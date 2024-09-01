@@ -1,0 +1,65 @@
+// Заголовки, загальні БЕМ блоки та інше...
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14.63 / 12);
+  color: #ffffff;
+  background: linear-gradient(120.72deg, #ffffff -96.4%, #b0201e 139.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Для Firefox версій 88 і вище */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@media (min-width: $pc) {
+  .title {
+    font-size: 15px;
+    line-height: calc(18.29 / 15);
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: initial;
+    text-fill-color: #ffffff;
+  }
+}
+
+.subtitle {
+  // font-family: Mattone;
+  font-size: 35px;
+  line-height: calc(42 / 35);
+  color: #ffffffc9;
+}
+
+@media (min-width: $pc) {
+  .subtitle {
+    font-size: 48px;
+    line-height: calc(57.6 / 48);
+  }
+}
+
+.accent-text{
+  color: $accent-color;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background-color: $accent-color;
+  color: $main-color;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-text{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height: calc(30.48/25);
+}
