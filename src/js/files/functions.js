@@ -807,4 +807,29 @@ export function changeIconHover() {
 		});
 	  });
 }
+
+
+export function transitionEffect() {
+	document.addEventListener("DOMContentLoaded", function () {
+		const description = document.querySelector('.pre-footer__description');
+	  
+		// Функція для додавання та зняття класів на основі видимості елемента
+		const observer = new IntersectionObserver((entries) => {
+		  entries.forEach(entry => {
+			if (entry.isIntersecting) {
+			  entry.target.classList.add('visible');
+			  entry.target.classList.remove('hidden');
+			} else {
+			  entry.target.classList.remove('visible');
+			  entry.target.classList.add('hidden');
+			}
+		  });
+		}, { threshold: 0.5 }); // Змінювати клас при 50% видимості елемента
+	  
+		// Спостерігаємо за описом
+		observer.observe(description);
+	  });
+	  
+	  
+}
 //================================================================================================================================================================================================================================================================================================================

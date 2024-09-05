@@ -1,5 +1,7 @@
 .header {
+  position: relative;
   padding-top: 21px;
+  z-index: 30;
 }
 
 @media (min-width: $tablet) {
@@ -43,6 +45,10 @@
     font-size: 18px;
     line-height: calc(24 / 18);
   }
+}
+
+body.skygen-page .menu__link{
+  color: $third-text-color;
 }
 
 .menu__link._spoller-ative {

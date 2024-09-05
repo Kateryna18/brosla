@@ -1,0 +1,279 @@
+@media (min-width: $mobile) {
+  .wrapper.wrapper__services-page::before {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.web-services {
+  padding-top: 455px;
+  padding-bottom: 130px;
+}
+@media (min-width: $mobile) {
+  .web-services {
+    display: flex;
+    gap: 60px;
+    padding-top: 0;
+    padding-bottom: 205px;
+
+    & > * {
+      flex: 1;
+    }
+  }
+}
+@media (min-width: $pc) {
+  .web-services {
+    gap: 100px;
+  }
+}
+
+@media (min-width: $mobile) {
+  .web-services__container {
+    padding-top: 1080px;
+  }
+}
+
+.web-services__thumb {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+@media (min-width: $mobile) {
+  .web-services__thumb {
+    // height: 1080px;
+    margin-bottom: 0;
+    // ----
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* Вирівнює зображення на початку контейнера */
+    min-height: 100vh; /* Задає висоту зображення рівну висоті екрану */
+  }
+}
+
+.web-services__thumb > img {
+  width: 100%;
+  height: 100%;
+}
+
+.web-services__content {
+}
+
+.web-services__top-content {
+  margin-bottom: 70px;
+}
+@media (min-width: $mobile) {
+  .web-services__top-content {
+    margin-bottom: 310px;
+  }
+}
+
+.title.web-services__title {
+  margin-bottom: 15px;
+
+  text-transform: uppercase;
+  color: $main-color;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #ffffff;
+  background-clip: initial;
+  text-fill-color: #ffffff;
+}
+@media (min-width: $mobile) {
+  .title.web-services__title {
+    font-size: 15px;
+    line-height: calc(18.29px / 15px);
+    color: $main-color;
+    background: linear-gradient(52.95deg, #ffffff -61.54%, #b0201e 121.42%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Для Firefox версій 88 і вище */
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+.web-services__description {
+  max-width: 319px;
+  margin-bottom: 60px;
+  // font-family: Mattone;
+  font-size: 20px;
+  line-height: calc(24px / 20px);
+  background: linear-gradient(178.29deg, #b0201e 0.86%, #ffffff 50.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Для Firefox версій 88 і вище */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media (min-width: $mobile) {
+  .web-services__description {
+    max-width: 100%;
+    margin-bottom: 80px;
+    font-size: 30px;
+    line-height: calc(36px / 30px);
+    background: linear-gradient(52.95deg, #ffffff -61.54%, #b0201e 121.42%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Для Firefox версій 88 і вище */
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+@media (min-width: $mobile) {
+  .web-services__features-box {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+
+    & > * {
+      flex: 1;
+    }
+  }
+}
+
+.web-services__features-boxes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.web-services__features-boxes.top {
+  position: relative;
+  padding-bottom: 80px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.88) 0%,
+      #b0201e 100%
+    );
+  }
+}
+@media (min-width: $mobile) {
+  .web-services__features-boxes.top {
+    position: relative;
+    padding-bottom: 0;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.web-services__features-boxes.bottom {
+  padding-top: 80px;
+}
+@media (min-width: $mobile) {
+  .web-services__features-boxes.bottom {
+    padding-top: 0;
+  }
+}
+
+.web-services__features-text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: calc(17.07px / 14px);
+}
+@media (min-width: $mobile) {
+  .web-services__features-text {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: calc(26.82px / 22px);
+  }
+}
+
+.web-services__features-text-accent {
+  font-weight: 700;
+}
+
+.web-services__options-box {
+  margin-bottom: 90px;
+}
+@media (min-width: $mobile) {
+  .web-services__options-box {
+    margin-bottom: 150px;
+  }
+}
+
+.package__spoiler-body-box.options-box {
+  width: 100%;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: scroll;
+}
+@media (min-width: $mobile) {
+  .package__spoiler-body-box.options-box {
+    max-height: none;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: $mobile) {
+  .package__overview-spoiler.options__spoiler{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px 30px;
+  }
+}
+
+@media (min-width: $pc) {
+  .package__overview-spoiler.options__spoiler{
+    gap: 110px 30px;
+  }
+}
+
+@media (min-width: $mobile) {
+  .spollers__item.options__item{
+    width: calc((100%/2) - 30px);
+  }
+}
+
+.package__spoiler-title.options-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(24.38px / 20px);
+  text-transform: none;
+}
+@media (min-width: $mobile) {
+  .package__spoiler-title.options-title {
+    font-size: 30px;
+    line-height: calc(36.57px / 30px);
+  }
+}
+
+
+.package__spoiler-body-text.options-text {
+  font-weight: 300;
+}
+
+.options-text--accent {
+  font-weight: 700;
+}
+
+.web-services__button{
+  width: 268px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.web-services__button > .button{
+  padding-top: 23px;
+  padding-bottom: 23px;
+}

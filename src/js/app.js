@@ -63,6 +63,7 @@ flsFunctions.showMore();
 
 
 flsFunctions.changeIconHover();
+flsFunctions.transitionEffect();
 
 /*
 Модуль "До/Після"

@@ -26,6 +26,7 @@ import "../../scss/base/swiper.scss";
 
 // Ініціалізація слайдерів
 function initSliders() {
+	let swiperInstance;
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
 	if (document.querySelector('.swiper')) { // Вказуємо клас потрібного слайдера
@@ -222,6 +223,37 @@ function initSliders() {
 		window.addEventListener('resize', function () {
 			initSwiper();
 		});
+	}
+
+	if (document.querySelector('.catalogs__slider')) { // Вказуємо клас потрібного слайдера
+
+		if (window.innerWidth <= 768) {  // Задаємо breakpoint для мобільних екранів
+			if (!swiperInstance) {
+				swiperInstance = new Swiper('.catalogs__slider', { // Вказуємо склас потрібного слайдера
+					// Підключаємо модулі слайдера
+					// для конкретного випадку
+					modules: [Pagination],
+					observer: true,
+					observeParents: true,
+					slidesPerView: 1,
+					spaceBetween: 10,
+					autoHeight: true,
+					speed: 800,
+					centeredSlides: true,
+		
+					// Пагінація
+					pagination: {
+						el: '.catalogs__pagination',
+						clickable: true,
+					},
+				});
+			}
+		} else {
+			if (swiperInstance) {
+				swiperInstance.destroy(true, true);
+				swiperInstance = null;
+			}
+		}
 	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
