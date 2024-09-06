@@ -84,3 +84,9 @@ h6 {
 summary{
 	list-style: none;
 }
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    outline: none;
+}

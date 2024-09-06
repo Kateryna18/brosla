@@ -832,4 +832,29 @@ export function transitionEffect() {
 	  
 	  
 }
+
+export function changeActiveLink() {
+	document.addEventListener("DOMContentLoaded", function() {
+		// Отримуємо поточний URL
+		const currentUrl = window.location.pathname;
+	  
+		// Знаходимо всі посилання в меню
+		const menuLinks = document.querySelectorAll(".menu__link");
+	  
+		// Перебираємо всі посилання та додаємо клас "active" до відповідного
+		menuLinks.forEach(link => {
+		  // Отримуємо шлях із href атрибуту посилання
+		  const linkHref = link.getAttribute("href");
+	  
+		  // Якщо шлях збігається з поточним URL, додаємо клас "active"
+		  if (currentUrl.includes(linkHref)) {
+			link.classList.add("active");
+		  } else {
+			// Видаляємо клас "active" для інших посилань
+			link.classList.remove("active");
+		  }
+		});
+	  });
+	  
+}
 //================================================================================================================================================================================================================================================================================================================

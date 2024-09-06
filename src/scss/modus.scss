@@ -1,0 +1,207 @@
+.modus__pre-text.none {
+  display: none;
+}
+@media (min-width: $tablet) {
+  .modus__pre-text,
+  .modus__pre-text.none {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: calc(21.94px / 18px);
+    text-transform: uppercase;
+  }
+}
+
+.modus__content-thumb {
+  width: 100%;
+  height: 330px;
+  background-image: url("../img/modus-content-img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.modus__content-thumb.thumb2 {
+  background-color: #000000;
+  background-image: url("../img/modus-content-img2.png");
+}
+@media (min-width: $tablet) {
+  .modus__content-thumb,
+  .modus__content-thumb.thumb2 {
+    height: 956px;
+  }
+}
+
+.presentation__info-icon.modus__info-icon {
+  color: #000000;
+}
+
+.skygen__subtitle.modus__subtitle {
+  margin-bottom: 40px;
+}
+
+.skygen__description.modus__solution-description {
+  margin-bottom: 60px;
+}
+@media (min-width: $tablet) {
+  .skygen__description.modus__solution-description {
+    margin-bottom: 220px;
+  }
+}
+
+//   ======================================================================================
+
+.modus-marketing-video__container {
+  margin-bottom: 80px;
+}
+@media (min-width: $tablet) {
+  .modus-marketing-video__container {
+    margin-bottom: 207px;
+  }
+}
+.modus-marketing-video__thumb {
+  width: 100%;
+  height: 194px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+@media (min-width: $tablet) {
+  .modus-marketing-video__thumb {
+    height: 833px;
+  }
+}
+.modus-marketing-video__thumb > img {
+  width: 100%;
+  height: 100%;
+}
+
+.marketing__container.modus__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 80px;
+}
+@media (min-width: $tablet) {
+  .marketing__container.modus__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+  }
+}
+
+.marketing__content-box.modus__marketing-content-box {
+  gap: 90px;
+}
+
+.solutions__content-box-subtitle.modus__content-box-subtitle {
+  position: relative;
+  width: fit-content;
+}
+
+.modus__marketing-content-subtitle {
+  margin-bottom: 40px;
+  // font-family: Mattone;
+  font-size: 25px;
+  line-height: calc(30px / 25px);
+  color: $main-color;
+}
+@media (min-width: $tablet) {
+  .modus__marketing-content-subtitle {
+    font-size: 30px;
+    line-height: calc(36px / 30px);
+  }
+}
+
+.marketing__button.modus__button {
+  width: 268px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: $tablet) {
+  .marketing__button.modus__button {
+    width: 320px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.building-brand.modus-building-brand {
+  padding-top: 47px;
+}
+@media (min-width: $tablet) {
+  .building-brand.modus-building-brand {
+    padding-top: 220px;
+  }
+}
+
+.modus-building-brand__image-thumb {
+  width: 100%;
+  height: 478px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+@media (min-width: $tablet) {
+  .modus-building-brand__image-thumb {
+    width: 735px;
+    min-width: 735px;
+    height: 1021px;
+  }
+}
+.modus-building-brand__image-thumb > img {
+  width: 100%;
+  height: 100%;
+}
+
+.modus-pre-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (min-width: $tablet) {
+  .modus-pre-footer {
+    gap: 10px;
+    padding-top: 205px;
+    padding-bottom: 250px;
+    background-color: #000000;
+  }
+}
+
+.modus-pre-footer__text {
+  font-size: 14px;
+  line-height: calc(17.07px / 14px);
+}
+@media (min-width: $tablet) {
+  .modus-pre-footer__text {
+    font-size: 18px;
+    line-height: calc(21.94px / 18px);
+    color: $main-color;
+  }
+}
+
+.modus-pre-footer__name {
+  font-size: 24px;
+  line-height: calc(29.26px / 24px);
+}
+@media (min-width: $tablet) {
+  .modus-pre-footer__name {
+    font-size: 30px;
+    line-height: calc(36.57px / 30px);
+    color: $main-color;
+  }
+}
+
+.modus-pre-footer__icon {
+  width: 53px;
+  height: 15px;
+  color: $accent-color;
+}
+@media (min-width: $tablet) {
+  .modus-pre-footer__icon {
+    width: 83px;
+    height: 15px;
+  }
+}
