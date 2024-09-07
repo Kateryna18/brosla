@@ -12,7 +12,7 @@
 */
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
-window['FLS'] = true;
+window["FLS"] = true;
 
 // Підключення основного файлу стилів
 import "../scss/style.scss";
@@ -60,7 +60,6 @@ flsFunctions.spollers();
 Сніппет (HTML): showmore
 */
 flsFunctions.showMore();
-
 
 flsFunctions.changeIconHover();
 flsFunctions.transitionEffect();
@@ -200,7 +199,7 @@ import "./files/sliders.js";
 // Модуль поекранної прокрутки
 // Документація: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html
 // Сніппет(HTML):
-// import './libs/fullpage.js'
+import "./libs/fullpage.js";
 
 // Модуль паралаксу
 // Документація: https://template.fls.guru/template-docs/paralaks-pri-skroli.html
@@ -257,3 +256,30 @@ import "./libs/dynamic_adapt.js";
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
+// Отримуємо всі елементи
+const items = document.querySelectorAll('.features__item');
+
+// // Функція, яка ховає всі елементи, крім того, на якому наведений курсор
+function handleMouseOver(event) {
+  items.forEach(item => {
+	if (item !== event.target) {
+	  item.classList.add('hidden');
+	} else {
+	  item.classList.add('highlight'); // Додаємо клас до активного елемента
+	}
+  });
+}
+
+// Функція, яка показує всі елементи і видаляє клас highlight
+function handleMouseOut(event) {
+  items.forEach(item => {
+	item.classList.remove('hidden');
+	item.classList.remove('highlight'); // Видаляємо клас highlight
+  });
+}
+
+// // Додаємо обробники подій для всіх елементів
+items.forEach(item => {
+  item.addEventListener('mouseenter', handleMouseOver);
+  item.addEventListener('mouseleave', handleMouseOut);
+});

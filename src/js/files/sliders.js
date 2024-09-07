@@ -68,39 +68,37 @@ function initSliders() {
 		});
 	}
 
-	if (document.querySelector('.partners__swiper')) { // Вказуємо клас потрібного слайдера
-		// Створюємо слайдер
-		new Swiper('.partners__swiper', { // Вказуємо склас потрібного слайдера
-			modules: [Pagination],
-			direction: "vertical",
-			observer: true,
-			observeParents: true,
-			slidesPerView: "auto",
-			spaceBetween: 10,
-			// autoHeight: true,
-			speed: 800,
-			centeredSlides: true,
+	// if (document.querySelector('.partners__swiper')) { // Вказуємо клас потрібного слайдера
+	// 	// Створюємо слайдер
+	// 	new Swiper('.partners__swiper', { // Вказуємо склас потрібного слайдера
+	// 		modules: [Pagination],
+	// 		direction: "vertical",
+	// 		slidesPerView: "auto",
+	// 		spaceBetween: 10,
+	// 		speed: 800,
+	// 		centeredSlides: false,
 
-			// Пагінація
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
+	// 		// Пагінація
+	// 		pagination: {
+	// 			enabled: false,
+	// 		},
 
-			// Брейкпоінти
-			breakpoints: {
-				992: {
-					slidesPerView: "auto",
-					spaceBetween: 130,
-				},
-			},
-
-			// Події
-			on: {
-
-			}
-		});
-	}
+	// 		// Брейкпоінти
+	// 		breakpoints: {
+	// 			992: {
+	// 				spaceBetween: 100,
+	// 				pagination: {
+	// 					enabled: true,
+	// 					el: '.swiper-pagination',
+	// 					clickable: true,
+	// 				},
+	// 			},
+	// 			1600: {
+	// 				spaceBetween: 130,
+	// 			},
+	// 		},
+	// 	});
+	// }
 
 	if (document.querySelector('.address__slider')) { // Вказуємо клас потрібного слайдера
 		let swiperInstance;

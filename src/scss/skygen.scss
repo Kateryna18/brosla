@@ -224,7 +224,7 @@
   background-image: url("../img/skygen-content-img2.png");
 }
 .skygen__content-thumb.thumb3 {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   background-image: url("../img/skygen-content-img3.png");
 }
 @media (min-width: $tablet) {
@@ -644,13 +644,13 @@
 }
 
 @media (min-width: $tablet) {
-    .building-brand__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 70px;
-    }
+  .building-brand__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
   }
+}
 
 .building-brand__images-box {
   width: 100%;
@@ -680,20 +680,19 @@
   }
 }
 @media (min-width: $pc) {
-    .building-brand__image-thumb {
-      width: 880px;
-      height: 553px;
-    }
+  .building-brand__image-thumb {
+    width: 880px;
+    height: 553px;
   }
+}
 .building-brand__image-thumb > img {
   width: 100%;
   height: 100%;
 }
 
-
 .skygen__subtitle.building-brand__subtitle {
-    position: relative;
-    max-width: 195px;
+  position: relative;
+  max-width: 195px;
   margin-bottom: 30px;
 }
 @media (min-width: $tablet) {
@@ -704,33 +703,36 @@
 }
 
 .skygen__description.building-brand__description {
-    margin-bottom: 90px;
+  margin-bottom: 90px;
 }
 
-.building-brand__button{
-    width: 268px;
-    margin-right: auto;
-    margin-left: auto;
+.building-brand__button {
+  width: 268px;
+  margin-right: auto;
+  margin-left: auto;
 }
-.building-brand__button > button{
-    padding-top: 23px;
-    padding-bottom: 23px;
+.building-brand__button > button {
+  padding-top: 23px;
+  padding-bottom: 23px;
 }
-
 
 // =====================================================================================
 .catalogs {
-    padding-top: 50px;
-    padding-bottom: 38px;
-    background: conic-gradient(from 180deg at 50% 50%, #FAFAFA 0deg, #D9D9D9 20.69deg, #FAFAFA 360deg);
-
+  padding-top: 50px;
+  padding-bottom: 38px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #fafafa 0deg,
+    #d9d9d9 20.69deg,
+    #fafafa 360deg
+  );
 }
 @media (min-width: $tablet) {
-    .catalogs {
-        padding-top: 155px;
-        padding-bottom: 226px;
-    }
+  .catalogs {
+    padding-top: 155px;
+    padding-bottom: 226px;
   }
+}
 
 .catalogs__container {
 }
@@ -740,7 +742,7 @@
 }
 
 .catalogs__wrapper.swiper-wrapper {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 @media (min-width: $tablet) {
   .catalogs__wrapper.swiper-wrapper {
@@ -750,50 +752,49 @@
     justify-content: space-between;
     gap: 45px 48px;
     margin-bottom: 0;
+  }
 }
-}
-
 
 @media (min-width: $tablet) {
   .catalogs__slide.swiper-slide {
     width: calc((100% - 48px * 3) / 4);
   }
 
-  .catalogs__slide.swiper-slide.translateY{
+  .catalogs__slide.swiper-slide.translateY {
     position: relative;
     top: 123px;
   }
 }
 
-
 .catalogs__thumb {
-    width: 100%;
-    height: 326px;
-    overflow: hidden;
+  width: 100%;
+  height: 326px;
+  overflow: hidden;
 }
 @media (min-width: $tablet) {
   .catalogs__thumb {
+  }
 }
-}
-.catalogs__thumb > img{
-    width: 100%;
-    height: 100%;
-}
-
-.catalogs__pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+.catalogs__thumb > img {
+  width: 100%;
+  height: 100%;
 }
 
-.swiper-pagination-bullet{
+.catalogs__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  & > .swiper-pagination-bullet {
     width: 5px;
     height: 5px;
     background-color: #000000;
-}
-.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  }
+
+  & > .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: $accent-color;
+  }
 }
 
 // ==================================================================================================
@@ -847,7 +848,7 @@
     margin-left: 0;
   }
 }
-.social-media-packaging-thumb > img{
+.social-media-packaging-thumb > img {
   width: 100%;
   height: 100%;
 }
@@ -894,6 +895,6 @@
   height: 52px;
 }
 
-.footer__titles{
+.footer__titles {
   color: $main-color;
 }
