@@ -122,6 +122,74 @@ body.skygen-page{
 	background: #555;
 	cursor: grab;
   }
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+.slide-in-top {
+    transform: translateY(-20%); /* Початкова позиція - вище видимої області */
+    opacity: 0; /* Невидимий елемент */
+    animation: slideInTop 1s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+}
+
+@keyframes slideInTop {
+    to {
+        transform: translateY(0); /* Кінцева позиція - на своєму місці */
+        opacity: 1; /* Елемент стає видимим */
+    }
+}
+
+.slide-in-down {
+    transform: translateY(20%); /* Початкова позиція - вище видимої області */
+    opacity: 0; /* Невидимий елемент */
+    animation: slideInTop 1s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+}
+
+@keyframes slideInTop {
+    to {
+        transform: translateY(0); /* Кінцева позиція - на своєму місці */
+        opacity: 1; /* Елемент стає видимим */
+    }
+}
+
+
+.slide-in-left {
+    transform: translateX(-100%); /* Початкова позиція - за межами лівої сторони екрану */
+    opacity: 0; /* Невидимий елемент */
+    animation: slideInLeft 1.4s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+	animation-delay: 0s;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0); /* Кінцева позиція - на своєму місці */
+        opacity: 1; /* Елемент стає видимим */
+    }
+}
+
+.scale-up {
+    transform: scale(0.8); /* Початкова позиція - дуже маленький елемент */
+    opacity: 0; /* Невидимий елемент */
+    animation: scaleUp 1s ease-in-out forwards; /* Анімація тривалістю 0.8 секунди */
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1); /* Кінцевий стан - стандартний розмір */
+        opacity: 1; /* Елемент стає видимим */
+    }
+}
+
 // Обмежуючий контейнер ======================================================================================================================================================================================================================
 
 // (i) Стилі будуть застосовуватись до

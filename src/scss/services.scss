@@ -6,7 +6,7 @@
 }
 
 .web-services {
-  padding-top: 455px;
+  padding-top: 70px;
   padding-bottom: 130px;
 }
 @media (min-width: $mobile) {
@@ -29,7 +29,17 @@
 
 @media (min-width: $mobile) {
   .web-services__container {
-    padding-top: 1080px;
+    padding-top: 50px;
+  }
+}
+
+.hero__thumb-logo-box.services__thumb-logo-box{
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: $mobile) {
+  .hero__thumb-logo-box.services__thumb-logo-box{
+    margin-bottom: 168px;
   }
 }
 
