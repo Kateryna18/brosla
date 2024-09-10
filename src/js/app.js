@@ -320,34 +320,38 @@ items.forEach(item => {
 
 const videos = document.querySelectorAll('video');
 
-  videos.forEach((video) => {
+videos.forEach((video) => {
 
-    // Відтворення відео при наведенні миші
-    video.addEventListener('mouseenter', () => {
-      video.muted = true; // Вимкнути звук
-      video.play(); // Запустити відтворення
-    });
-
-    // Зупинка відео, коли миша залишає область відео
-    video.addEventListener('mouseleave', () => {
-      video.pause(); // Зупинити відтворення
-      video.currentTime = 0; // Повернути на початок
-    });
-
-    // Відтворення зі звуком при кліку
-    video.addEventListener('click', () => {
-      if (video.muted) {
-        video.muted = false; // Увімкнути звук
-        video.play(); // Відтворити відео
-      } else {
-        video.muted = true; // Вимкнути звук
-        video.pause(); // Зупинити відео при повторному кліку
-      }
-    });
-
-    // Обробка помилок завантаження відео
-    video.addEventListener('error', (e) => {
-      console.error("Помилка при завантаженні відео:", e);
-      video.insertAdjacentHTML('afterend', '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
-    });
+  // Відтворення відео при наведенні миші
+  video.addEventListener('mouseenter', () => {
+	video.muted = true; // Вимкнути звук
+	video.play().catch(error => {
+	  console.log('Помилка під час відтворення відео:', error);
+	});
   });
+
+  // Зупинка відео, коли миша залишає область відео
+  video.addEventListener('mouseleave', () => {
+	video.pause(); // Зупинити відтворення
+	video.currentTime = 0; // Повернути на початок
+  });
+
+  // Відтворення зі звуком при кліку
+  video.addEventListener('click', () => {
+	if (video.muted) {
+	  video.muted = false; // Увімкнути звук
+	  video.play().catch(error => {
+		console.log('Помилка під час відтворення відео зі звуком:', error);
+	  });
+	} else {
+	  video.muted = true; // Вимкнути звук
+	  video.pause(); // Зупинити відео при повторному кліку
+	}
+  });
+
+  // Обробка помилок завантаження відео
+  video.addEventListener('error', (e) => {
+	console.error("Помилка при завантаженні відео:", e);
+	video.insertAdjacentHTML('afterend', '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
+  });
+});
