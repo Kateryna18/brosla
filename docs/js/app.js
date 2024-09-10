@@ -4459,7 +4459,7 @@
     changeIconHover();
     transitionEffect();
     changeActiveLink();
-    const items = document.querySelectorAll(".features__item");
+    const items = document.querySelectorAll(".features__slide");
     function handleMouseOver(event) {
         items.forEach((item => {
             if (item !== event.target) item.classList.add("hidden"); else item.classList.add("highlight");
