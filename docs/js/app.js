@@ -4475,4 +4475,28 @@
         item.addEventListener("mouseenter", handleMouseOver);
         item.addEventListener("mouseleave", handleMouseOut);
     }));
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video => {
+        video.addEventListener("mouseenter", (() => {
+            video.muted = true;
+            video.play();
+        }));
+        video.addEventListener("mouseleave", (() => {
+            video.pause();
+            video.currentTime = 0;
+        }));
+        video.addEventListener("click", (() => {
+            if (video.muted) {
+                video.muted = false;
+                video.play();
+            } else {
+                video.muted = true;
+                video.pause();
+            }
+        }));
+        video.addEventListener("error", (e => {
+            console.error("Помилка при завантаженні відео:", e);
+            video.insertAdjacentHTML("afterend", '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
+        }));
+    }));
 })();

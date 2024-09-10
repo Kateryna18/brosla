@@ -1252,7 +1252,7 @@ details.header-spoiler[open] {
   width: 165px;
   height: 280px
 }
-.video__item-thumb>img {
+.video__item-thumb>video {
   width: 100%;
   height: 100%
 }
