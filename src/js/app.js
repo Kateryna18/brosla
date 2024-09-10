@@ -257,7 +257,7 @@ import "./libs/dynamic_adapt.js";
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 // Отримуємо всі елементи
-const items = document.querySelectorAll('.features__item');
+const items = document.querySelectorAll('.features__slide');
 
 // // Функція, яка ховає всі елементи, крім того, на якому наведений курсор
 function handleMouseOver(event) {

@@ -16,6 +16,7 @@
 .menu__list {
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
@@ -37,7 +38,7 @@
 
 .menu__link {
   position: relative;
-  padding: 12px;
+  padding: 25px;
   font-size: 32px;
   line-height: calc(32 / 32);
   cursor: pointer;
@@ -57,18 +58,40 @@ body.skygen-page .menu__link{
 .menu__link._spoller-ative {
 }
 
+.header__menu-icon-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header__menu-icon{
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  color: $accent-color;
+
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.header__menu-icon-box:hover .header__menu-icon{
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+
 .menu__link-icon {
   display: none;
 }
 
-.menu__link.active .menu__link-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 130%;
-  height: 150%;
+.menu__link.active{
+  padding: 35px;
+}
+.menu__link.active .header__menu-icon {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
   color: $accent-color;
 }
 

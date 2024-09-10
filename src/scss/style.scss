@@ -21,7 +21,7 @@ $fontFamily: "Montserrat";
 $fontSize: toRem(22); // де 14(px) - розмір шрифту за замовчуванням з макету
 
 // Основні кольори
-$mainColor: #FFFFFF; // Колір шрифту за замовчуванням
+$mainColor: #ffffff; // Колір шрифту за замовчуванням
 
 // Палітра кольорів
 // @import "base/colors-palette";
@@ -42,7 +42,9 @@ $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поїнти
-$pc: toEm($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
+$pc: toEm(
+  $containerWidth
+); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
 $tablet: toEm(991.98); // Планшети, деякі телефони в горизонтальному положенні
 $mobile: toEm(767.98); // Телефони L
 $mobileSmall: toEm(479.98); // Телефони S
@@ -61,133 +63,134 @@ $responsiveType: 2;
 // Підключення компонентів tailwind ============================================================================================================================================================================================== =============================================================================================== ===========================================================================
 // @import "libs/tailwind";
 
-
 // Стилі тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 body {
-	line-height: calc(26.8/22);
-	background-color: #121212;
-	// scrollbar-gutter: stable;
-	// Скролл заблоковано
-	.lock & {
-		overflow: hidden;
-		touch-action: none;
-		overscroll-behavior: none;
-	}
-	// Сайт завантажений
-	.loaded & {
-	}
+  line-height: calc(26.8 / 22);
+  background-color: #121212;
+  overflow-x: hidden;
+  // scrollbar-gutter: stable;
+  // Скролл заблоковано
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+  // Сайт завантажений
+  .loaded & {
+  }
 }
 
-body.skygen-page{
-	background-color: #FFFFFF;
-	color: #000000;
+body.skygen-page {
+  background-color: #ffffff;
+  color: #000000;
 }
 // Оболонка wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	@supports (overflow: clip) {
-		overflow: clip;
-	}
-	// Притискаємо footer
-	> main {
-		flex: 1 1 auto;
-	}
-	// Фікс для слайдерів
-	> * {
-		min-width: 0;
-	}
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+  // Притискаємо footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фікс для слайдерів
+  > * {
+    min-width: 0;
+  }
 }
 
 /* Зміна вигляду скролбару */
 ::-webkit-scrollbar {
-	width: 8px; /* Ширина скролбару */
-  }
-  
-  /* Зміна вигляду доріжки скролбару */
-  ::-webkit-scrollbar-track {
-	background: #121212; /* Колір доріжки */
-  }
-  
-  /* Зміна вигляду ручки скролбару */
-  ::-webkit-scrollbar-thumb {
-	background: #000000; /* Колір ручки */
-	border-radius: 10px; /* Закруглення */
-  }
-  
-  /* Зміна вигляду ручки скролбару під час наведення */
-  ::-webkit-scrollbar-thumb:hover {
-	background: #555;
-	cursor: grab;
-  }
+  width: 8px; /* Ширина скролбару */
+}
 
+/* Зміна вигляду доріжки скролбару */
+::-webkit-scrollbar-track {
+  background: #121212; /* Колір доріжки */
+}
+
+/* Зміна вигляду ручки скролбару */
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Колір ручки */
+  border-radius: 10px; /* Закруглення */
+}
+
+/* Зміна вигляду ручки скролбару під час наведення */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: grab;
+}
 
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
-
-.slide-in-top {
+@media (min-width: $tablet) {
+  .slide-in-top {
     transform: translateY(-20%); /* Початкова позиція - вище видимої області */
     opacity: 0; /* Невидимий елемент */
     animation: slideInTop 1s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+  }
 }
 
 @keyframes slideInTop {
-    to {
-        transform: translateY(0); /* Кінцева позиція - на своєму місці */
-        opacity: 1; /* Елемент стає видимим */
-    }
+  to {
+    transform: translateY(0); /* Кінцева позиція - на своєму місці */
+    opacity: 1; /* Елемент стає видимим */
+  }
 }
 
 .slide-in-down {
-    transform: translateY(20%); /* Початкова позиція - вище видимої області */
-    opacity: 0; /* Невидимий елемент */
-    animation: slideInTop 1s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+  transform: translateY(20%); /* Початкова позиція - вище видимої області */
+  opacity: 0; /* Невидимий елемент */
+  animation: slideInTop 1s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
 }
 
 @keyframes slideInTop {
-    to {
-        transform: translateY(0); /* Кінцева позиція - на своєму місці */
-        opacity: 1; /* Елемент стає видимим */
-    }
+  to {
+    transform: translateY(0); /* Кінцева позиція - на своєму місці */
+    opacity: 1; /* Елемент стає видимим */
+  }
 }
 
-
 .slide-in-left {
-    transform: translateX(-100%); /* Початкова позиція - за межами лівої сторони екрану */
-    opacity: 0; /* Невидимий елемент */
-    animation: slideInLeft 1.4s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
-	animation-delay: 0s;
+  transform: translateX(
+    -100%
+  ); /* Початкова позиція - за межами лівої сторони екрану */
+  opacity: 0; /* Невидимий елемент */
+  animation: slideInLeft 1.4s ease-in-out forwards; /* Анімація тривалістю 1 секунда */
+  animation-delay: 0s;
 }
 
 @keyframes slideInLeft {
-    to {
-        transform: translateX(0); /* Кінцева позиція - на своєму місці */
-        opacity: 1; /* Елемент стає видимим */
-    }
+  to {
+    transform: translateX(0); /* Кінцева позиція - на своєму місці */
+    opacity: 1; /* Елемент стає видимим */
+  }
 }
 
 .scale-up {
-    transform: scale(0.8); /* Початкова позиція - дуже маленький елемент */
-    opacity: 0; /* Невидимий елемент */
-    animation: scaleUp 1s ease-in-out forwards; /* Анімація тривалістю 0.8 секунди */
+  transform: scale(0.8); /* Початкова позиція - дуже маленький елемент */
+  opacity: 0; /* Невидимий елемент */
+  animation: scaleUp 1s ease-in-out forwards; /* Анімація тривалістю 0.8 секунди */
 }
 
 @keyframes scaleUp {
-    to {
-        transform: scale(1); /* Кінцевий стан - стандартний розмір */
-        opacity: 1; /* Елемент стає видимим */
-    }
+  to {
+    transform: scale(1); /* Кінцевий стан - стандартний розмір */
+    opacity: 1; /* Елемент стає видимим */
+  }
 }
 
 // Обмежуючий контейнер ======================================================================================================================================================================================================================
@@ -198,52 +201,60 @@ body.skygen-page{
 // Сніппет (HTML): cnt
 
 @if ($responsiveType==1) {
-	// Чуйна
-	[class*="__container"] {
-		@if ($maxWidthContainer>0) {
-			max-width: toRem($containerWidth);
-			margin: 0 auto;
-		}
-		@if ($containerPadding>0) {
-			@if ($maxWidthContainer>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
-			} @else {
-				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
-				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
-			}
-		}
-	}
+  // Чуйна
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: toRem($containerWidth);
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      @if ($maxWidthContainer>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      } @else {
+        @include adaptiveValue(
+          "padding-left",
+          math.div($containerPadding, 2),
+          15
+        );
+        @include adaptiveValue(
+          "padding-right",
+          math.div($containerPadding, 2),
+          15
+        );
+      }
+    }
+  }
 } @else {
-	// Брейк-поїнтами
-	[class*="__container"] {
-		margin: 0 auto;
-		@if ($maxWidthContainer>0) {
-			max-width: toRem($containerWidth);
-		} @else {
-			@if ($containerPadding>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
-			}
-		}
-		@media (max-width: $pc) {
-			// max-width: toRem(910);
-			max-width: 100%;
-			@if ($containerPadding>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
-			}
-		}
-		@media (max-width: $tablet) {
-			max-width: toRem(750);
-			@if ($containerPadding>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
-			}
-		}
-		@media (max-width: $mobile) {
-			max-width: none;
-			@if ($containerPadding>0 and $maxWidthContainer>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
-			}
-		}
-	}
+  // Брейк-поїнтами
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: toRem($containerWidth);
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      // max-width: toRem(910);
+      max-width: 100%;
+      @if ($containerPadding>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $tablet) {
+      max-width: toRem(750);
+      @if ($containerPadding>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+  }
 }
 
 // (i) Експерементальний функціонал
