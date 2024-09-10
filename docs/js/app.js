@@ -4479,7 +4479,9 @@
     videos.forEach((video => {
         video.addEventListener("mouseenter", (() => {
             video.muted = true;
-            video.play();
+            video.play().catch((error => {
+                console.log("Помилка під час відтворення відео:", error);
+            }));
         }));
         video.addEventListener("mouseleave", (() => {
             video.pause();
@@ -4488,7 +4490,9 @@
         video.addEventListener("click", (() => {
             if (video.muted) {
                 video.muted = false;
-                video.play();
+                video.play().catch((error => {
+                    console.log("Помилка під час відтворення відео зі звуком:", error);
+                }));
             } else {
                 video.muted = true;
                 video.pause();
