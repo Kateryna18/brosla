@@ -48,11 +48,11 @@ body {
   }
 }
 
-// Оболонка буллетів
-// .fp-bullets {
-//   display: none;
-// }
-// @media (min-width: $tablet) {
+Оболонка буллетів
+.fp-bullets {
+  display: none;
+}
+@media (min-width: $tablet) {
   .fp-bullets {
     position: fixed;
     top: 50%;
@@ -80,8 +80,8 @@ body {
     // Булет
     & .fp-bullet {
       cursor: pointer;
-      width: toRem(25);
-      height: toRem(25);
+      width: toRem(15);
+      height: toRem(15);
       border-radius: 50%;
       background-color: transparent;
       border: toRem(2) solid $accent-color;
@@ -103,4 +103,4 @@ body {
       background-color: $accent-color;
     }
   }
-// }
+}

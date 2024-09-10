@@ -4,8 +4,8 @@
   <body class="fade-in">
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="page">
-        <section class="hero">
+      <main class="page" data-fp data-fp-bullets>
+        <section class="hero" data-fp-section>
           <div class="hero__container hero-container">
             <div class="hero__thumb-logo-box slide-in-down">
               <div class="hero__thumb-logo">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </section>
-        <section class="examples">
+        <section class="examples" data-fp-section>
           <div class="examples__container">
             <div class="examples__content">
               <h2 class="title examples__title">examples</h2>
@@ -137,7 +137,7 @@
             </div>
           </div>
         </section>
-        <section class="services">
+        <section class="services" data-fp-section>
           <div class="services__container">
             <div class="services__content">
               <h2 class="title services__title">Services</h2>
@@ -260,7 +260,7 @@
             </div>
           </div>
         </section>
-        <section class="partners">
+        <section class="partners" data-fp-section>
           <div class="partners__container">
             <div class="partners__content-top">
               <div class="partners__thumb-title">
@@ -332,7 +332,7 @@
             </div>
           </div>
         </section>
-        <section class="video">
+        <section class="video" data-fp-section>
           <div class="video__container">
             <div class="video__content-top">
               <div class="video__thumb-title"></div>
@@ -456,7 +456,7 @@
             </div>
           </div>
         </section>
-        <section class="photoshoots">
+        <section class="photoshoots" data-fp-section>
           <div class="photoshoots__content">
             <div class="photoshoots__thumb">
               <img src="@img/photoshoots-post.png" alt="Image" />
@@ -567,7 +567,7 @@
             </div>
           </div>
         </section>
-        <section class="package">
+        <section class="package" data-fp-section>
           <div class="package__container">
             <div class="package__content">
               <div class="package__overview">
@@ -747,7 +747,7 @@
             </div>
           </div>
         </section>
-        <section class="pre-footer">
+        <section class="pre-footer" data-fp-section>
           <div class="pre-footer__container">
             <div class="pre-footer__images-box">
               <div class="pre-footer__images-thumb">
@@ -767,8 +767,9 @@
             </p>
           </div>
         </section>
+        <section data-fp-section>@@include('html/_footer.htm',{})</section>
       </main>
-      @@include('html/_footer.htm',{})
+      <!-- @@include('html/_footer.htm',{}) -->
     </div>
     @@include('html/_js.htm',{})
   </body>

@@ -319,36 +319,8 @@ body.skygen-page .icon-menu {
 .fp-init .fade-mode [data-fp-section] {
   transition: opacity .5s ease-in-out 0s,visibility .5s ease-in-out 0s
 }
-.fp-bullets {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  right: 2.5rem;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  gap: .1875rem
-}
-.fp-bullets .fp-bullet {
-  cursor: pointer;
-  width: 1.5625rem;
-  height: 1.5625rem;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,0);
-  border: .125rem solid #b0201e;
-  opacity: .6;
-  transition: opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s,-webkit-transform .4s ease-in-out 0s;
-  transition: transform .4s ease-in-out 0s,opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s;
-  transition: transform .4s ease-in-out 0s,opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s,-webkit-transform .4s ease-in-out 0s
-}
-.fp-bullets .fp-bullet-active {
-  opacity: 1;
-  background-color: #b0201e
+Оболонка буллетів .fp-bullets {
+  display: none
 }
 .ibg {
   width: 100%;
@@ -2757,10 +2729,41 @@ body.skygen-page .footer__address-icon {
     -webkit-animation: slideInTop 1s ease-in-out forwards;
     animation: slideInTop 1s ease-in-out forwards
   }
+  .fp-bullets {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    right: 2.5rem;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    gap: .1875rem
+  }
+  .fp-bullets .fp-bullet {
+    cursor: pointer;
+    width: .9375rem;
+    height: .9375rem;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    border: .125rem solid #b0201e;
+    opacity: .6;
+    transition: opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s,-webkit-transform .4s ease-in-out 0s;
+    transition: transform .4s ease-in-out 0s,opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s;
+    transition: transform .4s ease-in-out 0s,opacity .4s ease-in-out 0s,background-color .4s ease-in-out 0s,box-shadow .4s ease-in-out 0s,-webkit-transform .4s ease-in-out 0s
+  }
+  .fp-bullets .fp-bullet-active {
+    opacity: 1;
+    background-color: #b0201e
+  }
   .header {
-    position: relative;
+    position: sticky;
     right: auto;
-    padding-top: 42px
+    padding-top: 0
   }
   .menu__list {
     justify-content: flex-end
@@ -3422,6 +3425,11 @@ body.skygen-page .footer__address-icon {
     height: 15px
   }
 }
+@media (min-width:61.99875em)and (any-hover:hover) {
+  .fp-bullets .fp-bullet:hover {
+    opacity: 1
+  }
+}
 @media (min-width:111.875em) {
   .title {
     font-size: 15px;
@@ -3499,9 +3507,6 @@ body.skygen-page .footer__address-icon {
   [class*=__container] {
     max-width: 100%;
     padding: 0 .9375rem
-  }
-  .fp-bullets {
-    right: 1.25rem
   }
 }
 @media (max-width:61.99875em) {
@@ -3588,7 +3593,12 @@ body.skygen-page .footer__address-icon {
     cursor: default
   }
 }
-@media (max-width:29.99875em) {
+@media (min-width:61.99875em)and (max-width:111.875em) {
+  .fp-bullets {
+    right: 1.25rem
+  }
+}
+@media (min-width:61.99875em)and (max-width:29.99875em) {
   .fp-bullets {
     top: auto;
     bottom: 1.25rem;
@@ -3596,10 +3606,5 @@ body.skygen-page .footer__address-icon {
     transform: translate(50%,0);
     flex-direction: row;
     right: 50%
-  }
-}
-@media (any-hover:hover) {
-  .fp-bullets .fp-bullet:hover {
-    opacity: 1
   }
 }

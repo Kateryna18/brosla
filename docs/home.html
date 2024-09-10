@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240910090553">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240910122837">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,8 +76,8 @@
 			</div>
 		</header>
 
-		<main class="page">
-			<section class="hero">
+		<main class="page" data-fp data-fp-bullets>
+			<section class="hero" data-fp-section>
 				<div class="hero__container hero-container">
 					<div class="hero__thumb-logo-box slide-in-down">
 						<div class="hero__thumb-logo">
@@ -104,7 +104,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="examples">
+			<section class="examples" data-fp-section>
 				<div class="examples__container">
 					<div class="examples__content">
 						<h2 class="title examples__title">examples</h2>
@@ -209,7 +209,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="services">
+			<section class="services" data-fp-section>
 				<div class="services__container">
 					<div class="services__content">
 						<h2 class="title services__title">Services</h2>
@@ -324,7 +324,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="partners">
+			<section class="partners" data-fp-section>
 				<div class="partners__container">
 					<div class="partners__content-top">
 						<div class="partners__thumb-title">
@@ -396,7 +396,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="video">
+			<section class="video" data-fp-section>
 				<div class="video__container">
 					<div class="video__content-top">
 						<div class="video__thumb-title"></div>
@@ -515,7 +515,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="photoshoots">
+			<section class="photoshoots" data-fp-section>
 				<div class="photoshoots__content">
 					<div class="photoshoots__thumb">
 						<img src="img/photoshoots-post.webp" alt="Image" />
@@ -626,7 +626,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="package">
+			<section class="package" data-fp-section>
 				<div class="package__container">
 					<div class="package__content">
 						<div class="package__overview">
@@ -790,7 +790,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="pre-footer">
+			<section class="pre-footer" data-fp-section>
 				<div class="pre-footer__container">
 					<div class="pre-footer__images-box">
 						<div class="pre-footer__images-thumb">
@@ -808,129 +808,252 @@
 					</p>
 				</div>
 			</section>
+			<section data-fp-section>
+				<footer class="footer">
+					<div class="footer__container">
+						<div class="footer__top">
+							<div class="footer__info-box">
+								<div class="footer__info-item">
+									<p class="footer__titles footer__info-title">determination</p>
+									<p class="footer__info-description">
+										Turn your napkin doodles into game-changing products and brands.
+										Because, hey, everyone starts somewhere, right?
+									</p>
+								</div>
+								<div class="footer__info-item">
+									<p class="footer__titles footer__info-title">Hurry up</p>
+									<p class="footer__info-description">
+										Maybe we're just a boutique agency, juggling a select few clients at
+										a time. So, unfortunately, spots are quite limited!
+									</p>
+								</div>
+							</div>
+							<div class="footer__form-box">
+								<p class="footer__titles footer__form-titles">Stay in the Know</p>
+								<form class="footer__form">
+									<div class="footer__fields">
+										<label for="email" class="footer__form-label">Email</label>
+										<input type="email" id="email" class="footer__form-input" />
+										<label for="name" class="footer__form-label">Name</label>
+										<input type="text" id="name" class="footer__form-input pc" />
+									</div>
+									<div class="footer__fields">
+										<label for="phone" class="footer__form-label">phone</label>
+										<input type="email" id="phone" class="footer__form-input margin" />
+										<div class="footer__form-button-box">
+											<button type="button" class="button">
+												<p class="button-text">Submit</p>
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="footer__bottom">
+							<div class="footer__contants-box">
+								<div class="footer__connect-box">
+									<p class="footer__titles footer__connect-title">Connect</p>
+									<a href="" class="footer__socials-box margin-bottom">
+										<svg class="footer__socials-icon">
+											<use xlink:href="img/icons/icons.svg#instagram"></use>
+										</svg>
+										<p class="footer__socials-name">Instagram</p>
+									</a>
+									<a class="footer__socials-box">
+										<svg class="footer__socials-icon">
+											<use xlink:href="img/icons/icons.svg#twitter"></use>
+										</svg>
+										<p class="footer__socials-name">Twitter</p>
+									</a>
+								</div>
+								<div class="footer__contanct-wrapper">
+									<div class="footer__contanct-title-box">
+										<p class="footer__titles footer__contanct-title">Contact</p>
+										<svg class="footer__contanct-icon">
+											<use xlink:href="img/icons/icons.svg#ring-v3"></use>
+										</svg>
+									</div>
+									<a href="malito:sale@brosla.com" class="footer__contanct-mail">sale@brosla.com</a>
+								</div>
+							</div>
+							<div class="footer__address-box">
+								<div class="address__slider">
+									<div class="address__wrapper swiper-wrapper">
+										<div class="address__slide swiper-slide">
+											<svg class="footer__address-icon icon-europe">
+												<use xlink:href="img/icons/icons.svg#europe"></use>
+											</svg>
+											<p class="footer__titles address__title">europe</p>
+											<p class="footer__address-value">
+												Rosenstraße 2, 10178 Berlin, Germany.
+											</p>
+										</div>
+										<div class="address__slide swiper-slide">
+											<svg class="footer__address-icon icon-toronto">
+												<use xlink:href="img/icons/icons.svg#toronto"></use>
+											</svg>
+											<p class="footer__titles address__title">Toronto | canada</p>
+											<p class="footer__address-value">
+												200 King Street West,200 King St W, Toronto, ON M5H 4H2
+											</p>
+										</div>
+										<div class="address__slide swiper-slide">
+											<svg class="footer__address-icon icon-dubai">
+												<use xlink:href="img/icons/icons.svg#dubai"></use>
+											</svg>
+											<p class="footer__titles address__title">dubai | Oae</p>
+											<p class="footer__address-value">
+												1911 Marasi Dr Business Bay Dubai - ОАE
+											</p>
+										</div>
+									</div>
+									<div class="adress__swiper-navigation">
+										<div class="adress__swiper-button-prev swiper-button-prev">
+											<svg class="adress__swiper-button-icon">
+												<use xlink:href="img/icons/icons.svg#arrow-left"></use>
+											</svg>
+										</div>
+										<div class="adress__swiper-button-next swiper-button-next">
+											<svg class="adress__swiper-button-icon">
+												<use xlink:href="img/icons/icons.svg#arrow-right"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="footer__copyright">
+									<p class="footer__copyright-text">© 2020-2024 Brosla online technologies.</p>
+									<a href="#" class="footer__link">Privacy Policy</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</section>
 		</main>
-		<footer class="footer">
-			<div class="footer__container">
-				<div class="footer__top">
-					<div class="footer__info-box">
-						<div class="footer__info-item">
-							<p class="footer__titles footer__info-title">determination</p>
-							<p class="footer__info-description">
-								Turn your napkin doodles into game-changing products and brands.
-								Because, hey, everyone starts somewhere, right?
-							</p>
-						</div>
-						<div class="footer__info-item">
-							<p class="footer__titles footer__info-title">Hurry up</p>
-							<p class="footer__info-description">
-								Maybe we're just a boutique agency, juggling a select few clients at
-								a time. So, unfortunately, spots are quite limited!
-							</p>
-						</div>
-					</div>
-					<div class="footer__form-box">
-						<p class="footer__titles footer__form-titles">Stay in the Know</p>
-						<form class="footer__form">
-							<div class="footer__fields">
-								<label for="email" class="footer__form-label">Email</label>
-								<input type="email" id="email" class="footer__form-input" />
-								<label for="name" class="footer__form-label">Name</label>
-								<input type="text" id="name" class="footer__form-input pc" />
-							</div>
-							<div class="footer__fields">
-								<label for="phone" class="footer__form-label">phone</label>
-								<input type="email" id="phone" class="footer__form-input margin" />
-								<div class="footer__form-button-box">
-									<button type="button" class="button">
-										<p class="button-text">Submit</p>
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="footer__bottom">
-					<div class="footer__contants-box">
-						<div class="footer__connect-box">
-							<p class="footer__titles footer__connect-title">Connect</p>
-							<a href="" class="footer__socials-box margin-bottom">
-								<svg class="footer__socials-icon">
-									<use xlink:href="img/icons/icons.svg#instagram"></use>
-								</svg>
-								<p class="footer__socials-name">Instagram</p>
-							</a>
-							<a class="footer__socials-box">
-								<svg class="footer__socials-icon">
-									<use xlink:href="img/icons/icons.svg#twitter"></use>
-								</svg>
-								<p class="footer__socials-name">Twitter</p>
-							</a>
-						</div>
-						<div class="footer__contanct-wrapper">
-							<div class="footer__contanct-title-box">
-								<p class="footer__titles footer__contanct-title">Contact</p>
-								<svg class="footer__contanct-icon">
-									<use xlink:href="img/icons/icons.svg#ring-v3"></use>
-								</svg>
-							</div>
-							<a href="malito:sale@brosla.com" class="footer__contanct-mail">sale@brosla.com</a>
-						</div>
-					</div>
-					<div class="footer__address-box">
-						<div class="address__slider">
-							<div class="address__wrapper swiper-wrapper">
-								<div class="address__slide swiper-slide">
-									<svg class="footer__address-icon icon-europe">
-										<use xlink:href="img/icons/icons.svg#europe"></use>
-									</svg>
-									<p class="footer__titles address__title">europe</p>
-									<p class="footer__address-value">
-										Rosenstraße 2, 10178 Berlin, Germany.
-									</p>
-								</div>
-								<div class="address__slide swiper-slide">
-									<svg class="footer__address-icon icon-toronto">
-										<use xlink:href="img/icons/icons.svg#toronto"></use>
-									</svg>
-									<p class="footer__titles address__title">Toronto | canada</p>
-									<p class="footer__address-value">
-										200 King Street West,200 King St W, Toronto, ON M5H 4H2
-									</p>
-								</div>
-								<div class="address__slide swiper-slide">
-									<svg class="footer__address-icon icon-dubai">
-										<use xlink:href="img/icons/icons.svg#dubai"></use>
-									</svg>
-									<p class="footer__titles address__title">dubai | Oae</p>
-									<p class="footer__address-value">
-										1911 Marasi Dr Business Bay Dubai - ОАE
-									</p>
-								</div>
-							</div>
-							<div class="adress__swiper-navigation">
-								<div class="adress__swiper-button-prev swiper-button-prev">
-									<svg class="adress__swiper-button-icon">
-										<use xlink:href="img/icons/icons.svg#arrow-left"></use>
-									</svg>
-								</div>
-								<div class="adress__swiper-button-next swiper-button-next">
-									<svg class="adress__swiper-button-icon">
-										<use xlink:href="img/icons/icons.svg#arrow-right"></use>
-									</svg>
-								</div>
-							</div>
-						</div>
-						<div class="footer__copyright">
-							<p class="footer__copyright-text">© 2020-2024 Brosla online technologies.</p>
-							<a href="#" class="footer__link">Privacy Policy</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
+		<!-- <footer class="footer">
+  <div class="footer__container">
+    <div class="footer__top">
+      <div class="footer__info-box">
+        <div class="footer__info-item">
+          <p class="footer__titles footer__info-title">determination</p>
+          <p class="footer__info-description">
+            Turn your napkin doodles into game-changing products and brands.
+            Because, hey, everyone starts somewhere, right?
+          </p>
+        </div>
+        <div class="footer__info-item">
+          <p class="footer__titles footer__info-title">Hurry up</p>
+          <p class="footer__info-description">
+            Maybe we're just a boutique agency, juggling a select few clients at
+            a time. So, unfortunately, spots are quite limited!
+          </p>
+        </div>
+      </div>
+      <div class="footer__form-box">
+        <p class="footer__titles footer__form-titles">Stay in the Know</p>
+        <form class="footer__form">
+          <div class="footer__fields">
+            <label for="email" class="footer__form-label">Email</label>
+            <input type="email" id="email" class="footer__form-input" />
+            <label for="name" class="footer__form-label">Name</label>
+            <input type="text" id="name" class="footer__form-input pc" />
+          </div>
+          <div class="footer__fields">
+            <label for="phone" class="footer__form-label">phone</label>
+            <input type="email" id="phone" class="footer__form-input margin" />
+            <div class="footer__form-button-box">
+              <button type="button" class="button">
+                <p class="button-text">Submit</p>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__contants-box">
+        <div class="footer__connect-box">
+          <p class="footer__titles footer__connect-title">Connect</p>
+          <a href="" class="footer__socials-box margin-bottom">
+            <svg class="footer__socials-icon">
+              <use xlink:href="img/icons/icons.svg#instagram"></use>
+            </svg>
+            <p class="footer__socials-name">Instagram</p>
+          </a>
+          <a class="footer__socials-box">
+            <svg class="footer__socials-icon">
+              <use xlink:href="img/icons/icons.svg#twitter"></use>
+            </svg>
+            <p class="footer__socials-name">Twitter</p>
+          </a>
+        </div>
+        <div class="footer__contanct-wrapper">
+          <div class="footer__contanct-title-box">
+            <p class="footer__titles footer__contanct-title">Contact</p>
+            <svg class="footer__contanct-icon">
+              <use xlink:href="img/icons/icons.svg#ring-v3"></use>
+            </svg>
+          </div>
+          <a href="malito:sale@brosla.com" class="footer__contanct-mail"
+            >sale@brosla.com</a
+          >
+        </div>
+      </div>
+      <div class="footer__address-box">
+        <div class="address__slider">
+          <div class="address__wrapper swiper-wrapper">
+            <div class="address__slide swiper-slide">
+              <svg class="footer__address-icon icon-europe">
+                <use xlink:href="img/icons/icons.svg#europe"></use>
+              </svg>
+              <p class="footer__titles address__title">europe</p>
+              <p class="footer__address-value">
+                Rosenstraße 2, 10178 Berlin, Germany.
+              </p>
+            </div>
+            <div class="address__slide swiper-slide">
+              <svg class="footer__address-icon icon-toronto">
+                <use xlink:href="img/icons/icons.svg#toronto"></use>
+              </svg>
+              <p class="footer__titles address__title">Toronto | canada</p>
+              <p class="footer__address-value">
+                200 King Street West,200 King St W, Toronto, ON M5H 4H2
+              </p>
+            </div>
+            <div class="address__slide swiper-slide">
+              <svg class="footer__address-icon icon-dubai">
+                <use xlink:href="img/icons/icons.svg#dubai"></use>
+              </svg>
+              <p class="footer__titles address__title">dubai | Oae</p>
+              <p class="footer__address-value">
+                1911 Marasi Dr Business Bay Dubai - ОАE
+              </p>
+            </div>
+          </div>
+          <div class="adress__swiper-navigation">
+            <div class="adress__swiper-button-prev swiper-button-prev">
+              <svg class="adress__swiper-button-icon">
+                <use xlink:href="img/icons/icons.svg#arrow-left"></use>
+              </svg>
+            </div>
+            <div class="adress__swiper-button-next swiper-button-next">
+              <svg class="adress__swiper-button-icon">
+                <use xlink:href="img/icons/icons.svg#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">© 2020-2024 Brosla online technologies.</p>
+          <a href="#" class="footer__link">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ -->
 	</div>
-	<script src="js/app.min.js?_v=20240910090553"></script>
+	<script src="js/app.min.js?_v=20240910122837"></script>
 </body>
 
 </html>

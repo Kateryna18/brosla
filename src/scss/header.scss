@@ -7,9 +7,9 @@
 
 @media (min-width: $tablet) {
   .header {
-    position: relative;
+    position: sticky;
     right: auto;
-    padding-top: 42px;
+    padding-top: 0;
   }
 }
 
