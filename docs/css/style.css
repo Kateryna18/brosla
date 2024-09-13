@@ -409,6 +409,9 @@ svg {
 body.skygen-page .menu__link {
   color: #171717
 }
+.lock.menu-open .menu__link {
+  color: #fff
+}
 .header__menu-icon-box {
   position: absolute;
   top: 0;
@@ -454,7 +457,7 @@ details.header-spoiler[open] {
   cursor: pointer
 }
 .footer {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 36px;
   background-color: #000
 }
@@ -578,7 +581,8 @@ details.header-spoiler[open] {
   color: #999
 }
 .address__slider {
-  margin-bottom: 70px
+  margin-bottom: 70px;
+  overflow: hidden
 }
 .address__slide.swiper-slide {
   width: 100%;
@@ -968,7 +972,8 @@ details.header-spoiler[open] {
   color: #fff
 }
 .services {
-  padding-bottom: 130px
+  padding-bottom: 130px;
+  padding-top: 80px
 }
 .services__container {
   margin-bottom: 60px
@@ -1135,7 +1140,8 @@ details.header-spoiler[open] {
   stroke-dasharray: 760
 }
 .partners {
-  padding-bottom: 130px
+  padding-bottom: 130px;
+  padding-top: 140px
 }
 .partners__content-top {
   margin-bottom: 80px
@@ -1201,7 +1207,8 @@ details.header-spoiler[open] {
   background-color: #b0201e
 }
 .video {
-  padding-bottom: 130px
+  padding-bottom: 130px;
+  padding-top: 110px
 }
 .video__content-top {
   margin-bottom: 40px
@@ -1312,6 +1319,7 @@ details.header-spoiler[open] {
 .photoshoots__thumb {
   width: 100%;
   height: 570px;
+  border-radius: 3px;
   overflow: hidden
 }
 .photoshoots__thumb>img {
@@ -1415,7 +1423,8 @@ details.header-spoiler[open] {
   text-transform: uppercase
 }
 .package {
-  padding-bottom: 130px
+  padding-bottom: 130px;
+  padding-top: 120px
 }
 .package__overview {
   width: 100%;
@@ -1542,6 +1551,7 @@ details.header-spoiler[open] {
   text-transform: uppercase
 }
 .pre-footer {
+  padding-top: 100px;
   padding-bottom: 120px
 }
 .pre-footer__images-box {
@@ -1549,6 +1559,7 @@ details.header-spoiler[open] {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px
 }
 .pre-footer__images-thumb {
@@ -1688,6 +1699,11 @@ details.header-spoiler[open] {
 .web-services__button>.button {
   padding-top: 23px;
   padding-bottom: 23px
+}
+.examples.services-page,
+.photoshoots.services-page,
+.video.services-page {
+  padding-top: 0
 }
 .wrapper.skygen__wrapper::after,
 .wrapper.skygen__wrapper::before {
@@ -2323,6 +2339,25 @@ body.skygen-page .footer__address-icon {
     flex-direction: row;
     justify-content: space-evenly
   }
+  .footer {
+    padding-top: 180px
+  }
+  .hero__container.hero-container {
+    padding-top: 205px;
+    gap: 90px
+  }
+  .hero__thumb-logo {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 0
+  }
+  .hero__footer {
+    margin-right: auto;
+    margin-left: 0
+  }
+  .examples {
+    padding-top: 180px
+  }
   .subtitle.examples__subtitle {
     max-width: 100%;
     margin-bottom: 35px;
@@ -2335,16 +2370,11 @@ body.skygen-page .footer__address-icon {
   .examples__description {
     margin-bottom: 30px
   }
-  .services .features__container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    overflow: hidden;
-    max-width: 100%;
-    width: 100%;
-    padding: 0
+  .examples__slide-thumb {
+    height: 370px
+  }
+  .services {
+    padding-top: 180px
   }
   .features__description {
     display: none
@@ -2359,7 +2389,7 @@ body.skygen-page .footer__address-icon {
     animation: fadeInUp .7s ease-in-out forwards
   }
   .partners {
-    padding-bottom: 250px
+    padding-top: 180px
   }
   .partners__content-top {
     margin-bottom: 180px
@@ -2389,35 +2419,26 @@ body.skygen-page .footer__address-icon {
     row-gap: 100px
   }
   .partners__slide.swiper-slide {
-    width: 790px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 790px;
-    display: flex;
-    align-items: center;
-    justify-content: normal
-  }
-  .partners__slide-content {
-    flex: 1
+    justify-content: space-around
   }
   .partners__slide-icon.margin {
     margin-left: auto
   }
   .video {
-    padding-bottom: 250px
+    padding-top: 180px
   }
   .video__content-top {
     margin-bottom: 108px
   }
   .video__thumb-title {
-    width: 869px;
-    height: 230px;
+    width: 100%;
     background-image: url(../img/VIDEO-pc.webp)
   }
   .video__description-box {
     display: flex;
-    align-items: center;
-    justify-content: space-between
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px
   }
   .video__description {
     max-width: 833px;
@@ -2449,16 +2470,9 @@ body.skygen-page .footer__address-icon {
   .video__item {
     width: calc((100% - 70px)/ 4)
   }
-  .video__video-box {
-    margin-bottom: 40px
-  }
   .video__item-thumb {
     width: 100%;
-    height: 600px
-  }
-  .video__item-name {
-    font-size: 22px;
-    line-height: 1.2190909091
+    height: 280px
   }
   .video__button-box {
     padding: 15px;
@@ -2469,11 +2483,13 @@ body.skygen-page .footer__address-icon {
     height: 35px
   }
   .photoshoots {
+    padding-top: 180px;
     padding-bottom: 250px
   }
   .photoshoots__thumb {
     width: 700px;
     min-width: 700px;
+    height: 770px;
     margin-right: auto;
     margin-left: auto
   }
@@ -2505,6 +2521,7 @@ body.skygen-page .footer__address-icon {
     line-height: 1.21875
   }
   .package {
+    padding-top: 180px;
     padding-bottom: 250px
   }
   .package__overview {
@@ -2591,13 +2608,8 @@ body.skygen-page .footer__address-icon {
     line-height: 1.5
   }
   .pre-footer {
+    padding-top: 180px;
     padding-bottom: 250px
-  }
-  .pre-footer__images-box {
-    margin-bottom: 80px;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px
   }
   .pre-footer__images-thumb {
     width: 630px;
@@ -2630,7 +2642,7 @@ body.skygen-page .footer__address-icon {
   .web-services {
     display: flex;
     gap: 60px;
-    padding-top: 0;
+    padding-top: 160px;
     padding-bottom: 205px
   }
   .web-services>* {
@@ -2643,14 +2655,7 @@ body.skygen-page .footer__address-icon {
     margin-bottom: 168px
   }
   .web-services__thumb {
-    margin-bottom: 0;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    min-height: 100vh
-  }
-  .web-services__top-content {
-    margin-bottom: 310px
+    height: 1000px
   }
   .title.web-services__title {
     font-size: 15px;
@@ -2720,6 +2725,26 @@ body.skygen-page .footer__address-icon {
     font-size: 30px;
     line-height: 1.219
   }
+  .examples.services-page,
+  .photoshoots.services-page,
+  .video.services-page {
+    padding-top: 0
+  }
+  .presentation {
+    padding-top: 180px;
+    padding-bottom: 110px
+  }
+  .brand-narrative__images-box {
+    min-width: 700px;
+    height: 500px
+  }
+  .brand-narrative__images-thumb {
+    width: 439px;
+    height: 237px
+  }
+  .catalogs__slide-content-thumb {
+    height: 316px
+  }
 }
 @media (min-width:61.99875em) {
   .slide-in-top {
@@ -2776,14 +2801,6 @@ body.skygen-page .footer__address-icon {
     padding-top: 85px;
     padding-bottom: 45px
   }
-  .footer__top {
-    margin-bottom: 0;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 80px;
-    border-bottom: 1px solid #999
-  }
   .footer__info-box {
     flex-direction: row;
     justify-content: normal;
@@ -2835,7 +2852,7 @@ body.skygen-page .footer__address-icon {
     line-height: 1.1428571429
   }
   .footer__bottom {
-    width: 85%;
+    width: 100%;
     flex-direction: row-reverse;
     align-items: flex-start;
     gap: 0;
@@ -2917,27 +2934,12 @@ body.skygen-page .footer__address-icon {
     margin-bottom: 0
   }
   .hero__container.hero-container {
-    height: 85vh;
-    padding-top: 10px;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: normal;
+    padding-top: 0;
     gap: 70px
-  }
-  .hero__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end
-  }
-  .hero__thumb-logo-box {
-    flex: 1;
-    display: flex;
-    justify-content: center
   }
   .hero__thumb-logo {
     width: 600px;
-    height: 600px;
-    margin-bottom: 0
+    height: 600px
   }
   .hero__thumb-logo::before {
     background-image: url(../img/logo-bg-pc.webp);
@@ -2956,10 +2958,10 @@ body.skygen-page .footer__address-icon {
     line-height: 1.3636363636
   }
   .hero__footer {
-    margin-right: 0;
-    margin-left: 0
+    margin-right: 0
   }
   .examples {
+    padding-top: 0;
     padding-bottom: 250px
   }
   .examples__slide {
@@ -2969,14 +2971,13 @@ body.skygen-page .footer__address-icon {
     padding: 32px
   }
   .examples__slide-content {
+    width: 860px;
     flex-direction: row;
-    align-items: flex-end;
     gap: 36px
   }
   .examples__slide-thumb {
-    width: 725px;
-    min-width: 725px;
-    height: 615px;
+    width: 425px;
+    min-width: 425px;
     border-radius: 5px
   }
   .examples__slide-info {
@@ -3015,10 +3016,22 @@ body.skygen-page .footer__address-icon {
     line-height: 1.2188888889
   }
   .services {
-    padding-bottom: 250px
+    padding-bottom: 250px;
+    padding-top: 0
   }
   .services__container {
     margin-bottom: 110px
+  }
+  .services .features__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    padding: 0
   }
   .services__subtitle {
     max-width: 546px;
@@ -3077,13 +3090,47 @@ body.skygen-page .footer__address-icon {
   .features__button-text {
     display: none
   }
-  .photoshoots__thumb {
-    width: 100%;
-    min-width: 700px;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    min-height: 100vh
+  .partners {
+    padding-bottom: 250px;
+    padding-top: 0
+  }
+  .partners__slide.swiper-slide {
+    width: 790px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 790px;
+    display: flex;
+    align-items: center;
+    justify-content: normal
+  }
+  .partners__slide-content {
+    flex: 1
+  }
+  .video {
+    padding-top: 0;
+    padding-bottom: 250px
+  }
+  .video__thumb-title {
+    width: 869px;
+    height: 230px
+  }
+  .video__description-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+  }
+  .video__item-thumb {
+    height: 400px
+  }
+  .video__item-name {
+    font-size: 16px;
+    line-height: 1.67625
+  }
+  .photoshoots {
+    padding-top: 0
+  }
+  .package {
+    padding-top: 0
   }
   .package__content {
     display: flex;
@@ -3107,12 +3154,23 @@ body.skygen-page .footer__address-icon {
     font-size: 30px;
     line-height: 1.2
   }
+  .pre-footer {
+    padding-top: 0
+  }
   .pre-footer__images-box {
-    gap: 100px
+    margin-bottom: 80px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px
+  }
+  .web-services {
+    padding-top: 0
+  }
+  .web-services__top-content {
+    margin-bottom: 100px
   }
   .presentation {
-    padding-top: 135px;
-    padding-bottom: 210px
+    padding-top: 135px
   }
   .skygen__title {
     margin-bottom: 15px;
@@ -3175,15 +3233,9 @@ body.skygen-page .footer__address-icon {
     padding-top: 210px;
     padding-bottom: 200px
   }
-  .brand-narrative__container {
-    display: flex;
-    justify-content: space-between;
-    gap: 70px
-  }
   .brand-narrative__images-box {
-    min-width: 700px;
-    height: 746px;
-    margin-bottom: 0
+    margin-bottom: 0;
+    height: 746px
   }
   .brand-narrative__images-thumb {
     width: 597px;
@@ -3222,7 +3274,7 @@ body.skygen-page .footer__address-icon {
   }
   .marketing__thumb-image {
     width: 651px;
-    min-width: 651px;
+    min-width: 600px;
     height: 3810px;
     margin-bottom: 0
   }
@@ -3297,7 +3349,7 @@ body.skygen-page .footer__address-icon {
     gap: 30px
   }
   .building-brand__image-thumb {
-    width: 700px;
+    width: 600px;
     height: 500px
   }
   .skygen__subtitle.building-brand__subtitle {
@@ -3324,7 +3376,7 @@ body.skygen-page .footer__address-icon {
     top: 123px
   }
   .catalogs__slide-content-thumb {
-    height: 245px
+    height: 200px
   }
   .catalogs__slide-content-bottom {
     padding-top: 22px;
@@ -3430,6 +3482,99 @@ body.skygen-page .footer__address-icon {
     opacity: 1
   }
 }
+@media (min-width:81.25em) {
+  .footer__top {
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #999
+  }
+  .footer__bottom {
+    width: 85%
+  }
+  .hero__container.hero-container {
+    height: 85vh;
+    padding-top: 10px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: normal
+  }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end
+  }
+  .hero__thumb-logo-box {
+    flex: 1;
+    display: flex;
+    justify-content: center
+  }
+  .examples__slide-content {
+    width: 100%;
+    align-items: flex-end
+  }
+  .examples__slide-thumb {
+    width: 625px;
+    min-width: 625px;
+    height: 515px;
+    border-radius: 5px
+  }
+  .video__video-box {
+    margin-bottom: 40px
+  }
+  .video__item-thumb {
+    height: 600px
+  }
+  .video__item-name {
+    font-size: 22px;
+    line-height: 1.2190909091
+  }
+  .photoshoots__thumb {
+    width: 100%;
+    min-width: 700px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    min-height: 100vh
+  }
+  .pre-footer__images-box {
+    gap: 100px
+  }
+  .web-services {
+    gap: 100px
+  }
+  .web-services__thumb {
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    min-height: 100vh
+  }
+  .web-services__top-content {
+    margin-bottom: 310px
+  }
+  .presentation {
+    padding-top: 100px;
+    padding-bottom: 210px
+  }
+  .brand-narrative__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px
+  }
+  .marketing__thumb-image {
+    min-width: 651px
+  }
+  .building-brand__image-thumb {
+    width: 700px;
+    height: 500px
+  }
+  .catalogs__slide-content-thumb {
+    height: 245px
+  }
+}
 @media (min-width:111.875em) {
   .title {
     font-size: 15px;
@@ -3456,6 +3601,12 @@ body.skygen-page .footer__address-icon {
     width: 934px;
     height: 934px
   }
+  .examples__slide-thumb {
+    width: 725px;
+    min-width: 725px;
+    height: 615px;
+    border-radius: 5px
+  }
   .video__item-thumb {
     height: 700px
   }
@@ -3474,9 +3625,6 @@ body.skygen-page .footer__address-icon {
     max-width: 390px;
     height: 555px
   }
-  .web-services {
-    gap: 100px
-  }
   .package__overview-spoiler.options__spoiler {
     gap: 110px 30px
   }
@@ -3491,6 +3639,11 @@ body.skygen-page .footer__address-icon {
     justify-content: space-between
   }
 }
+@media (min-width:991.98px) {
+  .swiper-initialized .swiper-slide {
+    flex-shrink: 1
+  }
+}
 @media (min-width:1300px) {
   .photoshoots__content {
     display: flex;
@@ -3501,6 +3654,9 @@ body.skygen-page .footer__address-icon {
   }
   .photoshoots__examples {
     padding-top: 45px
+  }
+  .swiper-initialized .swiper-slide {
+    flex-shrink: 0
   }
 }
 @media (max-width:111.875em) {

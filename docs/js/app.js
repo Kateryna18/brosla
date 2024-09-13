@@ -3942,7 +3942,7 @@
             let swiperInstance;
             function initSwiper() {
                 let screenWidth = window.innerWidth;
-                if (screenWidth < 1400 && !swiperInstance) swiperInstance = new swiper_core_Swiper(".address__slider", {
+                if (screenWidth < 1024 && !swiperInstance) swiperInstance = new swiper_core_Swiper(".address__slider", {
                     modules: [ Navigation ],
                     observer: true,
                     observeParents: true,
