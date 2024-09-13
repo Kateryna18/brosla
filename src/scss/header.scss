@@ -55,6 +55,10 @@ body.skygen-page .menu__link{
   color: $third-text-color;
 }
 
+.lock.menu-open .menu__link{
+  color: $main-color;
+}
+
 .menu__link._spoller-ative {
 }
 
