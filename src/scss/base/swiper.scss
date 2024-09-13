@@ -27,6 +27,20 @@
 		// transition-property: transform;
 	}
 }
+@media (min-width: 991.98px) {
+	.swiper-initialized {
+		.swiper-slide {
+			flex-shrink: 1;
+		}
+	}
+  }
+  @media (min-width: 1300px) {
+	.swiper-initialized {
+		.swiper-slide {
+			flex-shrink: 0;
+		}
+	}
+  }
 .swiper-android {
 	.swiper-slide,
 	.swiper-wrapper {

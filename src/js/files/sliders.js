@@ -61,54 +61,20 @@ function initSliders() {
 				},
 			},
 
-			// Події
 			on: {
 
 			}
 		});
 	}
 
-	// if (document.querySelector('.partners__swiper')) { // Вказуємо клас потрібного слайдера
-	// 	// Створюємо слайдер
-	// 	new Swiper('.partners__swiper', { // Вказуємо склас потрібного слайдера
-	// 		modules: [Pagination],
-	// 		direction: "vertical",
-	// 		slidesPerView: "auto",
-	// 		spaceBetween: 10,
-	// 		speed: 800,
-	// 		centeredSlides: false,
-
-	// 		// Пагінація
-	// 		pagination: {
-	// 			enabled: false,
-	// 		},
-
-	// 		// Брейкпоінти
-	// 		breakpoints: {
-	// 			992: {
-	// 				spaceBetween: 100,
-	// 				pagination: {
-	// 					enabled: true,
-	// 					el: '.swiper-pagination',
-	// 					clickable: true,
-	// 				},
-	// 			},
-	// 			1600: {
-	// 				spaceBetween: 130,
-	// 			},
-	// 		},
-	// 	});
-	// }
-
-	if (document.querySelector('.address__slider')) { // Вказуємо клас потрібного слайдера
+	if (document.querySelector('.address__slider')) { 
 		let swiperInstance;
 	
 		function initSwiper() {
 			let screenWidth = window.innerWidth;
 			
-			// Якщо ширина екрану менше 768px, ініціалізуємо слайдер
-			if (screenWidth < 1400 && !swiperInstance) {
-				swiperInstance = new Swiper('.address__slider', { // Вказуємо клас потрібного слайдера
+			if (screenWidth < 1024 && !swiperInstance) {
+				swiperInstance = new Swiper('.address__slider', { 
 					modules: [Navigation],
 					observer: true,
 					observeParents: true,

@@ -1,8 +1,13 @@
 //====================================================================================================
 .footer {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 36px;
   background-color: #000000;
+}
+@media (min-width: $mobile) {
+  .footer {
+    padding-top: 180px;
+  }
 }
 @media (min-width: $tablet) {
   .footer {
@@ -20,7 +25,7 @@
   flex-direction: column;
   gap: 80px;
 }
-@media (min-width: $tablet) {
+@media (min-width: $min-pc) {
   .footer__top {
     margin-bottom: 0;
     flex-direction: row;
@@ -196,11 +201,16 @@
 }
 @media (min-width: $tablet) {
   .footer__bottom {
-    width: 85%;
+    width: 100%;
     flex-direction: row-reverse;
     align-items: flex-start;
     gap: 0;
     padding-top: 69px;
+  }
+}
+@media (min-width: $min-pc) {
+  .footer__bottom {
+    width: 85%;
   }
 }
 
@@ -317,6 +327,7 @@
 
 .address__slider {
   margin-bottom: 70px;
+  overflow: hidden;
 }
 @media (min-width: $tablet) {
   .address__slider {
