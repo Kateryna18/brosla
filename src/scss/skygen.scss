@@ -8,10 +8,21 @@
   padding-top: 60px;
   padding-bottom: 80px;
 }
+@media (min-width: $mobile) {
+  .presentation {
+    padding-top: 180px;
+    padding-bottom: 110px;
+  }
+}
+@media (min-width: $min-pc) {
+  .presentation {
+    padding-top: 100px;
+    padding-bottom: 210px;
+  }
+}
 @media (min-width: $tablet) {
   .presentation {
     padding-top: 135px;
-    padding-bottom: 210px;
   }
 }
 
@@ -247,7 +258,7 @@
   }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $min-pc) {
   .brand-narrative__container {
     display: flex;
     justify-content: space-between;
@@ -261,11 +272,16 @@
   height: 350px;
   margin-bottom: 90px;
 }
-@media (min-width: $tablet) {
+@media (min-width: $mobile) {
   .brand-narrative__images-box {
     min-width: 700px;
-    height: 746px;
+    height: 500px;
+  }
+}
+@media (min-width: $tablet) {
+  .brand-narrative__images-box {
     margin-bottom: 0;
+    height: 746px;
   }
 }
 @media (min-width: $pc) {
@@ -279,6 +295,12 @@
   width: 239px;
   height: 137px;
   overflow: hidden;
+}
+@media (min-width: $mobile) {
+  .brand-narrative__images-thumb {
+    width: 439px;
+    height: 237px;
+  }
 }
 @media (min-width: $tablet) {
   .brand-narrative__images-thumb {
@@ -441,11 +463,17 @@
 @media (min-width: $tablet) {
   .marketing__thumb-image {
     width: 651px;
-    min-width: 651px;
+    min-width: 600px;
     height: 3810px;
     margin-bottom: 0;
   }
 }
+@media (min-width: $min-pc) {
+  .marketing__thumb-image {
+    min-width: 651px;
+  }
+}
+
 .marketing__thumb-image > img {
   width: 100%;
   height: 100%;
@@ -675,6 +703,12 @@
 }
 @media (min-width: $tablet) {
   .building-brand__image-thumb {
+    width: 600px;
+    height: 500px;
+  }
+}
+@media (min-width: $min-pc) {
+  .building-brand__image-thumb {
     width: 700px;
     height: 500px;
   }
@@ -777,7 +811,20 @@
 .catalogs__slide-content-thumb {
   height: 216px;
 }
+
+@media (min-width: $mobile) {
+  .catalogs__slide-content-thumb {
+    height: 316px;
+  }
+}
+
 @media (min-width: $tablet) {
+  .catalogs__slide-content-thumb {
+    height: 200px;
+  }
+}
+
+@media (min-width: $min-pc) {
   .catalogs__slide-content-thumb {
     height: 245px;
   }

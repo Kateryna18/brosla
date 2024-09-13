@@ -9,11 +9,12 @@
   padding-top: 70px;
   padding-bottom: 130px;
 }
+
 @media (min-width: $mobile) {
   .web-services {
     display: flex;
     gap: 60px;
-    padding-top: 0;
+    padding-top: 160px;
     padding-bottom: 205px;
 
     & > * {
@@ -21,7 +22,12 @@
     }
   }
 }
-@media (min-width: $pc) {
+@media (min-width: $tablet) {
+  .web-services {
+    padding-top: 0;
+  }
+}
+@media (min-width: $min-pc) {
   .web-services {
     gap: 100px;
   }
@@ -52,9 +58,12 @@
 }
 @media (min-width: $mobile) {
   .web-services__thumb {
-    // height: 1080px;
+    height: 1000px;
+  }
+}
+@media (min-width: $min-pc) {
+  .web-services__thumb {
     margin-bottom: 0;
-    // ----
     position: sticky;
     top: 0;
     align-self: flex-start; /* Вирівнює зображення на початку контейнера */
@@ -73,7 +82,12 @@
 .web-services__top-content {
   margin-bottom: 70px;
 }
-@media (min-width: $mobile) {
+@media (min-width: $tablet) {
+  .web-services__top-content {
+    margin-bottom: 100px;
+  }
+}
+@media (min-width: $min-pc) {
   .web-services__top-content {
     margin-bottom: 310px;
   }
@@ -286,4 +300,14 @@
 .web-services__button > .button{
   padding-top: 23px;
   padding-bottom: 23px;
+}
+
+.examples.services-page, .photoshoots.services-page, .video.services-page{
+  padding-top: 0;
+}
+
+@media (min-width: $mobile) {
+  .examples.services-page, .photoshoots.services-page, .video.services-page{
+    padding-top: 0;
+  }
 }
