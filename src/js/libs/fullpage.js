@@ -209,7 +209,6 @@ export class FullPage {
     if (this.activeSectionId === 0) {
       // Якщо це перша секція — прозорий фон
       header.style.display = "block";
-      header.style.backgroundColor = "transparent";
       header.style.paddingTop = "0";
       header.style.paddingBottom = "0";
       navLinks.forEach((navlink) => {
@@ -224,7 +223,6 @@ export class FullPage {
     } else {
       // Для інших секцій — чорний фон
       header.style.display = "block";
-      header.style.backgroundColor = "black";
       header.style.paddingTop = "7px";
       header.style.paddingBottom = "7px";
       navLinks.forEach((navlink) => {

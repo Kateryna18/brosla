@@ -199,7 +199,7 @@ import "./files/sliders.js";
 // Модуль поекранної прокрутки
 // Документація: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html
 // Сніппет(HTML):
-import "./libs/fullpage.js";
+// import "./libs/fullpage.js";
 
 // Модуль паралаксу
 // Документація: https://template.fls.guru/template-docs/paralaks-pri-skroli.html
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Функція для перевірки прокрутки та додавання/видалення класу
   function handleScroll() {
     if (header) {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 50 && window.scrollY < 2300) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
