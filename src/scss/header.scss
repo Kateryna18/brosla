@@ -5,11 +5,21 @@
   z-index: 30;
 }
 
+.header.wrapper__services-page{
+  padding-top: 0;
+}
+
+@media (min-width: $mobile) {
+  .header {
+    width: 100%;
+  }
+}
+
 @media (min-width: $tablet) {
   .header {
-    position: sticky;
-    right: auto;
+    position: fixed;
     padding-top: 0;
+    transition: all 0.3s ease;
   }
 }
 
@@ -41,7 +51,16 @@
   padding: 25px;
   font-size: 32px;
   line-height: calc(32 / 32);
+  text-wrap: nowrap;
+  transition: all 0.3s ease;
   cursor: pointer;
+}
+
+@media (min-width: $mobile) {
+  .menu__link {
+    font-size: 18px;
+    line-height: calc(24 / 18);
+  }
 }
 
 @media (min-width: $tablet) {
@@ -60,6 +79,15 @@ body.skygen-page .menu__link{
 }
 
 .menu__link._spoller-ative {
+}
+
+.header__menu{
+  padding-top: 21px;
+}
+@media (min-width: $tablet) {
+  .header__menu{
+    padding-top: 0;
+  }
 }
 
 .header__menu-icon-box{

@@ -286,38 +286,6 @@ items.forEach(item => {
 
 
 // =================================
-// // Отримати всі відео-елементи на сторінці
-// const videos = document.querySelectorAll('video');
-
-// // Додаємо слухачі подій для кожного відео
-// videos.forEach((video) => {
-
-//   // Відтворення відео при наведенні миші
-//   video.addEventListener('mouseenter', () => {
-// 	video.muted = true; // Вимкнути звук
-// 	video.play(); // Запустити відтворення
-//   });
-
-//   // Зупинка відео, коли миша залишає область відео
-//   video.addEventListener('mouseleave', () => {
-// 	video.pause(); // Зупинити відтворення
-// 	video.currentTime = 0; // Повернути на початок
-//   });
-
-//   // Відтворення зі звуком при кліку
-//   video.addEventListener('click', () => {
-// 	if (video.muted) {
-// 	  video.muted = false; // Увімкнути звук
-// 	  video.play(); // Відтворити відео
-// 	} else {
-// 	  video.muted = true; // Вимкнути звук
-// 	  video.pause(); // Зупинити відео при повторному кліку
-// 	}
-//   });
-
-// });
-
-
 const videos = document.querySelectorAll('video');
 
 videos.forEach((video) => {
@@ -355,3 +323,47 @@ videos.forEach((video) => {
 	video.insertAdjacentHTML('afterend', '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
   });
 });
+
+
+// ===============================================================================
+// Функція для запуску анімації при появі секції в зоні видимості
+document.addEventListener("DOMContentLoaded", function() {
+	const fadeInElements = document.querySelectorAll(".fade-in-content");
+	const slideUpElements = document.querySelectorAll(".slide-up");
+  
+	// Створюємо IntersectionObserver
+	const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+				  // Додаємо клас для fade-in ефекту
+				  if (entry.target.classList.contains("fade-in-content")) {
+					entry.target.classList.add("fade-in-visible");
+				  }
+		  
+				  // Додаємо клас для slide-up ефекту
+				  if (entry.target.classList.contains("slide-up")) {
+					entry.target.classList.add("slide-up-visible");
+				  }
+		  
+				  observer.unobserve(entry.target); 
+				}
+			  });
+	  
+	});
+
+
+	fadeInElements.forEach(el => {
+		if (el instanceof Element) {
+		  observer.observe(el);
+		}
+	  });
+	
+	  slideUpElements.forEach(el => {
+		if (el instanceof Element) {
+		  observer.observe(el);
+		} 
+	  });
+  });
+  
+  
+  

@@ -106,12 +106,13 @@ body.skygen-page {
 
 /* Зміна вигляду скролбару */
 ::-webkit-scrollbar {
+  position: relative;
   width: 8px; /* Ширина скролбару */
 }
 
 /* Зміна вигляду доріжки скролбару */
 ::-webkit-scrollbar-track {
-  background: #121212; /* Колір доріжки */
+  background: transparent;
 }
 
 /* Зміна вигляду ручки скролбару */
@@ -192,6 +193,32 @@ body.skygen-page {
     transform: scale(1); /* Кінцевий стан - стандартний розмір */
     opacity: 1; /* Елемент стає видимим */
   }
+}
+
+
+.fade-in-content {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in-visible {
+  opacity: 1;
+}
+
+/* Другий ефект – текст підіймається знизу */
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px); /* Початкове положення – трохи нижче */
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  transition-delay: 0.5s; /* Затримка на 1 секунду перед запуском */
+}
+.slide-up.delay {
+  transition-delay: 1s; /* Затримка на 1 секунду перед запуском */
+}
+
+.slide-up-visible {
+  opacity: 1;
+  transform: translateY(0); /* Підйом на своє місце */
 }
 
 // Обмежуючий контейнер ======================================================================================================================================================================================================================

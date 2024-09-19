@@ -1,5 +1,25 @@
 //====================================================================================================
-.wrapper::after {
+main{
+  position: relative;
+}
+
+.page::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/blur.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -20;
+}
+
+.page.skygen::before{
+  content: none;
+}
+
+.hero::after {
   content: "";
   position: absolute;
   top: 9px;
@@ -14,7 +34,7 @@
   opacity: 0.4;
 }
 @media (min-width: $tablet) {
-  .wrapper::after {
+  .hero::after {
     top: 0;
     width: 1180px;
     height: 120vh;
@@ -23,7 +43,7 @@
   }
 }
 @media (min-width: $pc) {
-  .wrapper::after {
+  .hero::after {
     width: 1540px;
   }
 }
@@ -95,13 +115,13 @@
 }
 @media (min-width: $tablet) {
   .hero__container.hero-container {
-    padding-top: 0;
+    padding-top: 150px;
     gap: 70px;
   }
 }
 @media (min-width: $min-pc) {
   .hero__container.hero-container {
-    height: 85vh;
+    height: 96vh;
     padding-top: 10px;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -118,6 +138,7 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    padding-top: 92px;
   }
 }
 
@@ -251,8 +272,14 @@
 }
 @media (min-width: $tablet) {
   .examples {
-    padding-top: 0;
-    padding-bottom: 250px;
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+}
+@media (min-width: $min-pc) {
+  .examples {
+    padding-top: 100px;
+    padding-bottom: 70px;
   }
 }
 
@@ -349,7 +376,7 @@
 }
 @media (min-width: $mobile) {
   .examples__slide-thumb {
-    height: 370px;
+    height: 390px;
   }
 }
 @media (min-width: $tablet) {
@@ -385,6 +412,15 @@
 @media (min-width: $tablet) {
   .examples__slide-info {
     max-width: 465px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+@media (min-width: $min-pc) {
+  .examples__slide-info {
     padding-bottom: 70px;
   }
 }
@@ -393,7 +429,7 @@
 .examples-slide-info__top {
   margin-bottom: 35px;
 }
-@media (min-width: $tablet) {
+@media (min-width: $min-pc) {
   .examples-slide-info__top {
     margin-bottom: 90px;
   }
@@ -547,8 +583,13 @@
 }
 @media (min-width: $tablet) {
   .services {
-    padding-bottom: 250px;
-    padding-top: 0;
+    padding-bottom: 70px;
+    padding-top: 130px;
+  }
+}
+@media (min-width: $min-pc) {
+  .services {
+    padding-top: 100px;
   }
 }
 
@@ -866,8 +907,13 @@
 }
 @media (min-width: $tablet) {
   .partners {
-    padding-bottom: 250px;
-    padding-top: 0;
+    padding-bottom: 70px;
+    padding-top: 130px;
+  }
+}
+@media (min-width: $min-pc) {
+  .partners {
+    padding-top: 100px;
   }
 }
 
@@ -1025,8 +1071,13 @@
 }
 @media (min-width: $tablet) {
   .video {
-    padding-top: 0;
-    padding-bottom: 250px;
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+}
+@media (min-width: $min-pc) {
+  .video {
+    padding-top: 100px;
   }
 }
 
@@ -1281,6 +1332,11 @@
 }
 @media (min-width: $tablet) {
   .photoshoots {
+    padding-top: 130px;
+  }
+}
+@media (min-width: $tablet) {
+  .photoshoots {
     padding-top: 0;
   }
 }
@@ -1409,13 +1465,38 @@
 .photoshoots__examples-item {
   width: calc((100% / 2) - (21px / 2));
   height: 230px;
+  overflow: hidden;
+  position: relative;
 }
+@media (min-width: $mobile) {
+  .photoshoots__examples-item {
+    width: calc((100% / 2) - (50px / 2));
+    height: 555px;
+    transition: transform 0.3 ease-in-out;
+  }
+}
+@media (min-width: $pc) {
+  .photoshoots__examples-item {
+    width: calc((100% / 2) - (50px / 2));
+    max-width: 390px;
+    height: 555px;
+  }
+}
+
+.photoshoots__examples-item {
+  width: calc((100% / 2) - (21px / 2));
+  height: 230px;
+  overflow: hidden;
+  position: relative; /* Додано для того, щоб псевдоелемент позиціонувався відносно контейнера */
+}
+
 @media (min-width: $mobile) {
   .photoshoots__examples-item {
     width: calc((100% / 2) - (50px / 2));
     height: 555px;
   }
 }
+
 @media (min-width: $pc) {
   .photoshoots__examples-item {
     width: calc((100% / 2) - (50px / 2));
@@ -1429,10 +1510,27 @@
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.photoshoots__examples-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+  z-index: -1; /* Поміщено псевдоелемент за контент */
 }
+
+.photoshoots__examples-link:hover::before {
+  transform: scale(1.1);
+}
+
 .photoshoots__examples-link::after {
   content: "";
   position: absolute;
@@ -1441,35 +1539,38 @@
   width: 100%;
   height: 100%;
   background: #00000080;
+  z-index: 1; /* Контент виявляється поверх затемнення */
 }
-.examples1 {
+
+.examples1::before {
   background-image: url("../img/photoshoots1.png");
 }
-.examples2 {
+.examples2::before {
   background-image: url("../img/photoshoots2.png");
 }
-.examples3 {
+.examples3::before {
   background-image: url("../img/photoshoots3.png");
 }
-.examples4 {
+.examples4::before {
   background-image: url("../img/photoshoots4.png");
 }
-.examples5 {
+.examples5::before {
   background-image: url("../img/photoshoots5.png");
 }
-.examples6 {
+.examples6::before {
   background-image: url("../img/photoshoots6.png");
 }
-.examples7 {
+.examples7::before {
   background-image: url("../img/photoshoots7.png");
 }
-.examples8 {
+.examples8::before {
   background-image: url("../img/photoshoots8.png");
 }
 
 .photoshoots__examples-item-content {
   position: relative;
   z-index: 10;
+  transform: translateY(150px);
   width: 100%;
   height: 100%;
   display: flex;
@@ -1477,7 +1578,13 @@
   align-items: center;
   justify-content: flex-end;
   padding-bottom: 24px;
+  transition: transform 1s ease;
 }
+
+.photoshoots__examples-link:hover .photoshoots__examples-item-content{
+  transform: translateY(0);
+}
+
 
 .photoshoots__examples-item-name {
   margin-bottom: 5px;
@@ -1519,7 +1626,12 @@
 }
 @media (min-width: $tablet) {
   .package {
-    padding-top: 0;
+    padding-top: 130px;
+  }
+}
+@media (min-width: $min-pc) {
+  .package {
+    padding-top: 70px;
   }
 }
 
@@ -1666,7 +1778,7 @@
     // ----
     position: sticky;
     top: 200px;
-    align-self: flex-start; /* Вирівнювання блока в колонці */
+    align-self: flex-start;
     max-height: 100vh;
   }
 }
@@ -1708,7 +1820,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px; /* Висота нижнього бордера */
+  height: 1px;
   background: linear-gradient(90deg, #ffffff 0%, #b0201e 100%);
 }
 
@@ -1725,7 +1837,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px; /* Висота нижнього бордера */
+    height: 1px;
     background: $main-color;
   }
 }
@@ -1849,7 +1961,12 @@
 }
 @media (min-width: $tablet) {
   .pre-footer {
-    padding-top: 0;
+    padding-top: 130px;
+  }
+}
+@media (min-width: $min-pc) {
+  .pre-footer {
+    padding-top: 90px;
   }
 }
 
@@ -1935,4 +2052,8 @@
 .pre-footer__description.hidden {
   opacity: 0;
   transform: translateY(20px);
+}
+
+.fp-bullets{
+  transition: all 1s ease;
 }

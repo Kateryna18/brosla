@@ -24,18 +24,63 @@
 }
 @media (min-width: $tablet) {
   .web-services {
-    padding-top: 0;
+    padding-top: 100px;
   }
 }
 @media (min-width: $min-pc) {
   .web-services {
+    padding-top: 0;
     gap: 100px;
+  }
+}
+
+.web-services::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: 0;
+  width: 100%;
+  height: 790px;
+  background-image: url("../img/brosla-bg-mb.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotate(3.08deg);
+  opacity: 0.4;
+}
+@media (min-width: $tablet) {
+  .web-services::after {
+    top: 100px;
+    width: 100%;
+    height: 800px;
+    background-image: url("../img/brosla-bg-pc.png");
+  }
+}
+@media (min-width: $min-pc) {
+  .web-services::after {
+    width: 55%;
+  }
+}
+@media (min-width: $pc) {
+  .web-services::after {
+    width: 1540px;
   }
 }
 
 @media (min-width: $mobile) {
   .web-services__container {
     padding-top: 50px;
+  }
+}
+
+@media (min-width: $min-pc) {
+  .web-services__container {
+    .hero__thumb-logo{
+      width: 500px;
+      height: 500px;
+      transform: translateY(300px);
+      animation: slideInDownContent 1.6s ease-in-out forwards;
+    }
   }
 }
 
@@ -77,6 +122,12 @@
 }
 
 .web-services__content {
+}
+
+@keyframes slideInDownContent {
+  to {
+    transform: translateY(0); /* Кінцева позиція - на своєму місці */
+  }
 }
 
 .web-services__top-content {
