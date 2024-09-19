@@ -4546,4 +4546,12 @@
             if (el instanceof Element) observer.observe(el);
         }));
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const header = document.querySelector(".wrapper__services-page header");
+        function handleScroll() {
+            if (header) if (window.scrollY > 50) header.classList.add("scrolled"); else header.classList.remove("scrolled");
+        }
+        window.addEventListener("scroll", handleScroll);
+        if (header) handleScroll();
+    }));
 })();

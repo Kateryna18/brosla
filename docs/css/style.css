@@ -418,8 +418,12 @@ svg {
   padding-top: 21px;
   z-index: 30
 }
-.header.wrapper__services-page {
-  padding-top: 0
+.wrapper__services-page header {
+  padding-top: 0;
+  transition: all .3s ease
+}
+.wrapper__services-page header.scrolled {
+  display: none
 }
 .menu__list {
   width: 100%;
@@ -2415,6 +2419,14 @@ body.skygen-page .footer__address-icon {
   font-size: 24px;
   line-height: 1.2191666667
 }
+.modus-pre-footer__button {
+  transition: all 1s ease
+}
+.modus-pre-footer__button:hover {
+  cursor: pointer;
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px)
+}
 .modus-pre-footer__icon {
   width: 53px;
   height: 15px;
@@ -2451,9 +2463,6 @@ body.skygen-page .footer__address-icon {
   display: none!important
 }
 @media (min-width:47.99875em) {
-  .header {
-    width: 100%
-  }
   .menu__list {
     flex-direction: row;
     justify-content: space-evenly
@@ -2919,6 +2928,9 @@ body.skygen-page .footer__address-icon {
     position: fixed;
     padding-top: 0;
     transition: all .3s ease
+  }
+  .skygen__wrapper .header {
+    position: static
   }
   .menu__list {
     justify-content: flex-end
@@ -3733,6 +3745,13 @@ body.skygen-page .footer__address-icon {
   }
   .web-services__top-content {
     margin-bottom: 310px
+  }
+  .examples.services-page,
+  .photoshoots.services-page {
+    padding-bottom: 250px
+  }
+  .video.services-page {
+    padding-bottom: 200px
   }
   .presentation {
     padding-top: 100px;
