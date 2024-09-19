@@ -4071,12 +4071,36 @@
             }
         }
         setClasses() {
+            const header = document.querySelector("header");
+            const navLinks = document.querySelectorAll(".menu__link");
+            const bulletsContainer = document.querySelector(".fp-bullets");
             this.previousSectionId = this.activeSectionId - 1 >= 0 ? this.activeSectionId - 1 : false;
             this.nextSectionId = this.activeSectionId + 1 < this.sections.length ? this.activeSectionId + 1 : false;
             this.activeSection = this.sections[this.activeSectionId];
             this.activeSection.classList.add(this.options.activeClass);
             for (let index = 0; index < this.sections.length; index++) document.documentElement.classList.remove(`fp-section-${index}`);
             document.documentElement.classList.add(`fp-section-${this.activeSectionId}`);
+            if (this.activeSectionId === 0) {
+                header.style.display = "block";
+                header.style.backgroundColor = "transparent";
+                header.style.paddingTop = "0";
+                header.style.paddingBottom = "0";
+                navLinks.forEach((navlink => {
+                    navlink.style.paddingTop = "35px";
+                    navlink.style.paddingBottom = "35px";
+                }));
+                if (bulletsContainer) bulletsContainer.style.opacity = "1";
+            } else if (this.activeSectionId === 5 || this.activeSectionId === 8) header.style.display = "none"; else {
+                header.style.display = "block";
+                header.style.backgroundColor = "black";
+                header.style.paddingTop = "7px";
+                header.style.paddingBottom = "7px";
+                navLinks.forEach((navlink => {
+                    navlink.style.paddingTop = "5px";
+                    navlink.style.paddingBottom = "5px";
+                }));
+                if (bulletsContainer) bulletsContainer.style.opacity = "0";
+            }
             if (this.previousSectionId !== false) {
                 this.previousSection = this.sections[this.previousSectionId];
                 this.previousSection.classList.add(this.options.previousClass);
@@ -4501,6 +4525,25 @@
         video.addEventListener("error", (e => {
             console.error("Помилка при завантаженні відео:", e);
             video.insertAdjacentHTML("afterend", '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
+        }));
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const fadeInElements = document.querySelectorAll(".fade-in-content");
+        const slideUpElements = document.querySelectorAll(".slide-up");
+        const observer = new IntersectionObserver(((entries, observer) => {
+            entries.forEach((entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains("fade-in-content")) entry.target.classList.add("fade-in-visible");
+                    if (entry.target.classList.contains("slide-up")) entry.target.classList.add("slide-up-visible");
+                    observer.unobserve(entry.target);
+                }
+            }));
+        }));
+        fadeInElements.forEach((el => {
+            if (el instanceof Element) observer.observe(el);
+        }));
+        slideUpElements.forEach((el => {
+            if (el instanceof Element) observer.observe(el);
         }));
     }));
 })();

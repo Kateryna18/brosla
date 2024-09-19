@@ -159,10 +159,11 @@ body.skygen-page {
   min-width: 0
 }
 ::-webkit-scrollbar {
+  position: relative;
   width: 8px
 }
 ::-webkit-scrollbar-track {
-  background: #121212
+  background: rgba(0,0,0,0)
 }
 ::-webkit-scrollbar-thumb {
   background: #000;
@@ -260,6 +261,30 @@ body.skygen-page {
     opacity: 1
   }
 }
+.fade-in-content {
+  opacity: 0;
+  transition: opacity 1s ease-in
+}
+.fade-in-visible {
+  opacity: 1
+}
+.slide-up {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  transition: opacity .5s ease-in,-webkit-transform .5s ease-in;
+  transition: opacity .5s ease-in,transform .5s ease-in;
+  transition: opacity .5s ease-in,transform .5s ease-in,-webkit-transform .5s ease-in;
+  transition-delay: .5s
+}
+.slide-up.delay {
+  transition-delay: 1s
+}
+.slide-up-visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0)
+}
 [class*=__container] {
   margin: 0 auto;
   max-width: 111.875rem
@@ -308,7 +333,8 @@ body.skygen-page .icon-menu {
   bottom: 0;
   width: 100%;
   height: 100%;
-  overflow: auto
+  overflow: auto;
+  overflow-x: hidden
 }
 .fp-init .cards-mode [data-fp-section],
 .fp-init .slider-mode [data-fp-section] {
@@ -392,6 +418,9 @@ svg {
   padding-top: 21px;
   z-index: 30
 }
+.header.wrapper__services-page {
+  padding-top: 0
+}
 .menu__list {
   width: 100%;
   display: flex;
@@ -404,6 +433,8 @@ svg {
   padding: 25px;
   font-size: 32px;
   line-height: 1;
+  text-wrap: nowrap;
+  transition: all .3s ease;
   cursor: pointer
 }
 body.skygen-page .menu__link {
@@ -411,6 +442,9 @@ body.skygen-page .menu__link {
 }
 .lock.menu-open .menu__link {
   color: #fff
+}
+.header__menu {
+  padding-top: 21px
 }
 .header__menu-icon-box {
   position: absolute;
@@ -651,7 +685,24 @@ details.header-spoiler[open] {
 .footer__link:hover {
   text-decoration: underline
 }
-.wrapper::after {
+main {
+  position: relative
+}
+.page::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/blur.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -20
+}
+.page.skygen::before {
+  content: none
+}
+.hero::after {
   content: "";
   position: absolute;
   top: 9px;
@@ -1355,16 +1406,41 @@ details.header-spoiler[open] {
 }
 .photoshoots__examples-item {
   width: calc(50% - 10.5px);
-  height: 230px
+  height: 230px;
+  overflow: hidden;
+  position: relative
+}
+.photoshoots__examples-item {
+  width: calc(50% - 10.5px);
+  height: 230px;
+  overflow: hidden;
+  position: relative
 }
 .photoshoots__examples-link {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden
+}
+.photoshoots__examples-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease;
+  z-index: -1
+}
+.photoshoots__examples-link:hover::before {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1)
 }
 .photoshoots__examples-link::after {
   content: "";
@@ -1373,42 +1449,52 @@ details.header-spoiler[open] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,.5019607843)
+  background: rgba(0,0,0,.5019607843);
+  z-index: 1
 }
-.examples1 {
+.examples1::before {
   background-image: url(../img/photoshoots1.webp)
 }
-.examples2 {
+.examples2::before {
   background-image: url(../img/photoshoots2.webp)
 }
-.examples3 {
+.examples3::before {
   background-image: url(../img/photoshoots3.webp)
 }
-.examples4 {
+.examples4::before {
   background-image: url(../img/photoshoots4.webp)
 }
-.examples5 {
+.examples5::before {
   background-image: url(../img/photoshoots5.webp)
 }
-.examples6 {
+.examples6::before {
   background-image: url(../img/photoshoots6.webp)
 }
-.examples7 {
+.examples7::before {
   background-image: url(../img/photoshoots7.webp)
 }
-.examples8 {
+.examples8::before {
   background-image: url(../img/photoshoots8.webp)
 }
 .photoshoots__examples-item-content {
   position: relative;
   z-index: 10;
+  -webkit-transform: translateY(150px);
+  transform: translateY(150px);
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 24px
+  padding-bottom: 24px;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease,-webkit-transform 1s ease
+}
+.photoshoots__examples-link:hover .photoshoots__examples-item-content {
+  -webkit-transform: translateY(0);
+  transform: translateY(0)
 }
 .photoshoots__examples-item-name {
   margin-bottom: 5px;
@@ -1595,9 +1681,27 @@ details.header-spoiler[open] {
   -webkit-transform: translateY(20px);
   transform: translateY(20px)
 }
+.fp-bullets {
+  transition: all 1s ease
+}
 .web-services {
   padding-top: 70px;
   padding-bottom: 130px
+}
+.web-services::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: 0;
+  width: 100%;
+  height: 790px;
+  background-image: url(../img/brosla-bg-mb.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(3.08deg);
+  transform: rotate(3.08deg);
+  opacity: .4
 }
 .hero__thumb-logo-box.services__thumb-logo-box {
   display: flex;
@@ -1613,6 +1717,18 @@ details.header-spoiler[open] {
 .web-services__thumb>img {
   width: 100%;
   height: 100%
+}
+@-webkit-keyframes slideInDownContent {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+@keyframes slideInDownContent {
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
 }
 .web-services__top-content {
   margin-bottom: 70px
@@ -2335,9 +2451,16 @@ body.skygen-page .footer__address-icon {
   display: none!important
 }
 @media (min-width:47.99875em) {
+  .header {
+    width: 100%
+  }
   .menu__list {
     flex-direction: row;
     justify-content: space-evenly
+  }
+  .menu__link {
+    font-size: 18px;
+    line-height: 1.3333333333
   }
   .footer {
     padding-top: 180px
@@ -2371,7 +2494,7 @@ body.skygen-page .footer__address-icon {
     margin-bottom: 30px
   }
   .examples__slide-thumb {
-    height: 370px
+    height: 390px
   }
   .services {
     padding-top: 180px
@@ -2506,6 +2629,13 @@ body.skygen-page .footer__address-icon {
   }
   .photoshoots__examples-list {
     gap: 50px
+  }
+  .photoshoots__examples-item {
+    width: calc(50% - 25px);
+    height: 555px;
+    transition: -webkit-transform .3 ease-in-out;
+    transition: transform .3 ease-in-out;
+    transition: transform .3 ease-in-out,-webkit-transform .3 ease-in-out
   }
   .photoshoots__examples-item {
     width: calc(50% - 25px);
@@ -2786,9 +2916,9 @@ body.skygen-page .footer__address-icon {
     background-color: #b0201e
   }
   .header {
-    position: sticky;
-    right: auto;
-    padding-top: 0
+    position: fixed;
+    padding-top: 0;
+    transition: all .3s ease
   }
   .menu__list {
     justify-content: flex-end
@@ -2797,8 +2927,11 @@ body.skygen-page .footer__address-icon {
     font-size: 18px;
     line-height: 1.3333333333
   }
+  .header__menu {
+    padding-top: 0
+  }
   .footer {
-    padding-top: 85px;
+    padding-top: 130px;
     padding-bottom: 45px
   }
   .footer__info-box {
@@ -2921,7 +3054,7 @@ body.skygen-page .footer__address-icon {
     align-items: flex-start;
     gap: 20px
   }
-  .wrapper::after {
+  .hero::after {
     top: 0;
     width: 1180px;
     height: 120vh;
@@ -2934,7 +3067,7 @@ body.skygen-page .footer__address-icon {
     margin-bottom: 0
   }
   .hero__container.hero-container {
-    padding-top: 0;
+    padding-top: 150px;
     gap: 70px
   }
   .hero__thumb-logo {
@@ -2961,8 +3094,8 @@ body.skygen-page .footer__address-icon {
     margin-right: 0
   }
   .examples {
-    padding-top: 0;
-    padding-bottom: 250px
+    padding-top: 130px;
+    padding-bottom: 70px
   }
   .examples__slide {
     width: 1350px;
@@ -2982,10 +3115,11 @@ body.skygen-page .footer__address-icon {
   }
   .examples__slide-info {
     max-width: 465px;
-    padding-bottom: 70px
-  }
-  .examples-slide-info__top {
-    margin-bottom: 90px
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between
   }
   .title.examples-slide-info__title {
     font-size: 15px;
@@ -3016,8 +3150,8 @@ body.skygen-page .footer__address-icon {
     line-height: 1.2188888889
   }
   .services {
-    padding-bottom: 250px;
-    padding-top: 0
+    padding-bottom: 70px;
+    padding-top: 130px
   }
   .services__container {
     margin-bottom: 110px
@@ -3091,8 +3225,8 @@ body.skygen-page .footer__address-icon {
     display: none
   }
   .partners {
-    padding-bottom: 250px;
-    padding-top: 0
+    padding-bottom: 70px;
+    padding-top: 130px
   }
   .partners__slide.swiper-slide {
     width: 790px;
@@ -3107,8 +3241,8 @@ body.skygen-page .footer__address-icon {
     flex: 1
   }
   .video {
-    padding-top: 0;
-    padding-bottom: 250px
+    padding-top: 130px;
+    padding-bottom: 70px
   }
   .video__thumb-title {
     width: 869px;
@@ -3127,10 +3261,11 @@ body.skygen-page .footer__address-icon {
     line-height: 1.67625
   }
   .photoshoots {
+    padding-top: 130px;
     padding-top: 0
   }
   .package {
-    padding-top: 0
+    padding-top: 130px
   }
   .package__content {
     display: flex;
@@ -3155,7 +3290,7 @@ body.skygen-page .footer__address-icon {
     line-height: 1.2
   }
   .pre-footer {
-    padding-top: 0
+    padding-top: 130px
   }
   .pre-footer__images-box {
     margin-bottom: 80px;
@@ -3164,7 +3299,13 @@ body.skygen-page .footer__address-icon {
     gap: 20px
   }
   .web-services {
-    padding-top: 0
+    padding-top: 100px
+  }
+  .web-services::after {
+    top: 100px;
+    width: 100%;
+    height: 800px;
+    background-image: url(../img/brosla-bg-pc.webp)
   }
   .web-services__top-content {
     margin-bottom: 100px
@@ -3495,7 +3636,7 @@ body.skygen-page .footer__address-icon {
     width: 85%
   }
   .hero__container.hero-container {
-    height: 85vh;
+    height: 96vh;
     padding-top: 10px;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -3509,7 +3650,12 @@ body.skygen-page .footer__address-icon {
   .hero__thumb-logo-box {
     flex: 1;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    padding-top: 92px
+  }
+  .examples {
+    padding-top: 100px;
+    padding-bottom: 70px
   }
   .examples__slide-content {
     width: 100%;
@@ -3520,6 +3666,21 @@ body.skygen-page .footer__address-icon {
     min-width: 625px;
     height: 515px;
     border-radius: 5px
+  }
+  .examples__slide-info {
+    padding-bottom: 70px
+  }
+  .examples-slide-info__top {
+    margin-bottom: 90px
+  }
+  .services {
+    padding-top: 100px
+  }
+  .partners {
+    padding-top: 100px
+  }
+  .video {
+    padding-top: 100px
   }
   .video__video-box {
     margin-bottom: 40px
@@ -3539,11 +3700,29 @@ body.skygen-page .footer__address-icon {
     align-self: flex-start;
     min-height: 100vh
   }
+  .package {
+    padding-top: 70px
+  }
+  .pre-footer {
+    padding-top: 90px
+  }
   .pre-footer__images-box {
     gap: 100px
   }
   .web-services {
+    padding-top: 0;
     gap: 100px
+  }
+  .web-services::after {
+    width: 55%
+  }
+  .web-services__container .hero__thumb-logo {
+    width: 500px;
+    height: 500px;
+    -webkit-transform: translateY(300px);
+    transform: translateY(300px);
+    -webkit-animation: slideInDownContent 1.6s ease-in-out forwards;
+    animation: slideInDownContent 1.6s ease-in-out forwards
   }
   .web-services__thumb {
     margin-bottom: 0;
@@ -3590,7 +3769,7 @@ body.skygen-page .footer__address-icon {
     font-size: 48px;
     line-height: 1.2
   }
-  .wrapper::after {
+  .hero::after {
     width: 1540px
   }
   .hero__thumb-logo {
@@ -3624,6 +3803,14 @@ body.skygen-page .footer__address-icon {
     width: calc(50% - 25px);
     max-width: 390px;
     height: 555px
+  }
+  .photoshoots__examples-item {
+    width: calc(50% - 25px);
+    max-width: 390px;
+    height: 555px
+  }
+  .web-services::after {
+    width: 1540px
   }
   .package__overview-spoiler.options__spoiler {
     gap: 110px 30px
