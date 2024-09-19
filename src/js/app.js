@@ -257,113 +257,130 @@ import "./libs/dynamic_adapt.js";
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 // Отримуємо всі елементи
-const items = document.querySelectorAll('.features__slide');
+const items = document.querySelectorAll(".features__slide");
 
 // // Функція, яка ховає всі елементи, крім того, на якому наведений курсор
 function handleMouseOver(event) {
-  items.forEach(item => {
-	if (item !== event.target) {
-	  item.classList.add('hidden');
-	} else {
-	  item.classList.add('highlight'); // Додаємо клас до активного елемента
-	}
+  items.forEach((item) => {
+    if (item !== event.target) {
+      item.classList.add("hidden");
+    } else {
+      item.classList.add("highlight"); // Додаємо клас до активного елемента
+    }
   });
 }
 
 // Функція, яка показує всі елементи і видаляє клас highlight
 function handleMouseOut(event) {
-  items.forEach(item => {
-	item.classList.remove('hidden');
-	item.classList.remove('highlight'); // Видаляємо клас highlight
+  items.forEach((item) => {
+    item.classList.remove("hidden");
+    item.classList.remove("highlight"); // Видаляємо клас highlight
   });
 }
 
 // // Додаємо обробники подій для всіх елементів
-items.forEach(item => {
-  item.addEventListener('mouseenter', handleMouseOver);
-  item.addEventListener('mouseleave', handleMouseOut);
+items.forEach((item) => {
+  item.addEventListener("mouseenter", handleMouseOver);
+  item.addEventListener("mouseleave", handleMouseOut);
 });
 
-
 // =================================
-const videos = document.querySelectorAll('video');
+const videos = document.querySelectorAll("video");
 
 videos.forEach((video) => {
-
   // Відтворення відео при наведенні миші
-  video.addEventListener('mouseenter', () => {
-	video.muted = true; // Вимкнути звук
-	video.play().catch(error => {
-	  console.log('Помилка під час відтворення відео:', error);
-	});
+  video.addEventListener("mouseenter", () => {
+    video.muted = true; // Вимкнути звук
+    video.play().catch((error) => {
+      console.log("Помилка під час відтворення відео:", error);
+    });
   });
 
   // Зупинка відео, коли миша залишає область відео
-  video.addEventListener('mouseleave', () => {
-	video.pause(); // Зупинити відтворення
-	video.currentTime = 0; // Повернути на початок
+  video.addEventListener("mouseleave", () => {
+    video.pause(); // Зупинити відтворення
+    video.currentTime = 0; // Повернути на початок
   });
 
   // Відтворення зі звуком при кліку
-  video.addEventListener('click', () => {
-	if (video.muted) {
-	  video.muted = false; // Увімкнути звук
-	  video.play().catch(error => {
-		console.log('Помилка під час відтворення відео зі звуком:', error);
-	  });
-	} else {
-	  video.muted = true; // Вимкнути звук
-	  video.pause(); // Зупинити відео при повторному кліку
-	}
+  video.addEventListener("click", () => {
+    if (video.muted) {
+      video.muted = false; // Увімкнути звук
+      video.play().catch((error) => {
+        console.log("Помилка під час відтворення відео зі звуком:", error);
+      });
+    } else {
+      video.muted = true; // Вимкнути звук
+      video.pause(); // Зупинити відео при повторному кліку
+    }
   });
 
   // Обробка помилок завантаження відео
-  video.addEventListener('error', (e) => {
-	console.error("Помилка при завантаженні відео:", e);
-	video.insertAdjacentHTML('afterend', '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>');
+  video.addEventListener("error", (e) => {
+    console.error("Помилка при завантаженні відео:", e);
+    video.insertAdjacentHTML(
+      "afterend",
+      '<p>Вибачте, це відео не може бути завантажене. Спробуйте переглянути його пізніше або завантажте <a href="your-video.mp4" download>відео</a>.</p>'
+    );
   });
 });
 
-
 // ===============================================================================
 // Функція для запуску анімації при появі секції в зоні видимості
-document.addEventListener("DOMContentLoaded", function() {
-	const fadeInElements = document.querySelectorAll(".fade-in-content");
-	const slideUpElements = document.querySelectorAll(".slide-up");
-  
-	// Створюємо IntersectionObserver
-	const observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-				  // Додаємо клас для fade-in ефекту
-				  if (entry.target.classList.contains("fade-in-content")) {
-					entry.target.classList.add("fade-in-visible");
-				  }
-		  
-				  // Додаємо клас для slide-up ефекту
-				  if (entry.target.classList.contains("slide-up")) {
-					entry.target.classList.add("slide-up-visible");
-				  }
-		  
-				  observer.unobserve(entry.target); 
-				}
-			  });
-	  
-	});
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeInElements = document.querySelectorAll(".fade-in-content");
+  const slideUpElements = document.querySelectorAll(".slide-up");
 
+  // Створюємо IntersectionObserver
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Додаємо клас для fade-in ефекту
+        if (entry.target.classList.contains("fade-in-content")) {
+          entry.target.classList.add("fade-in-visible");
+        }
 
-	fadeInElements.forEach(el => {
-		if (el instanceof Element) {
-		  observer.observe(el);
-		}
-	  });
-	
-	  slideUpElements.forEach(el => {
-		if (el instanceof Element) {
-		  observer.observe(el);
-		} 
-	  });
+        // Додаємо клас для slide-up ефекту
+        if (entry.target.classList.contains("slide-up")) {
+          entry.target.classList.add("slide-up-visible");
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
   });
-  
-  
-  
+
+  fadeInElements.forEach((el) => {
+    if (el instanceof Element) {
+      observer.observe(el);
+    }
+  });
+
+  slideUpElements.forEach((el) => {
+    if (el instanceof Element) {
+      observer.observe(el);
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".wrapper__services-page header");
+
+  // Функція для перевірки прокрутки та додавання/видалення класу
+  function handleScroll() {
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+  }
+
+  // Додаємо обробник подій прокрутки
+  window.addEventListener("scroll", handleScroll);
+
+  if (header) {
+    handleScroll();
+  }
+});

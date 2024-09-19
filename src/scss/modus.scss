@@ -194,6 +194,14 @@
   }
 }
 
+.modus-pre-footer__button{
+  transition: all 1s ease;
+}
+.modus-pre-footer__button:hover{
+  cursor: pointer;
+  transform: translateX(10px);
+}
+
 .modus-pre-footer__icon {
   width: 53px;
   height: 15px;

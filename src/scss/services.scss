@@ -362,3 +362,13 @@
     padding-top: 0;
   }
 }
+
+@media (min-width: $min-pc) {
+  .examples.services-page, .photoshoots.services-page{
+    padding-bottom: 250px;
+  }
+
+  .video.services-page{
+    padding-bottom: 200px;
+  }
+}
