@@ -111,8 +111,8 @@
     margin-bottom: 0;
     position: sticky;
     top: 0;
-    align-self: flex-start; /* Вирівнює зображення на початку контейнера */
-    min-height: 100vh; /* Задає висоту зображення рівну висоті екрану */
+    align-self: flex-start; 
+    min-height: 100vh; 
   }
 }
 
@@ -121,12 +121,10 @@
   height: 100%;
 }
 
-.web-services__content {
-}
 
 @keyframes slideInDownContent {
   to {
-    transform: translateY(0); /* Кінцева позиція - на своєму місці */
+    transform: translateY(0);
   }
 }
 

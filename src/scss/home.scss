@@ -3,16 +3,27 @@ main{
   position: relative;
 }
 
-.page::before{
-  content: "";
+.background{
   position: absolute;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-image: url("../img/blur.png");
+  height: calc(100%/3);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -20;
+}
+.background.bg1{
+  top: 0;
+  background-image: url("../img/blur.png");
+}
+.background.bg2{
+  top: calc(100% / 3);
+  background-image: url("../img/blur2.png");
+}
+.background.bg3{
+  top: calc((100% / 3) * 2);
+  background-image: url("../img/blur3.png");
 }
 
 .page.skygen::before{
@@ -32,6 +43,7 @@ main{
   background-repeat: no-repeat;
   transform: rotate(3.08deg);
   opacity: 0.4;
+  z-index: -10;
 }
 @media (min-width: $tablet) {
   .hero::after {
@@ -326,8 +338,6 @@ main{
 .examples__slider {
   margin-top: 60px;
 }
-.swiper {
-}
 .examples__wrapper.swiper-wrapper {
   margin-bottom: 50px;
 }
@@ -346,8 +356,6 @@ main{
     height: auto;
     padding: 32px;
   }
-}
-.swiper-slide {
 }
 .examples__slide-content {
   width: 100%;
@@ -424,8 +432,7 @@ main{
     padding-bottom: 70px;
   }
 }
-.examples-slide-info {
-}
+
 .examples-slide-info__top {
   margin-bottom: 35px;
 }
@@ -617,8 +624,6 @@ main{
   }
 }
 
-.services__content {
-}
 
 .title.services__title {
   margin-bottom: 15px;
@@ -917,8 +922,6 @@ main{
   }
 }
 
-.partners__container {
-}
 .partners__content-top {
   margin-bottom: 80px;
 }
@@ -1081,8 +1084,6 @@ main{
   }
 }
 
-.video__container {
-}
 .video__content-top {
   margin-bottom: 40px;
 }
@@ -1210,8 +1211,6 @@ main{
   }
 }
 
-.video__item-link {
-}
 .video__item-thumb {
   width: 165px;
   height: 280px;
@@ -1339,9 +1338,6 @@ main{
   .photoshoots {
     padding-top: 0;
   }
-}
-
-.photoshoots__container {
 }
 
 .photoshoots__content {
@@ -1487,7 +1483,7 @@ main{
   width: calc((100% / 2) - (21px / 2));
   height: 230px;
   overflow: hidden;
-  position: relative; /* Додано для того, щоб псевдоелемент позиціонувався відносно контейнера */
+  position: relative;
 }
 
 @media (min-width: $mobile) {
@@ -1524,7 +1520,7 @@ main{
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
-  z-index: -1; /* Поміщено псевдоелемент за контент */
+  z-index: -1; 
 }
 
 .photoshoots__examples-link:hover::before {
@@ -1539,7 +1535,7 @@ main{
   width: 100%;
   height: 100%;
   background: #00000080;
-  z-index: 1; /* Контент виявляється поверх затемнення */
+  z-index: 1;
 }
 
 .examples1::before {
@@ -1774,8 +1770,6 @@ main{
 @media (min-width: $tablet) {
   .package__attention {
     max-width: 707px;
-
-    // ----
     position: sticky;
     top: 200px;
     align-self: flex-start;

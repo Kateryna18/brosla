@@ -692,16 +692,27 @@ details.header-spoiler[open] {
 main {
   position: relative
 }
-.page::before {
-  content: "";
+.background {
   position: absolute;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-image: url(../img/blur.webp);
+  height: 33.3333333333%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -20
+}
+.background.bg1 {
+  top: 0;
+  background-image: url(../img/blur.webp)
+}
+.background.bg2 {
+  top: 33.3333333333%;
+  background-image: url(../img/blur2.webp)
+}
+.background.bg3 {
+  top: 66.6666666667%;
+  background-image: url(../img/blur3.webp)
 }
 .page.skygen::before {
   content: none
@@ -719,7 +730,8 @@ main {
   background-repeat: no-repeat;
   -webkit-transform: rotate(3.08deg);
   transform: rotate(3.08deg);
-  opacity: .4
+  opacity: .4;
+  z-index: -10
 }
 @-webkit-keyframes float {
   0% {
