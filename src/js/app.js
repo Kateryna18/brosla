@@ -384,3 +384,30 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScroll();
   }
 });
+
+// Кількість булетів (крім першого)
+const bullets = document.querySelectorAll('.bullet');
+const totalBullets = bullets.length - 1; // Не враховуємо перший булет
+
+// Обробка скролу
+window.addEventListener('scroll', () => {
+    // Висота сторінки та поточна позиція
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Розрахунок проценту скролу
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+    // Розрахунок кількості активних булетів (починаємо з другого)
+    const activeBullets = Math.floor((scrollPercent / 100) * totalBullets) + 1;
+
+    // Оновлення класів булетів
+    bullets.forEach((bullet, index) => {
+        if (index < activeBullets) {
+            bullet.classList.add('active');
+        } else {
+            bullet.classList.remove('active');
+        }
+    });
+});
+

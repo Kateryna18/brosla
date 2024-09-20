@@ -1697,9 +1697,6 @@ main {
   -webkit-transform: translateY(20px);
   transform: translateY(20px)
 }
-.fp-bullets {
-  transition: all 1s ease
-}
 .web-services {
   padding-top: 70px;
   padding-bottom: 130px
@@ -3732,6 +3729,27 @@ body.skygen-page .footer__address-icon {
   }
   .pre-footer__images-box {
     gap: 100px
+  }
+  .bullets-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+  }
+  .bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #b0201e;
+    transition: background-color .3s ease
+  }
+  .bullet.active {
+    background-color: #b0201e
   }
   .web-services {
     padding-top: 0;

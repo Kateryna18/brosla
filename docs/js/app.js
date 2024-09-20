@@ -4137,4 +4137,15 @@
         window.addEventListener("scroll", handleScroll);
         if (header) handleScroll();
     }));
+    const bullets = document.querySelectorAll(".bullet");
+    const totalBullets = bullets.length - 1;
+    window.addEventListener("scroll", (() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / scrollHeight * 100;
+        const activeBullets = Math.floor(scrollPercent / 100 * totalBullets) + 1;
+        bullets.forEach(((bullet, index) => {
+            if (index < activeBullets) bullet.classList.add("active"); else bullet.classList.remove("active");
+        }));
+    }));
 })();
