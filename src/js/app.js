@@ -363,51 +363,88 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector(".wrapper__services-page header");
 
-  // Функція для перевірки прокрутки та додавання/видалення класу
-  function handleScroll() {
-    if (header) {
-      if (window.scrollY > 50 && window.scrollY < 2300) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    }
+// =======================================================================
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
   }
-
-  // Додаємо обробник подій прокрутки
-  window.addEventListener("scroll", handleScroll);
-
-  if (header) {
-    handleScroll();
-  }
+  lastScrollY = window.scrollY;
 });
 
+
+// =======================================================================
 // Кількість булетів (крім першого)
 const bullets = document.querySelectorAll('.bullet');
-const totalBullets = bullets.length - 1; // Не враховуємо перший булет
+const sections = document.querySelectorAll('section');
 
-// Обробка скролу
-window.addEventListener('scroll', () => {
-    // Висота сторінки та поточна позиція
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+// Функція для плавного скролу до певної секції
+function scrollToSection(section) {
+  window.scrollTo({
+      top: section.offsetTop,
+      behavior: 'smooth' // Додає плавний скрол
+  });
+}
 
-    // Розрахунок проценту скролу
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-
-    // Розрахунок кількості активних булетів (починаємо з другого)
-    const activeBullets = Math.floor((scrollPercent / 100) * totalBullets) + 1;
-
-    // Оновлення класів булетів
-    bullets.forEach((bullet, index) => {
-        if (index < activeBullets) {
-            bullet.classList.add('active');
-        } else {
-            bullet.classList.remove('active');
-        }
-    });
+// Додаємо обробник події кліку для кожного булета
+bullets.forEach((bullet, index) => {
+  bullet.addEventListener('click', () => {
+      const targetSection = sections[index]; // Отримуємо відповідну секцію за індексом
+      if (targetSection) {
+          scrollToSection(targetSection); // Викликаємо функцію для скролу
+      }
+  });
 });
+
+// Обробка скролу для зміни стану булетів
+window.addEventListener('scroll', () => {
+  // Висота сторінки та поточна позиція
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  // Розрахунок проценту скролу
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  // Розрахунок кількості активних булетів (починаємо з другого)
+  const activeBullets = Math.floor((scrollPercent / 100) * (bullets.length - 1)) + 1;
+
+  // Оновлення класів булетів
+  bullets.forEach((bullet, index) => {
+      if (index < activeBullets) {
+          bullet.classList.add('active');
+      } else {
+          bullet.classList.remove('active');
+      }
+  });
+});
+
+
+// const totalBullets = bullets.length - 1; // Не враховуємо перший булет
+
+// // Обробка скролу
+// window.addEventListener('scroll', () => {
+//     // Висота сторінки та поточна позиція
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+//     // Розрахунок проценту скролу
+//     const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+//     // Розрахунок кількості активних булетів (починаємо з другого)
+//     const activeBullets = Math.floor((scrollPercent / 100) * totalBullets) + 1;
+
+//     // Оновлення класів булетів
+//     bullets.forEach((bullet, index) => {
+//         if (index < activeBullets) {
+//             bullet.classList.add('active');
+//         } else {
+//             bullet.classList.remove('active');
+//         }
+//     });
+// });
 

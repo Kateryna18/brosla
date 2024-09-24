@@ -48,7 +48,7 @@ function initSliders() {
 			// Брейкпоінти
 			breakpoints: {
 				992: {
-					slidesPerView: "auto",
+					// slidesPerView: "auto",
 					spaceBetween: 45,
 					centeredSlides: false,
 					slidesOffsetBefore: 10,
