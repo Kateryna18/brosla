@@ -789,25 +789,6 @@ export function dataMediaQueries(array, dataSetValue) {
 	}
 }
 
-export function changeIconHover() {
-	document.addEventListener("DOMContentLoaded", function() {
-		const icon = document.querySelector('.footer__address-icon.icon-dubai');
-		
-		const originalIcon = "@img/icons/icons.svg#dubai"; // Шлях до оригінальної іконки
-		const hoverIcon = "@img/icons/icons.svg#dubai-gradient"; // Шлях до іконки при ховері
-	  
-		// Додаємо обробник події для ховера
-		icon.addEventListener('mouseenter', function() {
-		  icon.querySelector('use').setAttribute('xlink:href', hoverIcon);
-		});
-	  
-		// Додаємо обробник події для повернення оригінальної іконки
-		icon.addEventListener('mouseleave', function() {
-		  icon.querySelector('use').setAttribute('xlink:href', originalIcon);
-		});
-	  });
-}
-
 
 export function transitionEffect() {
 	document.addEventListener("DOMContentLoaded", function () {

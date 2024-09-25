@@ -61,7 +61,6 @@ flsFunctions.spollers();
 */
 flsFunctions.showMore();
 
-flsFunctions.changeIconHover();
 flsFunctions.transitionEffect();
 flsFunctions.changeActiveLink();
 
@@ -447,4 +446,8 @@ window.addEventListener('scroll', () => {
 //         }
 //     });
 // });
+
+
+
+
 

@@ -317,6 +317,7 @@
   font-size: 15px;
   line-height: calc(18.29px / 15px);
   color: #999999;
+  cursor: pointer;
 }
 
 @media (min-width: $tablet) {
@@ -372,6 +373,31 @@
 }
 .address__slide.swiper-slide:hover .footer__address-icon.icon-toronto {
   color: #ff3825;
+}
+
+.footer__address-icon.icon-dubai{
+  position: relative;
+}
+.footer__address-icon img{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; 
+    height: 50px; 
+    transition: opacity 0.9s ease; 
+}
+.footer__address-icon.icon-dubai .img-dubai-hover{
+  opacity: 0;
+}
+.address__slide.swiper-slide:hover .img-dubai-hover {
+  opacity: 1;
+}
+.address__slide.swiper-slide:hover .img-dubai-default {
+  opacity: 0;
+}
+
+.address__slide.swiper-slide:hover .footer__address-icon use {
+  transition: all 0.3s ease; /* Додаємо плавність до змін */
 }
 
 .footer__titles.address__title {
