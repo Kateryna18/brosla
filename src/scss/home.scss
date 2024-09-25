@@ -220,9 +220,8 @@ main {
   background-repeat: no-repeat;
   z-index: -1;
 }
-@media (min-width: $tablet) {
+@media (min-width: $mobile) {
   .hero__thumb-logo::before {
-    background-image: url("../img/logo-bg-pc.png");
     width: 600px;
     height: 600px;
   }
