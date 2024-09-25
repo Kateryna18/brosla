@@ -1,14 +1,17 @@
 .modus__pre-text.none {
-  display: none;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(19.5px/16px);
+  text-transform: uppercase;
 }
 @media (min-width: $tablet) {
   .modus__pre-text,
   .modus__pre-text.none {
     display: block;
-    margin-bottom: 25px;
+    padding-top: 30px;
     font-size: 18px;
     line-height: calc(21.94px / 18px);
-    text-transform: uppercase;
   }
 }
 
@@ -37,6 +40,7 @@
 
 .skygen__subtitle.modus__subtitle {
   margin-bottom: 40px;
+  font-family: Mattone;
 }
 
 .skygen__description.modus__solution-description {
@@ -45,6 +49,11 @@
 @media (min-width: $tablet) {
   .skygen__description.modus__solution-description {
     margin-bottom: 1180px;
+    max-width: 500px;
+  }
+
+  .skygen__description.modus__solution-description-medium {
+    max-width: 564px;
   }
 }
 
@@ -133,17 +142,41 @@
 
 .modus__marketing-content-subtitle {
   margin-bottom: 40px;
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 25px;
   line-height: calc(30px / 25px);
   color: $main-color;
 }
 @media (min-width: $tablet) {
   .modus__marketing-content-subtitle {
+    max-width: 369px;
     font-size: 30px;
     line-height: calc(36px / 30px);
   }
+
+  .modus__marketing-content-subtitle.big {
+    max-width: 579px;
+  }
 }
+
+@media (min-width: $tablet) {
+  .skygen__description.marketing__description.marketing-modus__description-big{
+    max-width: 534px;
+  }
+
+  .skygen__description.marketing__description.marketing-modus__description-middle{
+    max-width: 496px;
+  }
+
+  .skygen__description.marketing__description.marketing-modus__description{
+    max-width: 521px;
+  }
+
+  .skygen__description.marketing__description.marketing-modus__description-small{
+    max-width: 467px;
+  }
+}
+
 
 .marketing__button.modus__button {
   width: 268px;
