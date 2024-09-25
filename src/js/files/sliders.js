@@ -60,10 +60,6 @@ function initSliders() {
 					slidesOffsetBefore: 65,
 				},
 			},
-
-			on: {
-
-			}
 		});
 	}
 
@@ -115,8 +111,8 @@ function initSliders() {
 					modules: [Pagination],
 					observer: true,
 					observeParents: true,
-					slidesPerView: 1,
-					spaceBetween: 20,
+					slidesPerView: "auto",
+					spaceBetween: 40,
 					autoHeight: true,
 					speed: 800,
 					centeredSlides: true,
@@ -125,6 +121,13 @@ function initSliders() {
 					pagination: {
 						el: '.catalogs__pagination',
 						clickable: true,
+					},
+
+					breakpoints: {
+						490: {
+							slidesPerView: 1,
+							spaceBetween: 30,
+						}
 					},
 				});
 			}

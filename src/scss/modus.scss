@@ -44,11 +44,32 @@
 }
 @media (min-width: $tablet) {
   .skygen__description.modus__solution-description {
-    margin-bottom: 220px;
+    margin-bottom: 1180px;
   }
 }
 
 //   ======================================================================================
+.solutions__container.modus__solutions{
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 90px;
+}
+@media (min-width: $min-pc) {
+  .solutions__container.modus__solutions{
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  .solutions__content-wrapper.modus-solutions__content-wrapper{
+    padding-top: 125px;
+  }
+}
+
+.marketing__thumb-image.modus-solutions__thumb-image{
+  margin-bottom: 0;
+}
 
 .modus-marketing-video__container {
   margin-bottom: 80px;
@@ -88,6 +109,18 @@
     gap: 70px;
   }
 }
+
+@media (min-width: $min-pc) {
+  .marketing__content-box.marketing-modus__content-box{
+    padding-top: 106px;
+    gap: 0;
+  }
+
+  .marketing__content-box-wrapper.marketing-modus__margin{
+    margin-bottom: 380px;
+  }
+}
+
 
 .marketing__content-box.modus__marketing-content-box {
   gap: 90px;
@@ -134,22 +167,126 @@
   }
 }
 
-.modus-building-brand__image-thumb {
-  width: 100%;
-  height: 478px;
-  border-radius: 5px;
-  overflow: hidden;
+.modus-poster__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-@media (min-width: $tablet) {
-  .modus-building-brand__image-thumb {
-    width: 735px;
-    min-width: 735px;
-    height: 1021px;
+
+.modus-poster__wrapper-thumb{
+  width: 109px;
+  height: 136px;
+  position: relative;
+}
+@media (min-width: $mobile) {
+  .modus-poster__wrapper-thumb{
+    width: calc(100% / 3);
+    max-width: 233px;
+    height: auto;
+    max-height: 291px;
   }
 }
-.modus-building-brand__image-thumb > img {
+
+.modus-poster__wrapper-thumb:nth-child(1) {
+  animation: move1 3s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(2) {
+  animation: move2 4s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(3) {
+  animation: move3 2.5s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(4) {
+  animation: move4 3.5s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(5) {
+  animation: move5 4s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(6) {
+  animation: move6 2.7s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(7) {
+  animation: move7 3.8s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(8) {
+  animation: move8 3.2s infinite alternate ease-in-out;
+}
+
+.modus-poster__wrapper-thumb:nth-child(9) {
+  animation: move9 2.9s infinite alternate ease-in-out;
+}
+
+/* Ключові кадри з невеликою амплітудою руху для кожного елемента */
+@keyframes move1 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3px, -3px); }
+  100% { transform: translate(-3px, 3px); }
+}
+
+@keyframes move2 {
+  0% { transform: translateY(-30%) translateX(0); }
+  50% { transform: translateY(calc(-30% - 3px)) translateX(2px); }
+  100% { transform: translateY(calc(-30% + 2px)) translateX(-2px); }
+}
+
+@keyframes move3 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(2px, -1px); }
+  100% { transform: translate(-2px, 3px); }
+}
+
+@keyframes move4 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 1px); }
+  100% { transform: translate(3px, -2px); }
+}
+
+@keyframes move5 {
+  0% { transform: translateY(-30%) translateX(0); }
+  50% { transform: translateY(calc(-30% + 2px)) translateX(-3px); }
+  100% { transform: translateY(calc(-30% - 1px)) translateX(3px); }
+}
+
+@keyframes move6 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, 2px); }
+  100% { transform: translate(2px, -2px); }
+}
+
+@keyframes move7 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(2px, 1px); }
+  100% { transform: translate(-2px, -1px); }
+}
+
+@keyframes move8 {
+  0% { transform: translateY(-30%) translateX(0); }
+  50% { transform: translateY(calc(-30% - 2px)) translateX(3px); }
+  100% { transform: translateY(calc(-30% + 1px)) translateX(-3px); }
+}
+
+@keyframes move9 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3px, 2px); }
+  100% { transform: translate(-3px, -2px); }
+}
+
+.modus-poster__wrapper-thumb.translate{
+  position: relative;
+  transform: translateY(-30%);
+}
+
+.modus-poster__wrapper-thumb > img{
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .modus-pre-footer {

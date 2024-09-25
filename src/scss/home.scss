@@ -333,7 +333,7 @@ main {
 }
 
 .examples__content {
-  max-width: 860px;
+  max-width: 979px;
 }
 
 .title.examples__title {
@@ -382,19 +382,22 @@ main {
 }
 
 .examples__description {
+  max-width: 343px;
   margin-bottom: 25px;
+  font-size: 14px;
+  line-height: calc(17.07px / 14px);
 }
 @media (min-width: $mobile) {
   .examples__description {
+    max-width: none;
+    font-size: 22px;
+    line-height: calc(26.82px/22px);
     margin-bottom: 30px;
   }
 }
-
-@media (min-width: $min-pc) {
-  .examples__accent-text {
-    font-weight: 600;
-    font-style: italic;
-  }
+.examples__accent-text {
+  font-weight: 600;
+  font-style: italic;
 }
 
 .examples__slider {
@@ -549,7 +552,7 @@ main {
 
 @media (min-width: $tablet) {
   .examples__slide-info {
-    max-width: 465px;
+    max-width: 460px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -585,7 +588,7 @@ main {
   .title.examples-slide-info__title {
     font-size: 15px;
     line-height: calc(18.29 / 15);
-    font-weight: 600;
+    font-weight: 500;
     color: $second-color;
     background: none;
     -webkit-background-clip: initial;
@@ -596,7 +599,7 @@ main {
 
 .examples-slide-info__subtitle {
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   line-height: calc(24.38 / 20);
   color: $second-color;
@@ -604,15 +607,18 @@ main {
 @media (min-width: $tablet) {
   .examples-slide-info__subtitle {
     margin-bottom: 30px;
-    font-weight: 600;
     font-size: 30px;
     line-height: calc(36.57 / 30);
+  }
+
+  .examples-slide-info__subtitle.slide2 {
+    max-width: 382px;
   }
 }
 
 .examples-slide-info__description {
-  font-size: 16px;
-  line-height: calc(17.07 / 16);
+  font-size: 14px;
+  line-height: calc(17.07 / 14);
   color: $second-text-color;
 }
 @media (min-width: $tablet) {
@@ -658,6 +664,11 @@ main {
   color: $second-color;
   text-transform: uppercase;
   cursor: pointer;
+}
+@media (min-width: $tablet) {
+  .examples-slide-button {
+    font-weight: 700;
+  }
 }
 .examples-slide-button-icon {
   position: absolute;
@@ -784,20 +795,20 @@ main {
 @media (min-width: $tablet) {
   .title.services__title {
     font-size: 15px;
-    line-height: calc(18.29px/15px);
+    line-height: calc(18.29px / 15px);
   }
 }
 
 .services__subtitle {
   max-width: 344px;
   margin-bottom: 40px;
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 30px;
   line-height: calc(36 / 30);
 }
 @media (min-width: $tablet) {
   .services__subtitle {
-    max-width: 600px;
+    max-width: 746px;
     margin-bottom: 35px;
     font-size: 48px;
     line-height: calc(57.6 / 48);
@@ -818,11 +829,12 @@ main {
   .services__description {
     font-size: 22px;
     line-height: calc(26.82 / 22);
-    max-width: 860px;
+    max-width: 1056px;
   }
 }
 .services__description-accent {
   font-weight: 600;
+  font-style: italic;
 }
 
 .features__container {
@@ -952,7 +964,7 @@ main {
 
 .features__number {
   margin-bottom: 47px;
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 30px;
   line-height: calc(36 / 30);
 }
@@ -963,7 +975,7 @@ main {
 }
 .features__name {
   margin-bottom: 35px;
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 30px;
   line-height: calc(36 / 30);
 }
@@ -1012,7 +1024,7 @@ main {
   transition: transform 0.5s ease;
 }
 
-.features__button-pc-icon:hover{
+.features__button-pc-icon:hover {
   transform: translateX(20%);
 }
 
@@ -1543,7 +1555,8 @@ main {
     position: sticky;
     top: 0;
     align-self: flex-start;
-    min-height: 100vh; 
+    min-height: 100vh;
+    height: 100vh;
   }
 }
 @media (min-width: $pc) {
@@ -1834,7 +1847,7 @@ main {
 .package-title {
   max-width: 345px;
   margin-bottom: 20px;
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 30px;
   line-height: calc(36px / 30px);
   text-transform: uppercase;
@@ -1911,6 +1924,7 @@ main {
     margin-bottom: 60px;
     font-size: 22px;
     line-height: calc(26.82px / 22px);
+    text-align: justify;
   }
 }
 
@@ -2095,7 +2109,7 @@ main {
 }
 
 .package__overview-benefits {
-  // font-family: Mattone;
+  font-family: Mattone;
   font-size: 14px;
   line-height: calc(25px / 14px);
   text-transform: uppercase;
@@ -2149,7 +2163,7 @@ main {
   }
 }
 
-.pre-footer__bg-thumb > img{
+.pre-footer__bg-thumb > img {
   display: block;
   width: 100%;
   height: 100%;
@@ -2162,7 +2176,6 @@ main {
     right: 170px;
   }
 }
-
 
 .pre-footer__images-box {
   margin-bottom: 40px;
@@ -2236,6 +2249,7 @@ main {
 
 .pre-footer__description .accent {
   font-weight: 600;
+  font-style: italic;
 }
 
 .pre-footer__description.visible {
