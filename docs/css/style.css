@@ -2048,17 +2048,17 @@ main {
 .skygen__content-thumb {
   width: 100%;
   height: 330px;
-  background-image: url(../img/skygen-content-img.png);
+  background-image: url(../img/skygen-content-img-mb.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat
 }
 .skygen__content-thumb.thumb2 {
-  background-image: url(../img/skygen-content-img2.png)
+  background-image: url(../img/skygen-content-img2-mb.png)
 }
 .skygen__content-thumb.thumb3 {
   background-color: #f1f1f1;
-  background-image: url(../img/skygen-content-img3.png)
+  background-image: url(../img/skygen-content-img3-mb.png)
 }
 .brand-narrative {
   padding-top: 80px;
@@ -2479,14 +2479,14 @@ body.skygen-page .footer__address-icon {
 .modus__content-thumb {
   width: 100%;
   height: 330px;
-  background-image: url(../img/modus-content-img.png);
+  background-image: url(../img/modus-content-img-mb.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat
 }
 .modus__content-thumb.thumb2 {
   background-color: #000;
-  background-image: url(../img/modus-content-img2.png)
+  background-image: url(../img/modus-content-img2-mb.png)
 }
 .presentation__info-icon.modus__info-icon {
   color: #000
@@ -2512,12 +2512,29 @@ body.skygen-page .footer__address-icon {
   margin-bottom: 80px
 }
 .modus-marketing-video__thumb {
+  position: relative;
   width: 100%;
   height: 194px;
   border-radius: 5px;
   overflow: hidden
 }
-.modus-marketing-video__thumb>img {
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity .3s ease
+}
+.play-button.hidden {
+  opacity: 0;
+  pointer-events: none
+}
+.modus-marketing-video__thumb>video {
   width: 100%;
   height: 100%
 }
@@ -3916,6 +3933,15 @@ body.skygen-page .footer__address-icon {
     font-size: 22px;
     line-height: 1.2190909091
   }
+  .skygen__content-thumb {
+    background-image: url(../img/skygen-content-img.png)
+  }
+  .skygen__content-thumb.thumb2 {
+    background-image: url(../img/skygen-content-img2.png)
+  }
+  .skygen__content-thumb.thumb3 {
+    background-image: url(../img/skygen-content-img3.png)
+  }
   .skygen__content-thumb,
   .skygen__content-thumb.thumb2 {
     height: 956px
@@ -4136,6 +4162,12 @@ body.skygen-page .footer__address-icon {
     font-size: 18px;
     line-height: 1.2188888889
   }
+  .modus__content-thumb {
+    background-image: url(../img/modus-content-img.png)
+  }
+  .modus__content-thumb.thumb2 {
+    background-image: url(../img/modus-content-img2.png)
+  }
   .modus__content-thumb,
   .modus__content-thumb.thumb2 {
     height: 956px
@@ -4152,6 +4184,10 @@ body.skygen-page .footer__address-icon {
   }
   .modus-marketing-video__thumb {
     height: 833px
+  }
+  .play-button {
+    width: 152px;
+    height: 152px
   }
   .marketing__container.modus__container {
     width: 100%;

@@ -4148,4 +4148,22 @@
             if (index < activeBullets) bullet.classList.add("active"); else bullet.classList.remove("active");
         }));
     }));
+    const video = document.getElementById("video");
+    const playButton = document.getElementById("playButton");
+    function toggleVideo() {
+        if (video.paused) {
+            video.play();
+            playButton.classList.add("hidden");
+        } else {
+            video.pause();
+            playButton.classList.remove("hidden");
+        }
+    }
+    playButton.addEventListener("click", toggleVideo);
+    video.addEventListener("pause", (function() {
+        playButton.classList.remove("hidden");
+    }));
+    video.addEventListener("play", (function() {
+        playButton.classList.add("hidden");
+    }));
 })();
