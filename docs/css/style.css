@@ -741,15 +741,15 @@ main {
 }
 .background.bg1 {
   top: 0;
-  background-image: url(../img/blur.webp)
+  background-image: url(../img/blur.png)
 }
 .background.bg2 {
   top: 33.3333333333%;
-  background-image: url(../img/blur2.webp)
+  background-image: url(../img/blur2.png)
 }
 .background.bg3 {
   top: 66.6666666667%;
-  background-image: url(../img/blur3.webp)
+  background-image: url(../img/blur3.png)
 }
 .page.skygen::before {
   content: none
@@ -761,7 +761,7 @@ main {
   right: 0;
   width: 100%;
   height: 532px;
-  background-image: url(../img/brosla-bg-mb.webp);
+  background-image: url(../img/brosla-bg-mb.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -897,7 +897,7 @@ main {
   transform: translateX(-50%);
   width: 320px;
   height: 320px;
-  background-image: url(../img/logo-bg-mb.webp);
+  background-image: url(../img/logo-bg-mb.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1167,13 +1167,13 @@ main {
   transition: width .7s ease
 }
 .features__slide.features__slide1 {
-  background-image: url(../img/servies1-large.webp)
+  background-image: url(../img/servies1-large.png)
 }
 .features__slide.features__slide2 {
-  background-image: url(../img/servies2-large.webp)
+  background-image: url(../img/servies2-large.png)
 }
 .features__slide.features__slide3 {
-  background-image: url(../img/servies3-large.webp)
+  background-image: url(../img/servies3-large.png)
 }
 .slide-link {
   display: flex;
@@ -1377,7 +1377,7 @@ main {
   width: 100%;
   height: 244px;
   margin-bottom: 47px;
-  background-image: url(../img/VIDEO.webp);
+  background-image: url(../img/VIDEO.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat
@@ -1563,28 +1563,28 @@ main {
   z-index: 1
 }
 .examples1::before {
-  background-image: url(../img/photoshoots1.webp)
+  background-image: url(../img/photoshoots1.png)
 }
 .examples2::before {
-  background-image: url(../img/photoshoots2.webp)
+  background-image: url(../img/photoshoots2.png)
 }
 .examples3::before {
-  background-image: url(../img/photoshoots3.webp)
+  background-image: url(../img/photoshoots3.png)
 }
 .examples4::before {
-  background-image: url(../img/photoshoots4.webp)
+  background-image: url(../img/photoshoots4.png)
 }
 .examples5::before {
-  background-image: url(../img/photoshoots5.webp)
+  background-image: url(../img/photoshoots5.png)
 }
 .examples6::before {
-  background-image: url(../img/photoshoots6.webp)
+  background-image: url(../img/photoshoots6.png)
 }
 .examples7::before {
-  background-image: url(../img/photoshoots7.webp)
+  background-image: url(../img/photoshoots7.png)
 }
 .examples8::before {
-  background-image: url(../img/photoshoots8.webp)
+  background-image: url(../img/photoshoots8.png)
 }
 .photoshoots__examples-item-content {
   position: relative;
@@ -1661,7 +1661,7 @@ main {
 .package-offer-thumb.thumb-bg {
   width: 234px;
   height: 130px;
-  background-image: url(../img/package-reels-mb.webp);
+  background-image: url(../img/package-reels-mb.png);
   background-size: contain;
   background-repeat: no-repeat
 }
@@ -2048,17 +2048,17 @@ main {
 .skygen__content-thumb {
   width: 100%;
   height: 330px;
-  background-image: url(../img/skygen-content-img.webp);
+  background-image: url(../img/skygen-content-img.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat
 }
 .skygen__content-thumb.thumb2 {
-  background-image: url(../img/skygen-content-img2.webp)
+  background-image: url(../img/skygen-content-img2.png)
 }
 .skygen__content-thumb.thumb3 {
   background-color: #f1f1f1;
-  background-image: url(../img/skygen-content-img3.webp)
+  background-image: url(../img/skygen-content-img3.png)
 }
 .brand-narrative {
   padding-top: 80px;
@@ -2479,14 +2479,14 @@ body.skygen-page .footer__address-icon {
 .modus__content-thumb {
   width: 100%;
   height: 330px;
-  background-image: url(../img/modus-content-img.webp);
+  background-image: url(../img/modus-content-img.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat
 }
 .modus__content-thumb.thumb2 {
   background-color: #000;
-  background-image: url(../img/modus-content-img2.webp)
+  background-image: url(../img/modus-content-img2.png)
 }
 .presentation__info-icon.modus__info-icon {
   color: #000
@@ -2943,7 +2943,7 @@ body.skygen-page .footer__address-icon {
     right: -16px;
     height: 800px;
     width: 110vw;
-    background-image: url(../img/brosla-bg-pc.webp)
+    background-image: url(../img/brosla-bg-pc.png)
   }
   .hero__container.hero-container {
     padding-top: 205px;
@@ -3052,7 +3052,7 @@ body.skygen-page .footer__address-icon {
   }
   .video__thumb-title {
     width: 100%;
-    background-image: url(../img/VIDEO-pc.webp)
+    background-image: url(../img/VIDEO-pc.png)
   }
   .video__description-box {
     display: flex;
@@ -3178,7 +3178,7 @@ body.skygen-page .footer__address-icon {
   .package-offer-thumb.thumb-bg {
     width: 596px;
     height: 90px;
-    background-image: url(../img/package-reels.webp)
+    background-image: url(../img/package-reels.png)
   }
   .package-description {
     max-width: 700px;

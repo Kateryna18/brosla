@@ -11,7 +11,8 @@ import fs from 'fs';
 global.app = {
 	isBuild: process.argv.includes('--build'),
 	isDev: !process.argv.includes('--build'),
-	isWebP: !process.argv.includes('--nowebp'),
+	// isWebP: !process.argv.includes('--nowebp'),
+	isWebP: false,
 	isImgOpt: !process.argv.includes('--noimgopt'),
 	isFontsReW: process.argv.includes('--rewrite'),
 	gulp: gulp,
