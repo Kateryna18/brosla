@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240920181304">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240926044146">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,14 @@
 
 <body class="fade-in">
 	<div class="wrapper wrapper__services-page">
-		<header class="header slide-in-top">
+		<header class="header">
 			<div class="header__container">
 				<div class="header__menu menu">
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<a href="home.html" class="menu__link">Home
+								<a href="index.html" class="menu__link">Home
 									<div class="header__menu-icon-box">
 										<svg class="header__menu-icon">
 											<use xlink:href="img/icons/icons.svg#ring"></use>
@@ -87,7 +87,7 @@
 				<div class="web-services__container">
 					<div class="hero__thumb-logo-box services__thumb-logo-box">
 						<div class="hero__thumb-logo">
-							<img src="img/logo-pc.webp" alt="Image" />
+							<img src="img/logo-pc.webp" alt="logo-mb" />
 						</div>
 					</div>
 					<div class="web-services__content slide-up">
@@ -279,6 +279,12 @@
 						</div>
 					</div>
 				</div>
+				<div class="web-services__thumb-bg">
+					<picture>
+						<source media="(min-width:768px)" srcset="img/brosla-bg-pc1.webp">
+						<img src="img/brosla-bg-mb1.webp" alt="brosla background">
+					</picture>
+				</div>
 			</section>
 			<section class="examples services-page">
 				<div class="examples__container">
@@ -304,7 +310,15 @@
 						<div class="examples__slide swiper-slide">
 							<div class="examples__slide-content">
 								<div class="examples__slide-thumb">
-									<img src="img/examples-slide1-pc.webp" alt="Image" />
+									<div class="examples__slide-thumb-label">
+										<img src="img/sturtap.webp" alt="text sturtap">
+									</div>
+									<div class="examples__slide-thumb-img">
+										<picture>
+											<source media="(max-width: 420px)" srcset="img/examples-after-slide2.webp">
+											<img src="img/examples-after-slide1.webp" alt="monitor">
+										</picture>
+									</div>
 								</div>
 								<div class="examples__slide-info examples-slide-info">
 									<div class="examples-slide-info__top">
@@ -321,9 +335,9 @@
 										</p>
 									</div>
 									<div class="examples-slide-info__down">
-										<button type="button" class="examples-slide-button">
+										<a href="./skygen.html" class="examples-slide-button">
 											read more
-										</button>
+										</a>
 										<div class="examples-slide-button-icon">
 											<svg class="examples-slide-button-icon-svg">
 												<use xlink:href="img/icons/icons.svg#ring"></use>
@@ -336,12 +350,20 @@
 						<div class="examples__slide swiper-slide">
 							<div class="examples__slide-content">
 								<div class="examples__slide-thumb">
-									<img src="img/examples-slide2-pc.webp" alt="Image" />
+									<div class="examples__slide-thumb-label">
+										<img src="img/product.webp" alt="text product">
+									</div>
+									<div class="examples__slide-thumb-img">
+										<picture>
+											<source media="(max-width: 420px)" srcset="img/examples-after-slide1.1.webp">
+											<img src="img/examples-after-slide2.2.webp" alt="screen">
+										</picture>
+									</div>
 								</div>
 								<div class="examples__slide-info examples-slide-info">
 									<div class="examples-slide-info__top">
 										<h3 class="title examples-slide-info__title">product</h3>
-										<p class="examples-slide-info__subtitle">
+										<p class="examples-slide-info__subtitle slide2">
 											Spoiler alert: It requires a ton of content.
 										</p>
 										<p class="examples-slide-info__description">
@@ -353,9 +375,9 @@
 										</p>
 									</div>
 									<div class="examples-slide-info__down">
-										<button type="button" class="examples-slide-button">
+										<a href="./modus.html" class="examples-slide-button">
 											read more
-										</button>
+										</a>
 										<div class="examples-slide-button-icon">
 											<svg class="examples-slide-button-icon-svg">
 												<use xlink:href="img/icons/icons.svg#ring"></use>
@@ -388,7 +410,7 @@
 			<section class="photoshoots services-page">
 				<div class="photoshoots__content">
 					<div class="photoshoots__thumb">
-						<img src="img/photoshoots-post.webp" alt="Image" />
+						<img src="img/photoshoots-post.webp" alt="model" />
 					</div>
 					<div class="photoshoots__container">
 						<div class="photoshoots__examples">
@@ -402,7 +424,7 @@
 								that. Prepare for a photoshoot so chic, even your camera will
 								blush.
 							</p>
-							<ul class="photoshoots__examples-list  slide-up delay">
+							<ul class="photoshoots__examples-list slide-up delay">
 								<li class="photoshoots__examples-item">
 									<a href="#" class="photoshoots__examples-link examples1">
 										<div class="photoshoots__examples-item-content">
@@ -705,7 +727,7 @@
 									<use xlink:href="img/icons/icons.svg#ring-v3"></use>
 								</svg>
 							</div>
-							<a href="malito:sale@brosla.com" class="footer__contanct-mail">sale@brosla.com</a>
+							<a href="mailto:sale@brosla.com" class="footer__contanct-mail">sale@brosla.com</a>
 						</div>
 					</div>
 					<div class="footer__address-box">
@@ -730,9 +752,10 @@
 									</p>
 								</div>
 								<div class="address__slide swiper-slide">
-									<svg class="footer__address-icon icon-dubai">
-										<use xlink:href="img/icons/icons.svg#dubai"></use>
-									</svg>
+									<div class="footer__address-icon icon-dubai">
+										<img class="img-dubai-hover" src="img/dubai-gradient.svg" alt="dubai-gradient-hover" />
+										<img class="img-dubai-default" src="img/dubai.svg" alt="dubai" />
+									</div>
 									<p class="footer__titles address__title">dubai | Oae</p>
 									<p class="footer__address-value">
 										1911 Marasi Dr Business Bay Dubai - ОАE
@@ -753,7 +776,9 @@
 							</div>
 						</div>
 						<div class="footer__copyright">
-							<p class="footer__copyright-text">© 2020-2024 Brosla online technologies.</p>
+							<p class="footer__copyright-text">
+								© 2020-2024 Brosla online technologies.
+							</p>
 							<a href="#" class="footer__link">Privacy Policy</a>
 						</div>
 					</div>
@@ -762,7 +787,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240920181304"></script>
+	<script src="js/app.min.js?_v=20240926044146"></script>
 </body>
 
 </html>

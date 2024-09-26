@@ -368,7 +368,7 @@
               <ul data-showmore-content="1" class="block__content video__list">
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide1-pc.png">
                           <source
@@ -378,13 +378,13 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">PROMO_ANIMATION</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide2-pc.png">
                           <source
@@ -394,13 +394,13 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">PARFUM</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide3-pc.png">
                           <source
@@ -410,13 +410,13 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">CLOTH_BRAND_STORE</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide4-pc.png">
                           <source
@@ -426,13 +426,13 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">EVENTS/CARS</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide5-pc.png">
                           <source
@@ -442,26 +442,26 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">PRODUCT</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide6-pc.png">
                           <source src="@img/video/Manu1.mov" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">REAL_ESTATE</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide7-pc.png">
                           <source
@@ -471,13 +471,13 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">RESTAURANT_2</p>
                 </li>
                 <li class="video__item">
                   <div class="video__video-box">
-                    <a href="#" class="video__item-link">
+                    <div class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide8-pc.png">
                           <source
@@ -487,7 +487,7 @@
                           Your browser does not support the video tag.
                         </video>
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <p class="video__item-name">EXPERT_BUSINESS</p>
                 </li>
@@ -814,10 +814,18 @@
           <div class="pre-footer__container">
             <div class="pre-footer__images-box">
               <div class="pre-footer__images-thumb">
-                <img src="@img/pre-footer1.png" alt="Office building" />
+                <img 
+                src="@img/pre-footer1.png" 
+                srcset="@img/pre-footer1-small.png 480w, @img/pre-footer1.png 1024w" 
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="Office building" />
               </div>
               <div class="pre-footer__images-thumb">
-                <img src="@img/pre-footer2.png" alt="Man in the studio" />
+                <img 
+                src="@img/pre-footer2.png" 
+                srcset="@img/pre-footer2-small.png 480w, @img/pre-footer2.png 1024w" 
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="Man in the studio" />
               </div>
             </div>
             <p class="pre-footer__description">

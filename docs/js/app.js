@@ -385,19 +385,6 @@
             }
         }
     }
-    function changeIconHover() {
-        document.addEventListener("DOMContentLoaded", (function() {
-            const icon = document.querySelector(".footer__address-icon.icon-dubai");
-            const originalIcon = "@img/icons/icons.svg#dubai";
-            const hoverIcon = "@img/icons/icons.svg#dubai-gradient";
-            icon.addEventListener("mouseenter", (function() {
-                icon.querySelector("use").setAttribute("xlink:href", hoverIcon);
-            }));
-            icon.addEventListener("mouseleave", (function() {
-                icon.querySelector("use").setAttribute("xlink:href", originalIcon);
-            }));
-        }));
-    }
     function transitionEffect() {
         document.addEventListener("DOMContentLoaded", (function() {
             const description = document.querySelector(".pre-footer__description");
@@ -3903,7 +3890,6 @@
             },
             breakpoints: {
                 992: {
-                    slidesPerView: "auto",
                     spaceBetween: 45,
                     centeredSlides: false,
                     slidesOffsetBefore: 10
@@ -3914,8 +3900,7 @@
                     centeredSlides: false,
                     slidesOffsetBefore: 65
                 }
-            },
-            on: {}
+            }
         });
         if (document.querySelector(".address__slider")) {
             let swiperInstance;
@@ -3948,14 +3933,20 @@
                 modules: [ Pagination ],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1,
-                spaceBetween: 20,
+                slidesPerView: "auto",
+                spaceBetween: 40,
                 autoHeight: true,
                 speed: 800,
                 centeredSlides: true,
                 pagination: {
                     el: ".catalogs__pagination",
                     clickable: true
+                },
+                breakpoints: {
+                    490: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    }
                 }
             });
         } else if (swiperInstance) {
@@ -4063,7 +4054,6 @@
     menuInit();
     spollers();
     showMore();
-    changeIconHover();
     transitionEffect();
     changeActiveLink();
     const items = document.querySelectorAll(".features__slide");
@@ -4129,21 +4119,31 @@
             if (el instanceof Element) observer.observe(el);
         }));
     }));
-    document.addEventListener("DOMContentLoaded", (function() {
-        const header = document.querySelector(".wrapper__services-page header");
-        function handleScroll() {
-            if (header) if (window.scrollY > 50 && window.scrollY < 2300) header.classList.add("scrolled"); else header.classList.remove("scrolled");
-        }
-        window.addEventListener("scroll", handleScroll);
-        if (header) handleScroll();
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector(".header");
+    window.addEventListener("scroll", (() => {
+        if (window.scrollY > lastScrollY) header.classList.add("hidden"); else header.classList.remove("hidden");
+        lastScrollY = window.scrollY;
     }));
     const bullets = document.querySelectorAll(".bullet");
-    const totalBullets = bullets.length - 1;
+    const sections = document.querySelectorAll("section");
+    function scrollToSection(section) {
+        window.scrollTo({
+            top: section.offsetTop,
+            behavior: "smooth"
+        });
+    }
+    bullets.forEach(((bullet, index) => {
+        bullet.addEventListener("click", (() => {
+            const targetSection = sections[index];
+            if (targetSection) scrollToSection(targetSection);
+        }));
+    }));
     window.addEventListener("scroll", (() => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = scrollTop / scrollHeight * 100;
-        const activeBullets = Math.floor(scrollPercent / 100 * totalBullets) + 1;
+        const activeBullets = Math.floor(scrollPercent / 100 * (bullets.length - 1)) + 1;
         bullets.forEach(((bullet, index) => {
             if (index < activeBullets) bullet.classList.add("active"); else bullet.classList.remove("active");
         }));
