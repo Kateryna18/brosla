@@ -13,7 +13,11 @@
               Modus Case
             </p>
             <div class="presentation-thumb">
-              <img src="@img/modus-hero-pc.png" alt="Office" />
+              <img 
+                src="@img/modus-hero-pc.png" 
+                srcset="@img/modus-hero-mb.png 480w, @img/modus-hero-pc.png 1024w" 
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="Office" />
             </div>
             <div class="presentation__content fade-in-content">
               <div class="presentation__info-box">
@@ -70,7 +74,11 @@
         <section class="solutions">
           <div class="solutions__container modus__solutions">
             <div class="marketing__thumb-image modus-solutions__thumb-image">
-              <img src="@img/modus-website1.png" alt="example website" />
+              <img 
+                src="@img/modus-website1.png" 
+                srcset="@img/modus-website1-mb.png 480w, @img/modus-website1.png 1024w" 
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="example website" />
             </div>
             <div class="solutions__content-wrapper modus-solutions__content-wrapper">
               <p class="modus__pre-text none">Reach for the Top with Modus!</p>
@@ -134,12 +142,29 @@
         <section class="marketing">
           <div class="modus-marketing-video__container">
             <div class="modus-marketing-video__thumb">
-              <img src="@img/modus-video.png" alt="Image" />
+              <video muted poster="@img/modus-video.png" id="video">
+                <source
+                  src="@img/video/modus-video.MP4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <button id="playButton" class="play-button">
+                <svg class="play-button__icon">
+                  <use
+                    xlink:href="@img/icons/icons.svg#play_button"
+                  ></use>
+                </svg>
+              </button>
             </div>
           </div>
           <div class="marketing__container modus__container">
             <div class="marketing__thumb-image">
-              <img src="@img/modus-website2.png" alt="example website" />
+              <img 
+              src="@img/modus-website2.png" 
+              srcset="@img/modus-website2-mb.png 480w, @img/modus-website2.png 1024w" 
+              sizes="(max-width: 600px) 480px, 1024px"
+              alt="example website" />
             </div>
             <div class="marketing__content-box marketing-modus__content-box">
               <div class="marketing__content-box-wrapper marketing-modus__margin">

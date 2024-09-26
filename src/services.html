@@ -9,8 +9,19 @@
         <div class="background bg2"></div>
         <div class="background bg3"></div>
         <section class="web-services">
-          <div class="web-services__thumb" data-da=".web-services__content,1300,1">
-            <img src="@img/web-services-pc.png" alt="building" />
+          <div
+            class="web-services__thumb"
+            data-da=".web-services__content,1300,1"
+          >
+            <img
+              src="@img/web-services-pc.png"
+              srcset="
+                @img/web-services-mb.png  480w,
+                @img/web-services-pc.png 1024w
+              "
+              sizes="(max-width: 600px) 480px, 1024px"
+              alt="building"
+            />
           </div>
           <div class="web-services__container">
             <div class="hero__thumb-logo-box services__thumb-logo-box">
@@ -105,7 +116,10 @@
                 </div>
               </div>
               <div class="web-services__options-box fade-in-content">
-                <div data-spollers class="package__overview-spoiler options__spoiler">
+                <div
+                  data-spollers
+                  class="package__overview-spoiler options__spoiler"
+                >
                   <details class="spollers__item options__item">
                     <summary class="package__spoiler-title-box">
                       <p class="package__spoiler-title options-title">
@@ -251,8 +265,11 @@
           </div>
           <div class="web-services__thumb-bg">
             <picture>
-              <source media="(min-width:768px)" srcset="@img/brosla-bg-pc1.png">
-              <img src="@img/brosla-bg-mb1.png" alt="brosla background">
+              <source
+                media="(min-width:768px)"
+                srcset="@img/brosla-bg-pc1.png"
+              />
+              <img src="@img/brosla-bg-mb1.png" alt="brosla background" />
             </picture>
           </div>
         </section>
@@ -280,15 +297,20 @@
               <div class="examples__slide swiper-slide">
                 <div class="examples__slide-content">
                   <div class="examples__slide-thumb">
-                     <div class="examples__slide-thumb-label">
-                        <img src="@img/sturtap.png" alt="text sturtap">
-                     </div>
-                     <div class="examples__slide-thumb-img">
-                      <picture>
-                        <source media="(max-width: 420px)" srcset="@img/examples-after-slide2.png">
-                        <img src="@img/examples-after-slide1.png" alt="monitor">
-                      </picture>
-                     </div>
+                    <div class="examples__slide-thumb-label">
+                      <img src="@img/sturtap.png" alt="text sturtap" />
+                    </div>
+                    <div class="examples__slide-thumb-img">
+                      <img
+                        src="@img/examples-after-slide1.png"
+                        srcset="
+                          @img/examples-after-slide2.png  480w,
+                          @img/examples-after-slide1.png 1024w
+                        "
+                        sizes="(max-width: 600px) 480px, 1024px"
+                        alt="Monitor"
+                      />
+                    </div>
                   </div>
                   <div class="examples__slide-info examples-slide-info">
                     <div class="examples-slide-info__top">
@@ -321,15 +343,20 @@
                 <div class="examples__slide-content">
                   <div class="examples__slide-thumb">
                     <div class="examples__slide-thumb-label">
-                       <img src="@img/product.png" alt="text product">
+                      <img src="@img/product.png" alt="text product" />
                     </div>
                     <div class="examples__slide-thumb-img">
-                     <picture>
-                       <source media="(max-width: 420px)" srcset="@img/examples-after-slide1.1.png">
-                       <img src="@img/examples-after-slide2.2.png" alt="screen">
-                     </picture>
+                      <img
+                        src="@img/examples-after-slide2.2.png"
+                        srcset="
+                          @img/examples-after-slide1.1.png  480w,
+                          @img/examples-after-slide2.2.png 1024w
+                        "
+                        sizes="(max-width: 600px) 480px, 1024px"
+                        alt="Screen"
+                      />
                     </div>
-                 </div>
+                  </div>
                   <div class="examples__slide-info examples-slide-info">
                     <div class="examples-slide-info__top">
                       <h3 class="title examples-slide-info__title">product</h3>
@@ -380,7 +407,15 @@
         <section class="photoshoots services-page">
           <div class="photoshoots__content">
             <div class="photoshoots__thumb">
-              <img src="@img/photoshoots-post.png" alt="model" />
+              <img
+                src="@img/photoshoots-post.png"
+                srcset="
+                  @img/photoshoots-post-mb.png  480w,
+                  @img/photoshoots-post.png    1024w
+                "
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="model"
+              />
             </div>
             <div class="photoshoots__container">
               <div class="photoshoots__examples">
@@ -491,8 +526,7 @@
         <section class="video services-page">
           <div class="video__container">
             <div class="video__content-top fade-in-content">
-              <div class="video__thumb-title">
-              </div>
+              <div class="video__thumb-title"></div>
               <div class="video__description-box">
                 <p class="video__description">
                   Because who doesn’t love a good story that just happens to
@@ -510,7 +544,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide1-pc.png">
-                          <source src="@img/video/BandaJanuary2.mov" type="video/mp4">
+                          <source
+                            src="@img/video/BandaJanuary2.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -523,7 +560,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide2-pc.png">
-                          <source src="@img/video/YSL_final.mov" type="video/mp4">
+                          <source
+                            src="@img/video/YSL_final.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -536,7 +576,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide3-pc.png">
-                          <source src="@img/video/MOOD_MYPOST_HB.mp4" type="video/mp4">
+                          <source
+                            src="@img/video/MOOD_MYPOST_HB.mp4"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -549,7 +592,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide4-pc.png">
-                          <source src="@img/video/Said_CARS15.07.mov" type="video/mp4">
+                          <source
+                            src="@img/video/Said_CARS15.07.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -562,7 +608,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide5-pc.png">
-                          <source src="@img/video/Chasing_Blossoms.mov" type="video/mp4">
+                          <source
+                            src="@img/video/Chasing_Blossoms.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -575,7 +624,7 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide6-pc.png">
-                          <source src="@img/video/Manu1.mov" type="video/mp4">
+                          <source src="@img/video/Manu1.mov" type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -588,7 +637,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide7-pc.png">
-                          <source src="@img/video/Edessa2.mov" type="video/mp4">
+                          <source
+                            src="@img/video/Edessa2.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -601,7 +653,10 @@
                     <a href="#" class="video__item-link">
                       <div class="video__item-thumb">
                         <video muted poster="@img/vide8-pc.png">
-                          <source src="@img/video/Exis_Tattoo.mov" type="video/mp4">
+                          <source
+                            src="@img/video/Exis_Tattoo.mov"
+                            type="video/mp4"
+                          />
                           Your browser does not support the video tag.
                         </video>
                       </div>

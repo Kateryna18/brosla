@@ -423,29 +423,33 @@ window.addEventListener('scroll', () => {
 });
 
 
-// const totalBullets = bullets.length - 1; // Не враховуємо перший булет
+const video = document.getElementById('video');
+const playButton = document.getElementById('playButton');
 
-// // Обробка скролу
-// window.addEventListener('scroll', () => {
-//     // Висота сторінки та поточна позиція
-//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+// Функція для запуску та паузи відео
+function toggleVideo() {
+  if (video.paused) {
+    video.play();
+    playButton.classList.add('hidden'); // Ховаємо кнопку при запуску відео
+  } else {
+    video.pause();
+    playButton.classList.remove('hidden'); // Показуємо кнопку при паузі
+  }
+}
 
-//     // Розрахунок проценту скролу
-//     const scrollPercent = (scrollTop / scrollHeight) * 100;
+// Додаємо слухач кліку на кнопку
+playButton.addEventListener('click', toggleVideo);
 
-//     // Розрахунок кількості активних булетів (починаємо з другого)
-//     const activeBullets = Math.floor((scrollPercent / 100) * totalBullets) + 1;
+// Слухач для появи кнопки, коли відео на паузі
+video.addEventListener('pause', function() {
+  playButton.classList.remove('hidden');
+});
 
-//     // Оновлення класів булетів
-//     bullets.forEach((bullet, index) => {
-//         if (index < activeBullets) {
-//             bullet.classList.add('active');
-//         } else {
-//             bullet.classList.remove('active');
-//         }
-//     });
-// });
+// Слухач для приховування кнопки, коли відео грає
+video.addEventListener('play', function() {
+  playButton.classList.add('hidden');
+});
+
 
 
 
