@@ -422,7 +422,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-
+// ======================================================================================
 const video = document.getElementById('video');
 const playButton = document.getElementById('playButton');
 
@@ -438,16 +438,30 @@ function toggleVideo() {
 }
 
 // Додаємо слухач кліку на кнопку
-playButton.addEventListener('click', toggleVideo);
+if (playButton) {
+  playButton.addEventListener('click', toggleVideo);
+}
 
-// Слухач для появи кнопки, коли відео на паузі
-video.addEventListener('pause', function() {
-  playButton.classList.remove('hidden');
-});
+if (video) {
+  video.addEventListener('pause', function() {
+    playButton.classList.remove('hidden');
+  });
+}
 
-// Слухач для приховування кнопки, коли відео грає
-video.addEventListener('play', function() {
-  playButton.classList.add('hidden');
+if (video) {
+  video.addEventListener('play', function() {
+    playButton.classList.add('hidden');
+  });
+}
+
+
+
+// =================================================================================================
+document.querySelectorAll('.footer__address-icon').forEach(icon => {
+  icon.addEventListener('click', function() {
+    document.querySelectorAll('.footer__address-icon').forEach(i => i.classList.remove('icon--active'));
+    this.classList.add('icon--active'); 
+  });
 });
 
 

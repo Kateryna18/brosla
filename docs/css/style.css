@@ -417,13 +417,21 @@ svg {
   background-color: #b0201e;
   color: #fff;
   border-radius: 5px;
-  cursor: pointer
+  cursor: pointer;
+  transition: all 1s ease
+}
+.button:hover {
+  background-color: #fff
+}
+.button:hover .button-text {
+  color: #000
 }
 .button-text {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 25px;
-  line-height: 1.2192
+  line-height: 1.2192;
+  transition: all .8s ease
 }
 .header {
   position: absolute;
@@ -571,12 +579,19 @@ details.header-spoiler[open] {
 .footer__form-button-box>.button {
   padding-top: 26px;
   padding-bottom: 26px;
-  background-color: #fff
+  background-color: #fff;
+  transition: all 1s ease
+}
+.footer__form-button-box:hover>.button {
+  background-color: #707070
 }
 .footer__form-button-box .button-text {
   font-size: 16px;
   line-height: 1.1428571429;
   color: #000
+}
+.footer__form-button-box:hover .button-text {
+  color: #fff
 }
 .footer__bottom {
   width: 100%;
@@ -651,7 +666,13 @@ details.header-spoiler[open] {
 .address__slide.swiper-slide:hover .footer__address-icon.icon-europe {
   color: #30f
 }
+.footer__address-icon.icon-europe.icon--active {
+  color: #30f
+}
 .address__slide.swiper-slide:hover .footer__address-icon.icon-toronto {
+  color: #ff3825
+}
+.footer__address-icon.icon-toronto.icon--active {
   color: #ff3825
 }
 .footer__address-icon.icon-dubai {
@@ -672,6 +693,12 @@ details.header-spoiler[open] {
   opacity: 1
 }
 .address__slide.swiper-slide:hover .img-dubai-default {
+  opacity: 0
+}
+.footer__address-icon.icon-dubai.icon--active .img-dubai-hover {
+  opacity: 1
+}
+.footer__address-icon.icon-dubai.icon--active .img-dubai-default {
   opacity: 0
 }
 .address__slide.swiper-slide:hover .footer__address-icon use {
@@ -902,8 +929,8 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  -webkit-filter: blur(20px);
-  filter: blur(20px)
+  -webkit-filter: blur(100px);
+  filter: blur(100px)
 }
 .hero__thumb-logo>img {
   width: 100%;
@@ -1017,12 +1044,11 @@ main {
   transition: all .8s ease
 }
 .examples__slide:hover .examples__slide-thumb-img {
-  top: 0;
-  left: 0;
+  padding: 0;
   width: 110%;
   height: 110%
 }
-.examples__slide-thumb-img img,
+.examples__slide-thumb-img>img,
 .examples__slide-thumb-label>img {
   display: block;
   width: 100%;
@@ -2079,19 +2105,25 @@ main {
 .brand-narrative__images-thumb.brand-narrative__images-thumb1 {
   top: 0;
   right: 0;
-  z-index: 10
+  z-index: 10;
+  -webkit-animation: float1-mobile 8s ease-in-out infinite;
+  animation: float1-mobile 8s ease-in-out infinite
 }
 .brand-narrative__images-thumb.brand-narrative__images-thumb2 {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  z-index: 2
+  z-index: 2;
+  -webkit-animation: float2-mobile 8s ease-in-out infinite;
+  animation: float2-mobile 8s ease-in-out infinite
 }
 .brand-narrative__images-thumb.brand-narrative__images-thumb3 {
   bottom: 0;
   right: 0;
-  z-index: 5
+  z-index: 5;
+  -webkit-animation: float3-mobile 8s ease-in-out infinite;
+  animation: float3-mobile 8s ease-in-out infinite
 }
 .brand-narrative__images-thumb>img {
   width: 100%;
@@ -2119,6 +2151,34 @@ main {
   50% {
     -webkit-transform: translate(10px,-17px);
     transform: translate(10px,-17px)
+  }
+  100% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+}
+@-webkit-keyframes float1-mobile {
+  0% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  50% {
+    -webkit-transform: translate(5px,-10px);
+    transform: translate(5px,-10px)
+  }
+  100% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+}
+@keyframes float1-mobile {
+  0% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  50% {
+    -webkit-transform: translate(5px,-10px);
+    transform: translate(5px,-10px)
   }
   100% {
     -webkit-transform: translate(0,0);
@@ -2153,6 +2213,34 @@ main {
     transform: translate(0,0)
   }
 }
+@-webkit-keyframes float2-mobile {
+  0% {
+    -webkit-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%)
+  }
+  50% {
+    -webkit-transform: translateX(-5px) translateY(-45%);
+    transform: translateX(-5px) translateY(-45%)
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%)
+  }
+}
+@keyframes float2-mobile {
+  0% {
+    -webkit-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%)
+  }
+  50% {
+    -webkit-transform: translateX(-5px) translateY(-45%);
+    transform: translateX(-5px) translateY(-45%)
+  }
+  100% {
+    -webkit-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%)
+  }
+}
 @-webkit-keyframes float3 {
   0% {
     -webkit-transform: translate(0,0);
@@ -2175,6 +2263,34 @@ main {
   50% {
     -webkit-transform: translate(-10px,-7px);
     transform: translate(-10px,-7px)
+  }
+  100% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+}
+@-webkit-keyframes float3-mobile {
+  0% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  50% {
+    -webkit-transform: translate(-5px,-5px);
+    transform: translate(-5px,-5px)
+  }
+  100% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+}
+@keyframes float3-mobile {
+  0% {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  50% {
+    -webkit-transform: translate(-5px,-5px);
+    transform: translate(-5px,-5px)
   }
   100% {
     -webkit-transform: translate(0,0);
@@ -2278,7 +2394,14 @@ main {
 .marketing__button>button {
   padding-top: 23px;
   padding-bottom: 23px;
-  background-color: #b0201e
+  background-color: #b0201e;
+  transition: all 1s ease
+}
+.marketing__button.black-hover:hover>button {
+  background-color: #000
+}
+.marketing__button.black-hover:hover .button-text {
+  color: #fff
 }
 .solutions {
   padding-top: 90px;
@@ -2343,7 +2466,14 @@ main {
 }
 .building-brand__button>button {
   padding-top: 23px;
-  padding-bottom: 23px
+  padding-bottom: 23px;
+  transition: all 1s ease
+}
+.building-brand__button:hover>button {
+  background-color: #000
+}
+.building-brand__button:hover .button-text {
+  color: #fff
 }
 .catalogs {
   padding-top: 50px;
@@ -2563,7 +2693,20 @@ body.skygen-page .footer__address-icon {
 .marketing__button.modus__button {
   width: 268px;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
+  transition: all 1s ease
+}
+.marketing__button.modus__button:hover>.button {
+  background-color: #000
+}
+.marketing__button.modus__button:hover .button-text {
+  color: #fff
+}
+.marketing__button.modus__button.white-hover:hover>.button {
+  background-color: #fff
+}
+.marketing__button.modus__button.white-hover:hover .button-text {
+  color: #000
 }
 .building-brand.modus-building-brand {
   padding-top: 47px
@@ -3658,10 +3801,11 @@ body.skygen-page .footer__address-icon {
     left: auto
   }
   .examples__slide-thumb-img {
-    top: 32px;
-    left: 32px;
-    width: 561px;
-    height: 451px
+    top: auto;
+    left: auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%
   }
   .examples__slide-info {
     max-width: 460px;
@@ -4311,6 +4455,9 @@ body.skygen-page .footer__address-icon {
     min-width: 625px;
     height: 515px;
     border-radius: 5px
+  }
+  .examples__slide-thumb-img {
+    padding: 32px
   }
   .examples__slide-info {
     padding-bottom: 70px

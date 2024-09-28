@@ -170,7 +170,12 @@
   padding-top: 26px;
   padding-bottom: 26px;
   background-color: $main-color;
+  transition: all 1s ease;
 }
+.footer__form-button-box:hover > .button{
+  background-color: $second-text-color;
+}
+
 @media (min-width: $tablet) {
   .footer__form-button-box > .button {
     padding-top: 14px;
@@ -182,6 +187,9 @@
   font-size: 16px;
   line-height: calc(16px / 14px);
   color: #000000;
+}
+.footer__form-button-box:hover .button-text{
+  color: $main-color;
 }
 @media (min-width: $tablet) {
   .footer__form-button-box .button-text {
@@ -371,7 +379,14 @@
 .address__slide.swiper-slide:hover .footer__address-icon.icon-europe {
   color: #3300ff;
 }
+.footer__address-icon.icon-europe.icon--active {
+  color: #3300ff;
+}
+
 .address__slide.swiper-slide:hover .footer__address-icon.icon-toronto {
+  color: #ff3825;
+}
+.footer__address-icon.icon-toronto.icon--active {
   color: #ff3825;
 }
 
@@ -393,6 +408,13 @@
   opacity: 1;
 }
 .address__slide.swiper-slide:hover .img-dubai-default {
+  opacity: 0;
+}
+
+.footer__address-icon.icon-dubai.icon--active .img-dubai-hover{
+  opacity: 1;
+}
+.footer__address-icon.icon-dubai.icon--active .img-dubai-default{
   opacity: 0;
 }
 

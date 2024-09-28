@@ -56,6 +56,15 @@ svg {
   color: $main-color;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 1s ease;
+}
+
+.button:hover{
+  background-color: $main-color;
+
+  & .button-text{
+    color: #000000;
+  }
 }
 
 .button-text{
@@ -63,4 +72,5 @@ svg {
   text-transform: uppercase;
   font-size: 25px;
   line-height: calc(30.48/25);
+  transition: all 0.8s ease;
 }

@@ -4159,11 +4159,17 @@
             playButton.classList.remove("hidden");
         }
     }
-    playButton.addEventListener("click", toggleVideo);
-    video.addEventListener("pause", (function() {
+    if (playButton) playButton.addEventListener("click", toggleVideo);
+    if (video) video.addEventListener("pause", (function() {
         playButton.classList.remove("hidden");
     }));
-    video.addEventListener("play", (function() {
+    if (video) video.addEventListener("play", (function() {
         playButton.classList.add("hidden");
+    }));
+    document.querySelectorAll(".footer__address-icon").forEach((icon => {
+        icon.addEventListener("click", (function() {
+            document.querySelectorAll(".footer__address-icon").forEach((i => i.classList.remove("icon--active")));
+            this.classList.add("icon--active");
+        }));
     }));
 })();

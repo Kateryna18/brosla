@@ -219,7 +219,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  filter: blur(20px);
+  filter: blur(100px);
 }
 @media (min-width: $mobile) {
   .hero__thumb-logo::before {
@@ -529,22 +529,27 @@ main {
 }
 @media (min-width: $tablet) {
   .examples__slide-thumb-img {
-    top: 32px;
-    left: 32px;
-    width: 561px;
-    height: 451px;
+    top: auto;
+    left: auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: $min-pc) {
+  .examples__slide-thumb-img {
+    padding: 32px;
   }
 }
 
 .examples__slide:hover .examples__slide-thumb-img {
-  top: 0;
-  left: 0;
+  padding: 0;
   width: 110%;
   height: 110%;
 }
 
 .examples__slide-thumb-label > img,
-.examples__slide-thumb-img img {
+.examples__slide-thumb-img > img {
   display: block;
   width: 100%;
   height: 100%;

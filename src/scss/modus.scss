@@ -218,6 +218,19 @@
   width: 268px;
   margin-right: auto;
   margin-left: auto;
+  transition: all 1s ease;
+}
+.marketing__button.modus__button:hover > .button{
+  background-color: #000000;
+}
+.marketing__button.modus__button:hover .button-text{
+  color: $main-color;
+}
+.marketing__button.modus__button.white-hover:hover > .button{
+  background-color: $main-color;
+}
+.marketing__button.modus__button.white-hover:hover .button-text{
+  color: #000000;
 }
 @media (min-width: $tablet) {
   .marketing__button.modus__button {

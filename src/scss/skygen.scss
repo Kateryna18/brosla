@@ -335,6 +335,7 @@
   top: 0;
   right: 0;
   z-index: 10;
+  animation: float1-mobile 8s ease-in-out infinite;
 }
 @media (min-width: $tablet) {
   .brand-narrative__images-thumb.brand-narrative__images-thumb1 {
@@ -346,6 +347,7 @@
   transform: translateY(-50%);
   left: 0;
   z-index: 2;
+  animation: float2-mobile 8s ease-in-out infinite;
 }
 @media (min-width: $tablet) {
   .brand-narrative__images-thumb.brand-narrative__images-thumb2 {
@@ -357,6 +359,7 @@
   bottom: 0;
   right: 0;
   z-index: 5;
+  animation: float3-mobile 8s ease-in-out infinite;
 }
 @media (min-width: $tablet) {
   .brand-narrative__images-thumb.brand-narrative__images-thumb3 {
@@ -380,6 +383,19 @@
   }
 }
 
+
+@keyframes float1-mobile {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 @keyframes float2 {
   0% {
     transform: translate(0, 0);
@@ -392,12 +408,36 @@
   }
 }
 
+@keyframes float2-mobile {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-45%);
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
 @keyframes float3 {
   0% {
     transform: translate(0, 0);
   }
   50% {
     transform: translate(-10px, -7px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float3-mobile {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, -5px);
   }
   100% {
     transform: translate(0, 0);
@@ -634,6 +674,13 @@
   padding-top: 23px;
   padding-bottom: 23px;
   background-color: $accent-color;
+  transition: all 1s ease;
+}
+.marketing__button.black-hover:hover > button {
+  background-color: #000000;
+}
+.marketing__button.black-hover:hover .button-text {
+  color: $main-color;
 }
 @media (min-width: $tablet) {
   .marketing__button {
@@ -808,6 +855,13 @@
 .building-brand__button > button {
   padding-top: 23px;
   padding-bottom: 23px;
+  transition: all 1s ease;
+}
+.building-brand__button:hover > button {
+  background-color: #000000;
+}
+.building-brand__button:hover .button-text {
+  color: $main-color;
 }
 
 // =====================================================================================
