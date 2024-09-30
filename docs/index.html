@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240930111913">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240930115713">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,10 @@
 				<div class="hero__container hero-container">
 					<div class="hero__thumb-logo-box slide-in-down">
 						<div class="hero__thumb-logo">
-							<img src="img/logo-pc.webp" alt="Image" loading="lazy" />
+							<img loading="lazy" src="img/logo-pc.webp" srcset="
+                          img/logo-mb.webp 480w,
+                          img/logo-pc.webp 1024w
+                        " sizes="(max-width: 600px) 480px, 1024px" alt="Logo: Brosla.com" />
 						</div>
 					</div>
 					<div class="hero__content scale-up">
@@ -1002,7 +1005,7 @@
 			</div>
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20240930111913"></script>
+	<script src="js/app.min.js?_v=20240930115713"></script>
 </body>
 
 </html>

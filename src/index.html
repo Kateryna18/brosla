@@ -12,7 +12,16 @@
           <div class="hero__container hero-container">
             <div class="hero__thumb-logo-box slide-in-down">
               <div class="hero__thumb-logo">
-                <img src="@img/logo-pc.png" alt="Image" loading="lazy" />
+                <img
+                        loading="lazy"
+                        src="@img/logo-pc.png"
+                        srcset="
+                          @img/logo-mb.png 480w,
+                          @img/logo-pc.png 1024w
+                        "
+                        sizes="(max-width: 600px) 480px, 1024px"
+                        alt="Logo: Brosla.com"
+                      />
               </div>
             </div>
             <div class="hero__content scale-up">
