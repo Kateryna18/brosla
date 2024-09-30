@@ -11,8 +11,8 @@ import fs from 'fs';
 global.app = {
 	isBuild: process.argv.includes('--build'),
 	isDev: !process.argv.includes('--build'),
-	// isWebP: !process.argv.includes('--nowebp'),
-	isWebP: false,
+	isWebP: !process.argv.includes('--nowebp'),
+	// isWebP: false,
 	isImgOpt: !process.argv.includes('--noimgopt'),
 	isFontsReW: process.argv.includes('--rewrite'),
 	gulp: gulp,
@@ -26,7 +26,7 @@ import { html } from "./config/gulp-tasks/html.js";
 import { css } from "./config/gulp-tasks/css.js";
 import { js } from "./config/gulp-tasks/js.js";
 import { jsDev } from "./config/gulp-tasks/js-dev.js";
-import { imagesOptimize, copySvg } from "./config/gulp-tasks/images.js";
+import { WebP, imagesOptimize, copySvg} from "./config/gulp-tasks/images.js";
 import { ftp } from "./config/gulp-tasks/ftp.js";
 import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
@@ -48,9 +48,9 @@ const devTasks = gulp.series(fonts, gitignore);
 // Порядок виконання завдань для режиму продакшн
 let buildTasks;
 if (process.argv.includes('--nowebp')) {
-	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(imagesOptimize, copySvg), gitignore));
+	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(WebP, imagesOptimize, copySvg), gitignore));
 } else {
-	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(copySvg), gitignore));
+	buildTasks = gulp.series(fonts, jsDev, js, gulp.parallel(html, css, gulp.parallel(WebP, copySvg), gitignore));
 }
 
 
