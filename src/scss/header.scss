@@ -51,9 +51,6 @@
   }
 }
 
-.menu__item {
-}
-
 .menu__link {
   position: relative;
   padding: 25px;
@@ -139,13 +136,32 @@ body.skygen-page .menu__link {
 }
 
 details.header-spoiler[open] {
+  position: relative;
   padding-left: 8px;
   padding-right: 8px;
   background-color: #000000;
-  border-bottom: 1px solid $main-color;
+
+  .submenu__item {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $main-color;
+    background-color: #000000;
+  }
 }
 
-.submenu__item {
+.skygen-page details.header-spoiler[open] {
+  background-color: transparent;
+
+  .submenu__item {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid #000000;
+  }
 }
 
 .menu__sub-link {

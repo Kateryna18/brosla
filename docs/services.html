@@ -5,7 +5,7 @@
 	<title>Brosla</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20240930123126" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20240930191202" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="preload" href="img/logo-mb.webp" as="image" media="(max-width: 768px)" />
 	<link rel="preload" href="img/logo-pc.webp" as="image" media="(min-width: 769px)" />
@@ -90,7 +90,11 @@
 				<div class="web-services__container">
 					<div class="hero__thumb-logo-box services__thumb-logo-box">
 						<div class="hero__thumb-logo">
-							<img src="img/logo-pc.webp" alt="logo-mb" />
+							<!-- <img src="img/logo-pc.webp" alt="logo-mb" /> -->
+							<img src="img/logo-pc.webp" srcset="
+                  img/logo-mb.webp 480w,
+                  img/logo-pc.webp 1024w
+                " sizes="(max-width: 600px) 480px, 1024px" alt="Logo: Brosla.com" />
 						</div>
 					</div>
 					<div class="web-services__content slide-up">
@@ -792,7 +796,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240930123126"></script>
+	<script src="js/app.min.js?_v=20240930191202" defer></script>
 </body>
 
 </html>

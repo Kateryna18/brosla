@@ -292,129 +292,129 @@ export function spollers() {
 	}
 }
 // Модуль роботи з табами =======================================================================================================================================================================================================================
-export function tabs() {
-	const tabs = document.querySelectorAll('[data-tabs]');
-	let tabsActiveHash = [];
+// export function tabs() {
+// 	const tabs = document.querySelectorAll('[data-tabs]');
+// 	let tabsActiveHash = [];
 
-	if (tabs.length > 0) {
-		const hash = getHash();
-		if (hash && hash.startsWith('tab-')) {
-			tabsActiveHash = hash.replace('tab-', '').split('-');
-		}
-		tabs.forEach((tabsBlock, index) => {
-			tabsBlock.classList.add('_tab-init');
-			tabsBlock.setAttribute('data-tabs-index', index);
-			tabsBlock.addEventListener("click", setTabsAction);
-			initTabs(tabsBlock);
-		});
+// 	if (tabs.length > 0) {
+// 		const hash = getHash();
+// 		if (hash && hash.startsWith('tab-')) {
+// 			tabsActiveHash = hash.replace('tab-', '').split('-');
+// 		}
+// 		tabs.forEach((tabsBlock, index) => {
+// 			tabsBlock.classList.add('_tab-init');
+// 			tabsBlock.setAttribute('data-tabs-index', index);
+// 			tabsBlock.addEventListener("click", setTabsAction);
+// 			initTabs(tabsBlock);
+// 		});
 
-		// Отримання слойлерів з медіа-запитами
-		let mdQueriesArray = dataMediaQueries(tabs, "tabs");
-		if (mdQueriesArray && mdQueriesArray.length) {
-			mdQueriesArray.forEach(mdQueriesItem => {
-				// Подія
-				mdQueriesItem.matchMedia.addEventListener("change", function () {
-					setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-				});
-				setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-			});
-		}
-	}
-	// Встановлення позицій заголовків
-	function setTitlePosition(tabsMediaArray, matchMedia) {
-		tabsMediaArray.forEach(tabsMediaItem => {
-			tabsMediaItem = tabsMediaItem.item;
-			let tabsTitles = tabsMediaItem.querySelector('[data-tabs-titles]');
-			let tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
-			let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
-			let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
-			tabsTitleItems = Array.from(tabsTitleItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
-			tabsContentItems = Array.from(tabsContentItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
-			tabsContentItems.forEach((tabsContentItem, index) => {
-				if (matchMedia.matches) {
-					tabsContent.append(tabsTitleItems[index]);
-					tabsContent.append(tabsContentItem);
-					tabsMediaItem.classList.add('_tab-spoller');
-				} else {
-					tabsTitles.append(tabsTitleItems[index]);
-					tabsMediaItem.classList.remove('_tab-spoller');
-				}
-			});
-		});
-	}
-	// Робота з контентом
-	function initTabs(tabsBlock) {
-		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
-		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
-		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+// 		// Отримання слойлерів з медіа-запитами
+// 		let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+// 		if (mdQueriesArray && mdQueriesArray.length) {
+// 			mdQueriesArray.forEach(mdQueriesItem => {
+// 				// Подія
+// 				mdQueriesItem.matchMedia.addEventListener("change", function () {
+// 					setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+// 				});
+// 				setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+// 			});
+// 		}
+// 	}
+// 	// Встановлення позицій заголовків
+// 	function setTitlePosition(tabsMediaArray, matchMedia) {
+// 		tabsMediaArray.forEach(tabsMediaItem => {
+// 			tabsMediaItem = tabsMediaItem.item;
+// 			let tabsTitles = tabsMediaItem.querySelector('[data-tabs-titles]');
+// 			let tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
+// 			let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
+// 			let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
+// 			tabsTitleItems = Array.from(tabsTitleItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
+// 			tabsContentItems = Array.from(tabsContentItems).filter(item => item.closest('[data-tabs]') === tabsMediaItem);
+// 			tabsContentItems.forEach((tabsContentItem, index) => {
+// 				if (matchMedia.matches) {
+// 					tabsContent.append(tabsTitleItems[index]);
+// 					tabsContent.append(tabsContentItem);
+// 					tabsMediaItem.classList.add('_tab-spoller');
+// 				} else {
+// 					tabsTitles.append(tabsTitleItems[index]);
+// 					tabsMediaItem.classList.remove('_tab-spoller');
+// 				}
+// 			});
+// 		});
+// 	}
+// 	// Робота з контентом
+// 	function initTabs(tabsBlock) {
+// 		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
+// 		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
+// 		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+// 		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
 
-		if (tabsActiveHashBlock) {
-			const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._tab-active');
-			tabsActiveTitle ? tabsActiveTitle.classList.remove('_tab-active') : null;
-		}
-		if (tabsContent.length) {
-			tabsContent.forEach((tabsContentItem, index) => {
-				tabsTitles[index].setAttribute('data-tabs-title', '');
-				tabsContentItem.setAttribute('data-tabs-item', '');
+// 		if (tabsActiveHashBlock) {
+// 			const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._tab-active');
+// 			tabsActiveTitle ? tabsActiveTitle.classList.remove('_tab-active') : null;
+// 		}
+// 		if (tabsContent.length) {
+// 			tabsContent.forEach((tabsContentItem, index) => {
+// 				tabsTitles[index].setAttribute('data-tabs-title', '');
+// 				tabsContentItem.setAttribute('data-tabs-item', '');
 
-				if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
-					tabsTitles[index].classList.add('_tab-active');
-				}
-				tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
-			});
-		}
-	}
-	function setTabsStatus(tabsBlock) {
-		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
-		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
-		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-		function isTabsAnamate(tabsBlock) {
-			if (tabsBlock.hasAttribute('data-tabs-animate')) {
-				return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
-			}
-		}
-		const tabsBlockAnimate = isTabsAnamate(tabsBlock);
-		if (tabsContent.length > 0) {
-			const isHash = tabsBlock.hasAttribute('data-tabs-hash');
-			tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
-			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
-			tabsContent.forEach((tabsContentItem, index) => {
-				if (tabsTitles[index].classList.contains('_tab-active')) {
-					if (tabsBlockAnimate) {
-						_slideDown(tabsContentItem, tabsBlockAnimate);
-					} else {
-						tabsContentItem.hidden = false;
-					}
-					if (isHash && !tabsContentItem.closest('.popup')) {
-						setHash(`tab-${tabsBlockIndex}-${index}`);
-					}
-				} else {
-					if (tabsBlockAnimate) {
-						_slideUp(tabsContentItem, tabsBlockAnimate);
-					} else {
-						tabsContentItem.hidden = true;
-					}
-				}
-			});
-		}
-	}
-	function setTabsAction(e) {
-		const el = e.target;
-		if (el.closest('[data-tabs-title]')) {
-			const tabTitle = el.closest('[data-tabs-title]');
-			const tabsBlock = tabTitle.closest('[data-tabs]');
-			if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelector('._slide')) {
-				let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
-				tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[data-tabs]') === tabsBlock) : null;
-				tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_tab-active') : null;
-				tabTitle.classList.add('_tab-active');
-				setTabsStatus(tabsBlock);
-			}
-			e.preventDefault();
-		}
-	}
-}
+// 				if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
+// 					tabsTitles[index].classList.add('_tab-active');
+// 				}
+// 				tabsContentItem.hidden = !tabsTitles[index].classList.contains('_tab-active');
+// 			});
+// 		}
+// 	}
+// 	function setTabsStatus(tabsBlock) {
+// 		let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
+// 		let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
+// 		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+// 		function isTabsAnamate(tabsBlock) {
+// 			if (tabsBlock.hasAttribute('data-tabs-animate')) {
+// 				return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
+// 			}
+// 		}
+// 		const tabsBlockAnimate = isTabsAnamate(tabsBlock);
+// 		if (tabsContent.length > 0) {
+// 			const isHash = tabsBlock.hasAttribute('data-tabs-hash');
+// 			tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
+// 			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
+// 			tabsContent.forEach((tabsContentItem, index) => {
+// 				if (tabsTitles[index].classList.contains('_tab-active')) {
+// 					if (tabsBlockAnimate) {
+// 						_slideDown(tabsContentItem, tabsBlockAnimate);
+// 					} else {
+// 						tabsContentItem.hidden = false;
+// 					}
+// 					if (isHash && !tabsContentItem.closest('.popup')) {
+// 						setHash(`tab-${tabsBlockIndex}-${index}`);
+// 					}
+// 				} else {
+// 					if (tabsBlockAnimate) {
+// 						_slideUp(tabsContentItem, tabsBlockAnimate);
+// 					} else {
+// 						tabsContentItem.hidden = true;
+// 					}
+// 				}
+// 			});
+// 		}
+// 	}
+// 	function setTabsAction(e) {
+// 		const el = e.target;
+// 		if (el.closest('[data-tabs-title]')) {
+// 			const tabTitle = el.closest('[data-tabs-title]');
+// 			const tabsBlock = tabTitle.closest('[data-tabs]');
+// 			if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelector('._slide')) {
+// 				let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
+// 				tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[data-tabs]') === tabsBlock) : null;
+// 				tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_tab-active') : null;
+// 				tabTitle.classList.add('_tab-active');
+// 				setTabsStatus(tabsBlock);
+// 			}
+// 			e.preventDefault();
+// 		}
+// 	}
+// }
 // Модуль роботи з меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
@@ -607,98 +607,98 @@ export function showMore() {
 }
 
 // Модуль "Ripple effect" =======================================================================================================================================================================================================================
-export function rippleEffect() {
-	// Подія кліку на кнопці
-	document.addEventListener("click", function (e) {
-		const targetItem = e.target;
-		if (targetItem.closest('[data-ripple]')) {
-			// Константи
-			const button = targetItem.closest('[data-ripple]');
-			const ripple = document.createElement('span');
-			const diameter = Math.max(button.clientWidth, button.clientHeight);
-			const radius = diameter / 2;
+// export function rippleEffect() {
+// 	// Подія кліку на кнопці
+// 	document.addEventListener("click", function (e) {
+// 		const targetItem = e.target;
+// 		if (targetItem.closest('[data-ripple]')) {
+// 			// Константи
+// 			const button = targetItem.closest('[data-ripple]');
+// 			const ripple = document.createElement('span');
+// 			const diameter = Math.max(button.clientWidth, button.clientHeight);
+// 			const radius = diameter / 2;
 
-			// Формування елементу
-			ripple.style.width = ripple.style.height = `${diameter}px`;
-			ripple.style.left = `${e.pageX - (button.getBoundingClientRect().left + scrollX) - radius}px`;
-			ripple.style.top = `${e.pageY - (button.getBoundingClientRect().top + scrollY) - radius}px`;
-			ripple.classList.add('ripple');
+// 			// Формування елементу
+// 			ripple.style.width = ripple.style.height = `${diameter}px`;
+// 			ripple.style.left = `${e.pageX - (button.getBoundingClientRect().left + scrollX) - radius}px`;
+// 			ripple.style.top = `${e.pageY - (button.getBoundingClientRect().top + scrollY) - radius}px`;
+// 			ripple.classList.add('ripple');
 
-			// Видалення існуючого елементу (опціонально)
-			button.dataset.ripple === 'once' && button.querySelector('.ripple') ?
-				button.querySelector('.ripple').remove() : null;
+// 			// Видалення існуючого елементу (опціонально)
+// 			button.dataset.ripple === 'once' && button.querySelector('.ripple') ?
+// 				button.querySelector('.ripple').remove() : null;
 
-			// Додавання елементу
-			button.appendChild(ripple);
+// 			// Додавання елементу
+// 			button.appendChild(ripple);
 
-			// Отримання часу дії анімації
-			const timeOut = getAnimationDuration(ripple);
+// 			// Отримання часу дії анімації
+// 			const timeOut = getAnimationDuration(ripple);
 
-			// Видалення елементу
-			setTimeout(() => {
-				ripple ? ripple.remove() : null;
-			}, timeOut);
+// 			// Видалення елементу
+// 			setTimeout(() => {
+// 				ripple ? ripple.remove() : null;
+// 			}, timeOut);
 
-			// Функтія отримання часу дії анімації
-			function getAnimationDuration() {
-				const aDuration = window.getComputedStyle(ripple).animationDuration;
-				return aDuration.includes('ms') ?
-					aDuration.replace("ms", '') : aDuration.replace("s", '') * 1000;
-			}
-		}
-	});
-}
+// 			// Функтія отримання часу дії анімації
+// 			function getAnimationDuration() {
+// 				const aDuration = window.getComputedStyle(ripple).animationDuration;
+// 				return aDuration.includes('ms') ?
+// 					aDuration.replace("ms", '') : aDuration.replace("s", '') * 1000;
+// 			}
+// 		}
+// 	});
+// }
 // Модуль "Сustom сursor" =======================================================================================================================================================================================================================
-export function customCursor(isShadowTrue) {
-	const wrapper = document.querySelector('[data-custom-cursor]') ? document.querySelector('[data-custom-cursor]') : document.documentElement;
-	if (wrapper && !isMobile.any()) {
-		// Створюємо та додаємо об'єкт курсору
-		const cursor = document.createElement('div');
-		cursor.classList.add('fls-cursor');
-		cursor.style.opacity = 0;
-		cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__pointer"></span>`);
-		isShadowTrue ? cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__shadow"></span>`) : null;
-		wrapper.append(cursor);
+// export function customCursor(isShadowTrue) {
+// 	const wrapper = document.querySelector('[data-custom-cursor]') ? document.querySelector('[data-custom-cursor]') : document.documentElement;
+// 	if (wrapper && !isMobile.any()) {
+// 		// Створюємо та додаємо об'єкт курсору
+// 		const cursor = document.createElement('div');
+// 		cursor.classList.add('fls-cursor');
+// 		cursor.style.opacity = 0;
+// 		cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__pointer"></span>`);
+// 		isShadowTrue ? cursor.insertAdjacentHTML('beforeend', `<span class="fls-cursor__shadow"></span>`) : null;
+// 		wrapper.append(cursor);
 
-		const cursorPointer = document.querySelector('.fls-cursor__pointer');
-		const cursorPointerStyle = {
-			width: cursorPointer.offsetWidth,
-			height: cursorPointer.offsetHeight
-		}
-		let cursorShadow, cursorShadowStyle;
-		if (isShadowTrue) {
-			cursorShadow = document.querySelector('.fls-cursor__shadow');
-			cursorShadowStyle = {
-				width: cursorShadow.offsetWidth,
-				height: cursorShadow.offsetHeight
-			}
-		}
-		function mouseActions(e) {
-			if (e.type === 'mouseout') {
-				cursor.style.opacity = 0;
-			} else if (e.type === 'mousemove') {
-				cursor.style.removeProperty('opacity');
-				if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || (window.getComputedStyle(e.target).cursor !== 'none' && window.getComputedStyle(e.target).cursor !== 'default')) {
-					cursor.classList.add('_hover');
-				} else {
-					cursor.classList.remove('_hover');
-				}
-			} else if (e.type === 'mousedown') {
-				cursor.classList.add('_active');
+// 		const cursorPointer = document.querySelector('.fls-cursor__pointer');
+// 		const cursorPointerStyle = {
+// 			width: cursorPointer.offsetWidth,
+// 			height: cursorPointer.offsetHeight
+// 		}
+// 		let cursorShadow, cursorShadowStyle;
+// 		if (isShadowTrue) {
+// 			cursorShadow = document.querySelector('.fls-cursor__shadow');
+// 			cursorShadowStyle = {
+// 				width: cursorShadow.offsetWidth,
+// 				height: cursorShadow.offsetHeight
+// 			}
+// 		}
+// 		function mouseActions(e) {
+// 			if (e.type === 'mouseout') {
+// 				cursor.style.opacity = 0;
+// 			} else if (e.type === 'mousemove') {
+// 				cursor.style.removeProperty('opacity');
+// 				if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || (window.getComputedStyle(e.target).cursor !== 'none' && window.getComputedStyle(e.target).cursor !== 'default')) {
+// 					cursor.classList.add('_hover');
+// 				} else {
+// 					cursor.classList.remove('_hover');
+// 				}
+// 			} else if (e.type === 'mousedown') {
+// 				cursor.classList.add('_active');
 
-			} else if (e.type === 'mouseup') {
-				cursor.classList.remove('_active');
-			}
-			cursorPointer ? cursorPointer.style.transform = `translate3d(${e.clientX - cursorPointerStyle.width / 2}px, ${e.clientY - cursorPointerStyle.height / 2}px, 0)` : null;
-			cursorShadow ? cursorShadow.style.transform = `translate3d(${e.clientX - cursorShadowStyle.width / 2}px, ${e.clientY - cursorShadowStyle.height / 2}px, 0)` : null;
-		}
+// 			} else if (e.type === 'mouseup') {
+// 				cursor.classList.remove('_active');
+// 			}
+// 			cursorPointer ? cursorPointer.style.transform = `translate3d(${e.clientX - cursorPointerStyle.width / 2}px, ${e.clientY - cursorPointerStyle.height / 2}px, 0)` : null;
+// 			cursorShadow ? cursorShadow.style.transform = `translate3d(${e.clientX - cursorShadowStyle.width / 2}px, ${e.clientY - cursorShadowStyle.height / 2}px, 0)` : null;
+// 		}
 
-		window.addEventListener('mouseup', mouseActions);
-		window.addEventListener('mousedown', mouseActions);
-		window.addEventListener('mousemove', mouseActions);
-		window.addEventListener('mouseout', mouseActions);
-	}
-}
+// 		window.addEventListener('mouseup', mouseActions);
+// 		window.addEventListener('mousedown', mouseActions);
+// 		window.addEventListener('mousemove', mouseActions);
+// 		window.addEventListener('mouseout', mouseActions);
+// 	}
+// }
 //================================================================================================================================================================================================================================================================================================================
 // Інші корисні функції ================================================================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================================================================
@@ -711,30 +711,30 @@ export function FLS(message) {
 	}, 0);
 }
 // Отримати цифри з рядка
-export function getDigFromString(item) {
-	return parseInt(item.replace(/[^\d]/g, ''))
-}
+// export function getDigFromString(item) {
+// 	return parseInt(item.replace(/[^\d]/g, ''))
+// }
 // Форматування цифр типу 100 000 000
 export function getDigFormat(item, sepp = ' ') {
 	return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, `$1${sepp}`);
 }
 // Прибрати клас з усіх елементів масиву
-export function removeClasses(array, className) {
-	for (var i = 0; i < array.length; i++) {
-		array[i].classList.remove(className);
-	}
-}
+// export function removeClasses(array, className) {
+// 	for (var i = 0; i < array.length; i++) {
+// 		array[i].classList.remove(className);
+// 	}
+// }
 // Унікалізація масиву
-export function uniqArray(array) {
-	return array.filter(function (item, index, self) {
-		return self.indexOf(item) === index;
-	});
-}
+// export function uniqArray(array) {
+// 	return array.filter(function (item, index, self) {
+// 		return self.indexOf(item) === index;
+// 	});
+// }
 // Функція отримання індексу всередині батьківського елемента
-export function indexInParent(parent, element) {
-	const array = Array.prototype.slice.call(parent.children);
-	return Array.prototype.indexOf.call(array, element);
-};
+// export function indexInParent(parent, element) {
+// 	const array = Array.prototype.slice.call(parent.children);
+// 	return Array.prototype.indexOf.call(array, element);
+// };
 // Функція перевіряє чи об'єкт видимий
 export function isHidden(el) {
 	return (el.offsetParent === null)

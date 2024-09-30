@@ -54,11 +54,11 @@
 }
 
 .skygen__description.modus__solution-description {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 }
 @media (min-width: $tablet) {
   .skygen__description.modus__solution-description {
-    margin-bottom: 1180px;
+    // margin-bottom: 1180px;
     max-width: 500px;
   }
 
@@ -75,14 +75,21 @@
   align-items: center;
   gap: 90px;
 }
-@media (min-width: $min-pc) {
+@media (min-width: $tablet) {
   .solutions__container.modus__solutions{
+    height: 3780px;
     flex-direction: row-reverse;
     align-items: flex-start;
   }
 
   .solutions__content-wrapper.modus-solutions__content-wrapper{
     padding-top: 125px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    gap: 220px;
   }
 }
 
@@ -149,6 +156,7 @@
 @media (min-width: $tablet) {
   .marketing__container.modus__container {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     gap: 70px;
@@ -157,19 +165,44 @@
 
 @media (min-width: $min-pc) {
   .marketing__content-box.marketing-modus__content-box{
+    height: 3790px;
     padding-top: 106px;
-    gap: 0;
   }
 
-  .marketing__content-box-wrapper.marketing-modus__margin{
-    margin-bottom: 380px;
+  .startup-content{
+    position: relative;
+    height: calc(90% / 3);
+    max-height: calc(90% / 3);
+  }
+
+  .startup-content.small{
+    position: relative;
+    height: 10%;
+    max-height: 10%;
   }
 }
 
 
 .marketing__content-box.modus__marketing-content-box {
+  height: 50%;
+  max-height: 50%;
   gap: 90px;
 }
+.marketing__content-box.modus__marketing-content-box.non-gap{
+  gap: 0;
+  margin-bottom: 60px;
+}
+
+@media (min-width: $tablet) {
+  .marketing__content-box.modus__marketing-content-box.non-gap{
+    margin-bottom: 0;
+  }
+}
+
+.modus-content__margin{
+  margin-bottom: 90px;
+}
+
 
 .solutions__content-box-subtitle.modus__content-box-subtitle {
   position: relative;
@@ -193,6 +226,10 @@
   .modus__marketing-content-subtitle.big {
     max-width: 579px;
   }
+}
+
+.skygen__description.marketing__description.marketing-modus__description{
+  margin-bottom: 60px;
 }
 
 @media (min-width: $tablet) {
@@ -430,5 +467,11 @@
   .modus-pre-footer__icon {
     width: 83px;
     height: 15px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .skygen__subtitle.marketing__subtitle.small{
+    max-width: 649px;
   }
 }
