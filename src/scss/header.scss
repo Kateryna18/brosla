@@ -103,6 +103,10 @@ body.skygen-page .menu__link {
   height: 100%;
 }
 
+html.lock.menu-open details.header-spoiler[open] .submenu__item{
+  position: static;
+}
+
 .header__menu-icon {
   stroke-dasharray: 140 540;
   stroke-dashoffset: -474;
@@ -161,6 +165,13 @@ details.header-spoiler[open] {
     width: 100%;
     background-color: transparent;
     border-bottom: 1px solid #000000;
+  }
+}
+
+html.lock.menu-open .skygen-page details.header-spoiler[open]{
+  .submenu__item {
+    color: $main-color;
+    border-bottom: 1px solid $main-color;
   }
 }
 

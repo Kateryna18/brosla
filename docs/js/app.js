@@ -214,9 +214,21 @@
     }
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
+            const targetElement = e.target.closest(".menu__link");
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
+            }
+            if (targetElement && document.documentElement.classList.contains("menu-open")) {
+                if (targetElement.tagName.toLowerCase() === "summary") return;
+                bodyLockToggle();
+                document.documentElement.classList.remove("menu-open");
+                if (targetElement.getAttribute("href") === "#footer") {
+                    const footer = document.querySelector("#footer");
+                    if (footer) footer.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
             }
         }));
     }
