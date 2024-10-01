@@ -92,8 +92,15 @@
     .hero__thumb-logo{
       width: 500px;
       height: 500px;
-      transform: translateY(300px);
-      animation: slideInDownContent 1.6s ease-in-out forwards;
+    }
+  }
+}
+
+@media (min-width: $pc) {
+  .web-services__container {
+    .hero__thumb-logo{
+      width: 665px;
+      height: 665px;
     }
   }
 }
@@ -135,13 +142,6 @@
 .web-services__thumb > img {
   width: 100%;
   height: 100%;
-}
-
-
-@keyframes slideInDownContent {
-  to {
-    transform: translateY(0);
-  }
 }
 
 .web-services__top-content {

@@ -227,10 +227,21 @@ main {
     height: 600px;
   }
 }
+@media (min-width: $min-pc) {
+  .web-services .hero__thumb-logo::before {
+    width: 500px;
+    height: 500px;
+  }
+}
 @media (min-width: $pc) {
   .hero__thumb-logo::before {
     width: 934px;
     height: 934px;
+  }
+
+  .web-services .hero__thumb-logo::before {
+    width: 665px;
+    height: 665px;
   }
 }
 

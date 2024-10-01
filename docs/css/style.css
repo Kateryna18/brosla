@@ -133,6 +133,9 @@ select:focus,
 textarea:focus {
   outline: 0
 }
+html {
+  scroll-behavior: smooth
+}
 body {
   line-height: 1.2181818182;
   font-weight: 400;
@@ -584,6 +587,9 @@ details.header-spoiler[open] .submenu__item {
   font-size: 14px;
   line-height: 1.4285714286;
   text-transform: capitalize
+}
+.skygen__wrapper .footer__form-label {
+  color: #fff
 }
 .footer__form-input {
   display: block;
@@ -1880,18 +1886,6 @@ main {
 .web-services__thumb>img {
   width: 100%;
   height: 100%
-}
-@-webkit-keyframes slideInDownContent {
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0)
-  }
-}
-@keyframes slideInDownContent {
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0)
-  }
 }
 .web-services__top-content {
   margin-bottom: 70px
@@ -4193,7 +4187,7 @@ body.skygen-page .footer__address-icon {
     max-height: 50%;
     display: flex;
     flex-direction: column;
-    gap: 220px
+    gap: 80px
   }
   .marketing__content-box-wrapper.small {
     max-width: 460px
@@ -4490,6 +4484,10 @@ body.skygen-page .footer__address-icon {
     justify-content: center;
     padding-top: 92px
   }
+  .web-services .hero__thumb-logo::before {
+    width: 500px;
+    height: 500px
+  }
   .examples {
     padding-top: 100px;
     padding-bottom: 250px
@@ -4631,11 +4629,7 @@ body.skygen-page .footer__address-icon {
   }
   .web-services__container .hero__thumb-logo {
     width: 500px;
-    height: 500px;
-    -webkit-transform: translateY(300px);
-    transform: translateY(300px);
-    -webkit-animation: slideInDownContent 1.6s ease-in-out forwards;
-    animation: slideInDownContent 1.6s ease-in-out forwards
+    height: 500px
   }
   .web-services__thumb {
     margin-bottom: 0;
@@ -4723,6 +4717,10 @@ body.skygen-page .footer__address-icon {
     width: 934px;
     height: 934px
   }
+  .web-services .hero__thumb-logo::before {
+    width: 665px;
+    height: 665px
+  }
   .subtitle.hero__subtitle {
     margin-bottom: 40px
   }
@@ -4759,6 +4757,10 @@ body.skygen-page .footer__address-icon {
     width: 90%;
     height: 120%;
     right: 170px
+  }
+  .web-services__container .hero__thumb-logo {
+    width: 665px;
+    height: 665px
   }
   .package__overview-spoiler.options__spoiler {
     gap: 110px 30px
