@@ -2053,7 +2053,6 @@ main {
 }
 .presentation-thumb {
   width: 100%;
-  max-width: 400px;
   height: 345px;
   margin-bottom: 45px;
   margin-right: auto;
@@ -2651,12 +2650,16 @@ main {
 body.skygen-page .footer__address-icon {
   color: #fff
 }
-.modus__pre-text.none {
+.modus__pre-text {
+  display: block;
   margin-bottom: 15px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.21875;
   text-transform: uppercase
+}
+.modus__pre-text.none {
+  display: none
 }
 .modus__content-thumb {
   width: 100%;
@@ -3594,9 +3597,6 @@ body.skygen-page .footer__address-icon {
   .skygen__description.small {
     max-width: none
   }
-  .presentation-thumb {
-    max-width: none
-  }
   .brand-narrative__images-box {
     min-width: 700px;
     height: 500px
@@ -4105,6 +4105,7 @@ body.skygen-page .footer__address-icon {
     line-height: 1.2190909091
   }
   .presentation__subtitle {
+    min-width: 870px;
     line-height: 1.44
   }
   .presentation__subtitle.presentation__product-name {
@@ -4150,6 +4151,8 @@ body.skygen-page .footer__address-icon {
     line-height: 1.2
   }
   .presentation__product-description {
+    width: 827px;
+    max-width: 827px;
     font-size: 22px;
     line-height: 1.2190909091
   }
@@ -4818,6 +4821,14 @@ body.skygen-page .footer__address-icon {
   }
   .social-media-packaging__container {
     justify-content: space-between
+  }
+}
+@media (min-width:390px) {
+  .presentation-thumb {
+    height: auto
+  }
+  .marketing__thumb-image {
+    height: auto
   }
 }
 @media (min-width:420px) {
