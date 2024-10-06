@@ -61,6 +61,20 @@
   line-height: calc(17.07px / 14px);
   color: #000000;
 }
+.skygen__description.small{
+  max-width: 320px;
+}
+.skygen__description.medium{
+  max-width: 330px;
+}
+.skygen__description.big{
+  max-width: 345px;
+}
+@media (min-width: $mobile) {
+  .skygen__description.medium, .skygen__description.small, .skygen__description.big{
+    max-width: none;
+  }
+}
 @media (min-width: $tablet) {
   .skygen__description {
     font-size: 22px;
@@ -103,12 +117,32 @@
   }
 }
 
+.marketing__button{
+  max-width: 268px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: $tablet) {
+  .marketing__button{
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
 .presentation-thumb {
   width: 100%;
+  max-width: 400px;
   height: 345px;
   margin-bottom: 45px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 5px;
   overflow: hidden;
+}
+@media (min-width: $mobile) {
+  .presentation-thumb {
+    max-width: none;
+  }
 }
 @media (min-width: $tablet) {
   .presentation-thumb {
@@ -734,6 +768,7 @@
 }
 
 .skygen__subtitle.solutions__subtitle {
+  max-width: 345px;
   margin-bottom: 60px;
   font-family: Mattone;
 }
@@ -745,6 +780,7 @@
 }
 
 .solutions__content-box-subtitle {
+  max-width: 345px;
   margin-bottom: 30px;
   font-family: Mattone;
   font-size: 25px;
@@ -752,9 +788,19 @@
 }
 @media (min-width: $tablet) {
   .solutions__content-box-subtitle {
+    max-width: none;
     margin-bottom: 40px;
     font-size: 30px;
     line-height: calc(36px / 30px);
+  }
+}
+
+.solutions__content-box-subtitle.small{
+  max-width: 280px;
+}
+@media (min-width: $mobile) {
+  .solutions__content-box-subtitle.small{
+    max-width: none;
   }
 }
 

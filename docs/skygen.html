@@ -5,7 +5,7 @@
 	<title>Brosla</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20241002141751" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20241006130702" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="preload" href="img/logo-mb.webp" as="image" media="(max-width: 768px)" />
 	<link rel="preload" href="img/logo-pc.webp" as="image" media="(min-width: 769px)" />
@@ -228,7 +228,17 @@
 			<section class="marketing">
 				<div class="marketing__container">
 					<div class="marketing__thumb-image">
-						<img src="img/marketing-pc.webp" srcset="img/marketing-mb.webp 480w, img/marketing-pc.webp 1024w" sizes="(max-width: 600px) 480px, 1024px" alt="example website" />
+						<!-- <img
+                src="img/marketing-pc.webp"
+                srcset="img/marketing-mb.webp 480w, img/marketing-pc.webp 1024w"
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="example website"
+              /> -->
+						<img src="img/marketing-mb.webp" srcset="
+                  img/marketing-mb.webp 480w,
+                  img/marketing-mb-3x.webp 1200w,
+                  img/marketing-pc.webp 3000w
+                " sizes="100vw" alt="example website" />
 					</div>
 					<div class="marketing__content-box">
 						<div class="marketing__content-box-wrapper">
@@ -338,10 +348,20 @@
 			<section class="solutions">
 				<div class="solutions__container">
 					<div class="marketing__thumb-image solutions__thumb-image">
-						<img src="img/marketing2-pc.webp" srcset="
+						<!-- <img
+                src="img/marketing2-pc.webp"
+                srcset="
                   img/marketing2-mb.webp  480w,
                   img/marketing2-pc.webp 1024w
-                " sizes="(max-width: 600px) 480px, 1024px" alt="example website" />
+                "
+                sizes="(max-width: 600px) 480px, 1024px"
+                alt="example website"
+              /> -->
+						<img src="img/marketing2-mb.webp" srcset="
+                  img/marketing2-mb.webp 480w,
+                  img/marketing2-mb-3x.webp 1200w,
+                  img/marketing2-pc.webp 3000w
+                " sizes="100vw" alt="example website" />
 					</div>
 					<div class="solutions__content-wrapper">
 						<div class="marketing__content-box solutions__content-box">
@@ -361,7 +381,7 @@
 										<p class="solutions__content-box-subtitle">
 											Ready for the Future, and Then Some
 										</p>
-										<p class="skygen__description">
+										<p class="skygen__description medium">
 											Introducing our fully customizable WordPress theme for
 											Skygen, complete with branded modules and page
 											templates.
@@ -372,10 +392,10 @@
 								</div>
 								<div class="marketing__content fade-in-content">
 									<div class="sticky">
-										<p class="solutions__content-box-subtitle">
+										<p class="solutions__content-box-subtitle small">
 											Smooth Sailing for Users
 										</p>
-										<p class="skygen__description">
+										<p class="skygen__description small">
 											Deliver a consistent and intuitive user experience that
 											doesn’t skimp on creative flexibility. Your brand's
 											consistency?
@@ -387,10 +407,10 @@
 							<div class="marketing__content-box-wrapper medium fade-in-content">
 								<div class="marketing__content fade-in-content">
 									<div class="sticky">
-										<p class="solutions__content-box-subtitle">
+										<p class="solutions__content-box-subtitle small">
 											Alive and Ready to Thrive
 										</p>
-										<p class="skygen__description">
+										<p class="skygen__description big">
 											The Skygen website made its grand entrance in spring
 											2024, instantly raising the bar for global e-commerce
 											sites. This project is our pride and joy, brought to
@@ -790,7 +810,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20241002141751" defer></script>
+	<script src="js/app.min.js?_v=20241006130702" defer></script>
 </body>
 
 </html>

@@ -2168,16 +2168,22 @@ main {
   }
 }
 
-@media (min-width: $min-pc) {
+@media (min-width: 1200px) {
   .pre-footer__bg-thumb {
     position: absolute;
     display: block;
-    top: -285px;
+    top: -105px;
     right: 0;
     width: 110%;
     z-index: -10;
     transform: rotate(-3.08deg);
     opacity: 0.4;
+  }
+}
+
+@media (min-width: $min-pc) {
+  .pre-footer__bg-thumb {
+    top: -285px;
   }
 }
 
@@ -2219,9 +2225,16 @@ main {
 
 .pre-footer__images-thumb {
   width: 100%;
+  max-width: 345px;
   height: 345px;
   border-radius: 5px;
   overflow: hidden;
+}
+@media (min-width: 420px) {
+  .pre-footer__images-thumb {
+    height: auto;
+    max-width: none;
+  }
 }
 @media (min-width: $mobile) {
   .pre-footer__images-thumb {

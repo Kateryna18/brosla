@@ -1831,6 +1831,7 @@ main {
 }
 .pre-footer__images-thumb {
   width: 100%;
+  max-width: 345px;
   height: 345px;
   border-radius: 5px;
   overflow: hidden
@@ -2016,6 +2017,15 @@ main {
   line-height: 1.2192857143;
   color: #000
 }
+.skygen__description.small {
+  max-width: 320px
+}
+.skygen__description.medium {
+  max-width: 330px
+}
+.skygen__description.big {
+  max-width: 345px
+}
 .skygen__description-accent {
   font-weight: 600;
   font-style: italic
@@ -2036,10 +2046,18 @@ main {
   font-size: 40px;
   line-height: 1.2
 }
+.marketing__button {
+  max-width: 268px;
+  margin-right: auto;
+  margin-left: auto
+}
 .presentation-thumb {
   width: 100%;
+  max-width: 400px;
   height: 345px;
   margin-bottom: 45px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 5px;
   overflow: hidden
 }
@@ -2440,14 +2458,19 @@ main {
   margin-bottom: 90px
 }
 .skygen__subtitle.solutions__subtitle {
+  max-width: 345px;
   margin-bottom: 60px;
   font-family: Mattone
 }
 .solutions__content-box-subtitle {
+  max-width: 345px;
   margin-bottom: 30px;
   font-family: Mattone;
   font-size: 25px;
   line-height: 1.2
+}
+.solutions__content-box-subtitle.small {
+  max-width: 280px
 }
 .solutions__content-box-subtitle.bottom {
   margin-bottom: 20px
@@ -3566,6 +3589,14 @@ body.skygen-page .footer__address-icon {
     padding-top: 180px;
     padding-bottom: 110px
   }
+  .skygen__description.big,
+  .skygen__description.medium,
+  .skygen__description.small {
+    max-width: none
+  }
+  .presentation-thumb {
+    max-width: none
+  }
   .brand-narrative__images-box {
     min-width: 700px;
     height: 500px
@@ -3573,6 +3604,9 @@ body.skygen-page .footer__address-icon {
   .brand-narrative__images-thumb {
     width: 439px;
     height: 237px
+  }
+  .solutions__content-box-subtitle.small {
+    max-width: none
   }
   .catalogs__slide.swiper-slide {
     width: 100%;
@@ -4078,6 +4112,10 @@ body.skygen-page .footer__address-icon {
     font-size: 48px;
     line-height: 1.2
   }
+  .marketing__button {
+    margin-right: auto;
+    margin-left: 0
+  }
   .presentation-thumb {
     height: 700px;
     margin-bottom: 220px
@@ -4255,6 +4293,7 @@ body.skygen-page .footer__address-icon {
     margin-bottom: 110px
   }
   .solutions__content-box-subtitle {
+    max-width: none;
     margin-bottom: 40px;
     font-size: 30px;
     line-height: 1.2
@@ -4588,15 +4627,7 @@ body.skygen-page .footer__address-icon {
     padding-top: 0
   }
   .pre-footer__bg-thumb {
-    position: absolute;
-    display: block;
-    top: -285px;
-    right: 0;
-    width: 110%;
-    z-index: -10;
-    -webkit-transform: rotate(-3.08deg);
-    transform: rotate(-3.08deg);
-    opacity: .4
+    top: -285px
   }
   .pre-footer__images-box {
     gap: 100px
@@ -4789,6 +4820,12 @@ body.skygen-page .footer__address-icon {
     justify-content: space-between
   }
 }
+@media (min-width:420px) {
+  .pre-footer__images-thumb {
+    height: auto;
+    max-width: none
+  }
+}
 @media (min-width:490px) {
   .mobile-break {
     display: none
@@ -4797,6 +4834,19 @@ body.skygen-page .footer__address-icon {
 @media (min-width:991.98px) {
   .swiper-initialized .swiper-slide {
     flex-shrink: 1
+  }
+}
+@media (min-width:1200px) {
+  .pre-footer__bg-thumb {
+    position: absolute;
+    display: block;
+    top: -105px;
+    right: 0;
+    width: 110%;
+    z-index: -10;
+    -webkit-transform: rotate(-3.08deg);
+    transform: rotate(-3.08deg);
+    opacity: .4
   }
 }
 @media (min-width:1300px) {
